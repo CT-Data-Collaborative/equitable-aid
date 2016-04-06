@@ -55,34 +55,56 @@
             <div class="top-row">
               <div class="arrow_box">
                 <div class="top-row-title">
-                  <h1><a href="#">CTData Angular Project</a></h1>
+                  <h1><a href="#">CTData Budget Simulator</a></h1>
                 </div>
               </div>
             </div>
             <div class="container-fluid main-internal">
               <div class="row">
-                <div class="col-sm-12">
-                  <h2>Simulation Output</h2>
-                  <pre>{{modelParems}}</pre>
+                <div class="col-sm-6 input">
+                  <h2>Select Model Parameters</h2>
                   <form>
                     <fieldset class="form-group">
                       <label for="percentChange">Percent Change (-1 to 0)</label>
-                      <input type="text" class="form-control" id="percentChange" ng-model="modelParems.percent_cut">
+                      <input type="number" min="-1" max="0" class="form-control" id="percentChange" ng-model="modelParems.percent_cut">
                     </fieldset>
                     <fieldset class="form-group">
                       <label for="max">Max Multiplier</label>
-                      <input type="text" class="form-control" id="max" ng-model="modelParems.max_r">
+                      <input type="number" min="0" class="form-control" id="max" ng-model="modelParems.max_r">
                     </fieldset>
                     <fieldset class="form-group">
                       <label for="min">Min Multiplier</label>
-                      <input type="text" class="form-control" id="min" ng-model="modelParems.min_r">
+                      <input type="number" min="0" class="form-control" id="min" ng-model="modelParems.min_r">
                     </fieldset>
                     <fieldset class="form-group">
                       <label for="baseline">Baseline Percentile (0 to 100)</label>
-                      <input type="text" class="form-control" id="baseline" ng-model="modelParems.baseline_per">
+                      <input type="number" min="0" max="100" class="form-control" id="baseline" ng-model="modelParems.baseline_per">
                     </fieldset>
                   </form>
-                  <pre>{{ simulatedTowns }}</pre>
+                </div>
+                <div class="col-sm-6 output">
+                  <h2>Simulation Output</h2>
+                  <h4>Baseline cut ($): {{ baseline | number:2}}</h4>
+                  <table class="ctdata-table">
+                    <thead>
+                      <th class="col-name town">Town</th>
+                      <th class="col-name">Gap</th>
+                      <th class="col-name">Previous Allocation</th>
+                      <th class="col-name">Simulated Allocation</th>
+                      <th class="col-name">% Change</th>
+                      <th class="col-name">Category</th>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="town in simulatedTowns">
+                        <td class="name">{{town.town}}</td>
+                        <td class="value">{{town.gap}}</td>
+                        <td class="value">{{town.allocation}}</td>
+                        <td class="value">{{town.adj_allocation | number:2}}</td>
+                        <td class="value">{{town.per_change | number:2}}</td>
+                        <td class="value">{{town.category}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>

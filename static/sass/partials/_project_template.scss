@@ -84,3 +84,9 @@
         height: calc(100vh - 27rem);
     }
 }
+
+
+.output {
+    max-height: 75vh;
+    overflow: scroll;
+}

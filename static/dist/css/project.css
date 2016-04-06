@@ -92,6 +92,10 @@
   .home-internal {
     height: calc(100vh - 27rem); } }
 
+.output {
+  max-height: 75vh;
+  overflow: scroll; }
+
 .navbar-header {
   height: 3rem; }
   .navbar-header .navbar {
@@ -337,10 +341,12 @@
 
 table.ctdata-table {
   margin-bottom: 2rem; }
-  table.ctdata-table th, table.ctdata-table td {
-    padding: .25em,.75em; }
   table.ctdata-table tr:hover {
     background: #9EDDFC; }
+  table.ctdata-table th, table.ctdata-table td {
+    max-width: calc(100%/6);
+    text-wrap: normal;
+    padding-right: .25rem; }
   table.ctdata-table .name {
     text-align: left;
     font-weight: 500;
@@ -350,6 +356,8 @@ table.ctdata-table {
     font-weight: 700;
     background-color: #CDEFFE;
     border-left: 5px solid #fff; }
+  table.ctdata-table .col-name.town {
+    text-align: left; }
   table.ctdata-table .value {
     text-align: right;
     font-weight: 300; }

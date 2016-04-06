@@ -1,4 +1,5 @@
 
+
 function percentile(arr, p) {
   if (arr.length === 0) return 0;
   if (typeof p !== 'number') throw new TypeError('p must be a number');
@@ -127,7 +128,7 @@ function print(data, type) {
   data.forEach(function(e) { if (e.category == type ) { console.log(e);}});
 }
 
-cut = -0.35;
+cut = -0.1;
 adj_data = allocate(data, cut);
 
 total_adj_allocation = adj_data.map(function(e) { return e.adj_allocation * e.population;});

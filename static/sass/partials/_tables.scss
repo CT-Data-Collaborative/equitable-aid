@@ -1,14 +1,16 @@
 table.ctdata-table {
     margin-bottom: 2rem;
 
-    th, td {
-        padding: .25em,.75em;
-    }
 
     tr:hover {
         background: $ctdata-light-blue;
     }
 
+    th,td {
+        max-width: calc(100%/6);
+        text-wrap: normal;
+        padding-right: .25rem;
+    }
     .name {
         text-align: left;
         font-weight:500;
@@ -22,6 +24,9 @@ table.ctdata-table {
         border-left: 5px solid #fff;
     }
 
+    .col-name.town {
+        text-align: left;
+    }
     .value {
         text-align: right;
         font-weight: 300;

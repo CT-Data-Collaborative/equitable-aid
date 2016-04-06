@@ -7,9 +7,8 @@ var app = angular.module('app', [
 angular.module('app')
     .service('calculate', function() {
 
-        return ({
-            calculate: calculate
-        });
+        var calcObj = {calculate: calculate};
+        return (calcObj);
 
 
         // ---
@@ -29,6 +28,7 @@ angular.module('app')
             var gap_array = data.map(function(x) { return x.gap;});
             gap_array.sort(function(a,b) { return b-a;});
             var baseline = percentile(gap_array, baseline_per/100);
+            calcObj.baseline = baseline;
             r2 = get_r2(data, baseline, total_allocation, max_cut, min_cut);
             data.forEach(function(e) {
                 if (e.category == 'max') {
@@ -196,9 +196,9 @@ angular.module('app')
             return $scope.modelParems;
         }, function() {
             if (typeof($scope.modelParems) != 'undefined') {
-                console.log($scope.modelParems);
-                $scope.simulatedTowns = $scope.calculate($scope.towns, $scope.modelParems);
-                console.log($scope.simulatedTowns);
+                $scope.simulatedTowns = $scope.towns
+                $scope.simulatedTowns = $scope.calculate($scope.simulatedTowns, $scope.modelParems);
+                $scope.baseline = calculate.baseline;
             }
         });
 

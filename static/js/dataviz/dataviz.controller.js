@@ -20,9 +20,9 @@ angular.module('app')
             return $scope.modelParems;
         }, function() {
             if (typeof($scope.modelParems) != 'undefined') {
-                console.log($scope.modelParems);
-                $scope.simulatedTowns = $scope.calculate($scope.towns, $scope.modelParems);
-                console.log($scope.simulatedTowns);
+                $scope.simulatedTowns = $scope.towns
+                $scope.simulatedTowns = $scope.calculate($scope.simulatedTowns, $scope.modelParems);
+                $scope.baseline = calculate.baseline;
             }
         });
 
