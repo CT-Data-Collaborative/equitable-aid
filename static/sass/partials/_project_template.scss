@@ -1,0 +1,86 @@
+* {
+    font: 100% $font1;
+    color: $extra-dark-grey;
+}
+
+.header-inline {
+    display: inline;
+    padding-left: 1rem;
+}
+
+.odd,.even {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+@media (min-width: 48em) {
+    .odd, .even {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+
+.odd {
+    background: $extra-light-grey;
+    a:hover {
+        color: $ctdata-dark-blue;
+        text-decoration: none;
+    }
+}
+
+.even {
+    background: $ctdata-extra-dark-blue;
+    h1,h2,h3,h4,h5 {
+        color: white;
+    }
+    a {
+        color: $ctdata-extra-light-blue;
+    }
+    a:hover {
+        color: $ctdata-dark-blue;
+        text-decoration: none;
+    }
+    p {
+        color: $extra-light-grey;
+    }
+}
+
+.infobox-title {
+    margin-bottom: 1rem;
+}
+
+.home-internal-no-img {
+    background: $extra-light-grey;
+    overflow-y: auto;
+    height: calc(100vh - 5rem);
+}
+
+.home-internal {
+    background: $extra-light-grey;
+    overflow-y: auto;
+    height: calc(100vh - 16rem);
+}
+
+@media (min-width: 48em) {
+    .home-internal {
+        height: calc(100vh - 17rem);
+    }
+}
+
+@media (min-width: 62em) {
+    .home-internal {
+        height: calc(100vh - 21rem);
+    }
+}
+
+@media (min-width: 75em) {
+    .home-internal {
+        height: calc(100vh - 23rem);
+    }
+}
+
+@media (min-width: 86em) {
+    .home-internal {
+        height: calc(100vh - 27rem);
+    }
+}

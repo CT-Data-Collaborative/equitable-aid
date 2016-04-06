@@ -1,0 +1,93 @@
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: $sidebar-menu-width;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .actions, .title {
+        padding-left: 1rem;
+    }
+
+    .actions, .title {
+        padding-top: 1rem;
+    }
+
+    .actions {
+        padding-left: 2rem;
+        button.btn.ctdata-btn {
+            margin-right: 1rem;
+        }
+    }
+
+    li {
+        background: $light-tan;
+        cursor: pointer;
+        &.category {
+            background: white;
+            border-top: solid .1rem $dark-grey;
+            border-bottom: solid .1rem $dark-grey;
+            border-right: solid .1rem $dark-grey;
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+        }
+        &.deselected {
+            background: $light-tan;
+        }
+
+        span {
+            &.icon {
+                font-size: 1.75rem;
+                border-right: solid .1rem $dark-grey;
+                border-left: solid .25rem $dark-grey;
+                padding-left: .5rem;
+                padding-right: .5rem;
+                padding-top: .5rem;
+                padding-bottom: .5rem;
+
+                .fa {
+                    text-align: center;
+                    width: (18em / 14);
+                }
+
+                &.color-0,.color-5,.color-10 {
+                    border-left: solid .25rem $ctdata-extra-dark-blue;
+                }
+                &.color-1,.color-6,.color-11 {
+                    border-left: solid .25rem $ctdata-dark-blue;
+                }
+                &.color-2,.color-7,.color-12 {
+                    border-left: solid .25rem $ctdata-medium-blue;
+                }
+                &.color-3,.color-8,.color-13 {
+                    border-left: solid .25rem $ctdata-light-blue;
+                }
+                &.color-4,.color-9,.color-14 {
+                    border-left: solid .25rem $ctdata-extra-light-blue;
+                }
+            }
+            &.name {
+                font-size: 1rem;
+                padding-left: .5rem;
+            }
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            color: #999999;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #fff;
+            background: rgba(255,255,255,0.2);
+        }
+
+        a:active, a:focus {
+            text-decoration: none;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+// This is a fix for the bootstrap4 alpha release
+@media (max-width: 47.9em) {
+  .navbar-nav .nav-item {
+    display: inline-block;
+    float: none;
+    width: 100%;
+  }
+
+  .navbar-nav .nav-item + .nav-item {
+    margin-left: 0;
+  }
+
+  .nav.navbar-nav.pull-right {
+    float: none !important;
+  }
+}
+
+[hidden][style="display: block;"] {
+  display: block !important;
+}
+
+@import 'partials/project_variables';
+@import 'partials/project_template';
+@import 'partials/project_nav';
+@import 'partials/project_footer';
+@import 'partials/project_topbar';
+@import 'partials/sidebar_slideout_template';
+@import 'partials/sidebar_content';
+@import 'partials/buttons';
+@import 'partials/tables';

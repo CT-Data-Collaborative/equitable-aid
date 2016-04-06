@@ -1,0 +1,73 @@
+#main {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#main.toggled {
+    padding-left: $sidebar-menu-width;
+}
+
+#wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow:hidden;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: $sidebar-menu-width;
+    width: 0;
+    height: calc(100vh - 5em - 9px);
+    // height: 100%;
+    margin-left: -$sidebar-menu-width;
+    margin-top: 2px;
+    margin-bottom: -2px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: $light-tan;
+    border-right: solid;
+    border-right-width: 1px;
+    border-right-color: $light-grey;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#main.toggled #sidebar-wrapper {
+    width: $sidebar-menu-width;
+}
+
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 17px;
+    height: calc(100vh - 5em - 9px);
+    overflow-y: hidden;
+    overflow-x: hidden;
+    top: 3rem;
+    // background: $light-tan;
+}
+
+#main.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -$sidebar-menu-width;
+}
+
+.main-internal {
+    height: 95%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    // margin-top: -1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    background: white;
+}

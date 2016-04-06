@@ -1,0 +1,34 @@
+table.ctdata-table {
+    margin-bottom: 2rem;
+
+    th, td {
+        padding: .25em,.75em;
+    }
+
+    tr:hover {
+        background: $ctdata-light-blue;
+    }
+
+    .name {
+        text-align: left;
+        font-weight:500;
+        padding-left: 1rem;
+    }
+
+    .col-name {
+        text-align: right;
+        font-weight: 700;
+        background-color: $ctdata-extra-light-blue;
+        border-left: 5px solid #fff;
+    }
+
+    .value {
+        text-align: right;
+        font-weight: 300;
+    }
+
+    .name, .col-name, .value {
+        padding-right: .5rem;
+        padding-left: .5rem;
+    }
+}
