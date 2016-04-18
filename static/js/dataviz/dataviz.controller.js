@@ -9,10 +9,10 @@ angular.module('app')
         dataPromise.then(function(results) {
             $scope.towns = results;
             $scope.modelParems = {
-                percent_cut: -0.1,
-                max_r: 2.5,
-                min_r: 0.1,
-                baseline_per: 10.0
+                percent_cut: 10,
+                max_cut: 15,
+                min_cut: 5,
+                baseline_per: 20.0
             };
         });
 

@@ -10,12 +10,10 @@ angular.module('app')
         // --
 
         function calculate(data, parems) {
-            var percent_cut = parems.percent_cut;
-            var max_r = parems.max_r;
-            var min_r = parems.min_r;
-            var max_cut = max_r * percent_cut;
-            var min_cut = min_r * percent_cut;
-            baseline_per = parems.baseline_per;
+            var percent_cut = parems.percent_cut/-100;
+            var max_cut = parems.max_cut/-100;
+            var min_cut = parems.min_cut/-100;
+            baseline_per = 100 - parems.baseline_per;
             var allocations = data.map(function(x) { return x.total_aid});
             var total_allocation = allocations.reduce(function (prev, curr) {
                     return prev + curr;}) * (1 + percent_cut);
@@ -32,7 +30,11 @@ angular.module('app')
                 } else {
                     e.per_change = r2 * (e.gap - baseline) / e.allocation - 1;
                 }
-                e.adj_allocation = e.allocation * (1 + e.per_change );
+                e.sim_allocation = e.allocation * (1 + e.per_change );
+                e.sim_allocation_difference = e.sim_allocation - e.allocation;
+                e.even_cut_allocation = e.allocation * (1 + percent_cut);
+                e.even_cut_allocation_difference = e.even_cut_allocation - e.allocation;
+                e.sim_better = (e.sim_allocation - e.even_cut_allocation) >= 0;
             });
             return data;
         }
@@ -42,6 +44,13 @@ angular.module('app')
         // Helpers
         // ---
 
+        function isBetter(v) {
+            if(v <= 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
         function percentile(arr, p) {
             if (arr.length === 0) return 0;
             if (typeof p !== 'number') throw new TypeError('p must be a number');

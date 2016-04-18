@@ -9,7 +9,7 @@ angular.module('app')
     dataProvider.loadData = function() {
         var request = $http({
             method: "get",
-            url: '../data/data.json'
+            url: '../data/ma_data.json'
         });
         return( request.then(handleSuccess, handleError) );
     };
@@ -30,9 +30,6 @@ angular.module('app')
     }
 
     function handleSuccess( response ) {
-        response.data.forEach(function(e) {
-            e.gap = -e.gap;
-        });
         return( response.data );
     }
     return dataProvider;
