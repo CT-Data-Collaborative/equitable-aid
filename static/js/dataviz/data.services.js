@@ -30,9 +30,6 @@ angular.module('app')
     }
 
     function handleSuccess( response ) {
-        response.data.forEach(function(e) {
-            e.gap = -e.gap;
-        });
         return( response.data );
     }
     return dataProvider;

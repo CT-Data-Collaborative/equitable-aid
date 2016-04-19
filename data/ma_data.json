@@ -1,0 +1,2459 @@
+[
+    {
+        "town": "Abington",
+        "population": 16789,
+        "total_aid": 1663872,
+        "allocation": 99.10489011,
+        "gap": 598.55
+    },
+    {
+        "town": "Acton",
+        "population": 21234,
+        "total_aid": 1183155,
+        "allocation": 55.71983611,
+        "gap": 360.6
+    },
+    {
+        "town": "Acushnet",
+        "population": 10377,
+        "total_aid": 1282445,
+        "allocation": 123.5853329,
+        "gap": 687.02
+    },
+    {
+        "town": "Adams",
+        "population": 8247,
+        "total_aid": 1980179,
+        "allocation": 240.1090093,
+        "gap": 1098.99
+    },
+    {
+        "town": "Agawam",
+        "population": 28616,
+        "total_aid": 3116003,
+        "allocation": 108.8902362,
+        "gap": 914.97
+    },
+    {
+        "town": "Alford",
+        "population": 390,
+        "total_aid": 11869,
+        "allocation": 30.43333333,
+        "gap": -1360.6
+    },
+    {
+        "town": "Amesbury",
+        "population": 16708,
+        "total_aid": 1645476,
+        "allocation": 98.48431889,
+        "gap": 677.1
+    },
+    {
+        "town": "Amherst",
+        "population": 36246,
+        "total_aid": 7120842,
+        "allocation": 196.4586989,
+        "gap": 1126.88
+    },
+    {
+        "town": "Andover",
+        "population": 33700,
+        "total_aid": 1511358,
+        "allocation": 44.8474184,
+        "gap": 78.73
+    },
+    {
+        "town": "Arlington",
+        "population": 41724,
+        "total_aid": 6416909,
+        "allocation": 153.7941952,
+        "gap": 314.46
+    },
+    {
+        "town": "Ashburnham",
+        "population": 6070,
+        "total_aid": 672501,
+        "allocation": 110.790939,
+        "gap": 851.58
+    },
+    {
+        "town": "Ashby",
+        "population": 3108,
+        "total_aid": 370356,
+        "allocation": 119.1621622,
+        "gap": 699.53
+    },
+    {
+        "town": "Ashfield",
+        "population": 1827,
+        "total_aid": 157026,
+        "allocation": 85.94745484,
+        "gap": 688.01
+    },
+    {
+        "town": "Ashland",
+        "population": 15383,
+        "total_aid": 1143808,
+        "allocation": 74.35532731,
+        "gap": 450.42
+    },
+    {
+        "town": "Athol",
+        "population": 11862,
+        "total_aid": 2239276,
+        "allocation": 188.777272,
+        "gap": 653.95
+    },
+    {
+        "town": "Attleboro",
+        "population": 43645,
+        "total_aid": 4825303,
+        "allocation": 110.5579791,
+        "gap": 864.49
+    },
+    {
+        "town": "Auburn",
+        "population": 16474,
+        "total_aid": 1448540,
+        "allocation": 87.92885759,
+        "gap": 681.47
+    },
+    {
+        "town": "Avon",
+        "population": 4375,
+        "total_aid": 586234,
+        "allocation": 133.9963429,
+        "gap": 565.15
+    },
+    {
+        "town": "Ayer",
+        "population": 7854,
+        "total_aid": 640306,
+        "allocation": 81.52610135,
+        "gap": 910.04
+    },
+    {
+        "town": "Barnstable",
+        "population": 46297,
+        "total_aid": 1779132,
+        "allocation": 38.42866708,
+        "gap": -20.23
+    },
+    {
+        "town": "Barre",
+        "population": 5616,
+        "total_aid": 760702,
+        "allocation": 135.4526353,
+        "gap": 634.32
+    },
+    {
+        "town": "Becket",
+        "population": 1802,
+        "total_aid": 76812,
+        "allocation": 42.62597114,
+        "gap": 283.38
+    },
+    {
+        "town": "Bedford",
+        "population": 13814,
+        "total_aid": 970936,
+        "allocation": 70.28637614,
+        "gap": 482.47
+    },
+    {
+        "town": "Belchertown",
+        "population": 14141,
+        "total_aid": 1439150,
+        "allocation": 101.7714447,
+        "gap": 760.99
+    },
+    {
+        "town": "Bellingham",
+        "population": 15853,
+        "total_aid": 1435208,
+        "allocation": 90.53226519,
+        "gap": 292.37
+    },
+    {
+        "town": "Belmont",
+        "population": 23675,
+        "total_aid": 1909790,
+        "allocation": 80.66694826,
+        "gap": -134.05
+    },
+    {
+        "town": "Berkley",
+        "population": 6498,
+        "total_aid": 514636,
+        "allocation": 79.1991382,
+        "gap": 347.59
+    },
+    {
+        "town": "Berlin",
+        "population": 2950,
+        "total_aid": 170528,
+        "allocation": 57.80610169,
+        "gap": -148.51
+    },
+    {
+        "town": "Bernardston",
+        "population": 2235,
+        "total_aid": 246005,
+        "allocation": 110.0693512,
+        "gap": 619.14
+    },
+    {
+        "town": "Beverly",
+        "population": 39513,
+        "total_aid": 4939380,
+        "allocation": 125.0064536,
+        "gap": 561.43
+    },
+    {
+        "town": "Billerica",
+        "population": 39865,
+        "total_aid": 4925266,
+        "allocation": 123.5486266,
+        "gap": 659.66
+    },
+    {
+        "town": "Blackstone",
+        "population": 9725,
+        "total_aid": 1157715,
+        "allocation": 119.0452442,
+        "gap": 550.48
+    },
+    {
+        "town": "Blandford",
+        "population": 1301,
+        "total_aid": 107398,
+        "allocation": 82.55034589,
+        "gap": 474.1
+    },
+    {
+        "town": "Bolton",
+        "population": 4604,
+        "total_aid": 166996,
+        "allocation": 36.27193745,
+        "gap": 60.8
+    },
+    {
+        "town": "Boston",
+        "population": 645169,
+        "total_aid": 160247301,
+        "allocation": 248.3803484,
+        "gap": 1001.52
+    },
+    {
+        "town": "Bourne",
+        "population": 19390,
+        "total_aid": 1239900,
+        "allocation": 63.94533265,
+        "gap": 45.19
+    },
+    {
+        "town": "Boxborough",
+        "population": 5174,
+        "total_aid": 213357,
+        "allocation": 41.23637418,
+        "gap": 220.72
+    },
+    {
+        "town": "Boxford",
+        "population": 8164,
+        "total_aid": 411171,
+        "allocation": 50.36391475,
+        "gap": -350.09
+    },
+    {
+        "town": "Boylston",
+        "population": 4373,
+        "total_aid": 289720,
+        "allocation": 66.25200091,
+        "gap": 402.28
+    },
+    {
+        "town": "Braintree",
+        "population": 35296,
+        "total_aid": 4840026,
+        "allocation": 137.1267566,
+        "gap": 592.28
+    },
+    {
+        "town": "Brewster",
+        "population": 9976,
+        "total_aid": 333966,
+        "allocation": 33.47694467,
+        "gap": -394.64
+    },
+    {
+        "town": "Bridgewater",
+        "population": 27263,
+        "total_aid": 3080637,
+        "allocation": 112.9969923,
+        "gap": 576.77
+    },
+    {
+        "town": "Brimfield",
+        "population": 3813,
+        "total_aid": 329768,
+        "allocation": 86.48518227,
+        "gap": 662.26
+    },
+    {
+        "town": "Brockton",
+        "population": 93529,
+        "total_aid": 17709906,
+        "allocation": 189.3520299,
+        "gap": 1040.07
+    },
+    {
+        "town": "Brookfield",
+        "population": 3400,
+        "total_aid": 417618,
+        "allocation": 122.8288235,
+        "gap": 751.91
+    },
+    {
+        "town": "Brookline",
+        "population": 56410,
+        "total_aid": 5370029,
+        "allocation": 95.19640135,
+        "gap": -133.45
+    },
+    {
+        "town": "Buckland",
+        "population": 1989,
+        "total_aid": 258986,
+        "allocation": 130.2091503,
+        "gap": 786.69
+    },
+    {
+        "town": "Burlington",
+        "population": 25688,
+        "total_aid": 2215064,
+        "allocation": 86.22952351,
+        "gap": 681.77
+    },
+    {
+        "town": "Cambridge",
+        "population": 108780,
+        "total_aid": 18170690,
+        "allocation": 167.0407244,
+        "gap": 272.99
+    },
+    {
+        "town": "Canton",
+        "population": 22382,
+        "total_aid": 1813812,
+        "allocation": 81.03887052,
+        "gap": 300.75
+    },
+    {
+        "town": "Carlisle",
+        "population": 4878,
+        "total_aid": 185546,
+        "allocation": 38.03731037,
+        "gap": -559.02
+    },
+    {
+        "town": "Carver",
+        "population": 12034,
+        "total_aid": 1235613,
+        "allocation": 102.6768323,
+        "gap": 614.87
+    },
+    {
+        "town": "Charlemont",
+        "population": 1386,
+        "total_aid": 147847,
+        "allocation": 106.6717172,
+        "gap": 932.95
+    },
+    {
+        "town": "Charlton",
+        "population": 12637,
+        "total_aid": 1225401,
+        "allocation": 96.96929651,
+        "gap": 443.11
+    },
+    {
+        "town": "Chatham",
+        "population": 6753,
+        "total_aid": 127294,
+        "allocation": 18.8499926,
+        "gap": -3087.22
+    },
+    {
+        "town": "Chelmsford",
+        "population": 34111,
+        "total_aid": 4292998,
+        "allocation": 125.8537715,
+        "gap": 563.64
+    },
+    {
+        "town": "Chelsea",
+        "population": 37483,
+        "total_aid": 6946677,
+        "allocation": 185.3287357,
+        "gap": 1729.85
+    },
+    {
+        "town": "Cheshire",
+        "population": 3304,
+        "total_aid": 519594,
+        "allocation": 157.2621065,
+        "gap": 784.39
+    },
+    {
+        "town": "Chester",
+        "population": 1308,
+        "total_aid": 152278,
+        "allocation": 116.4204893,
+        "gap": 846.28
+    },
+    {
+        "town": "Chesterfield",
+        "population": 1270,
+        "total_aid": 116778,
+        "allocation": 91.9511811,
+        "gap": 673.23
+    },
+    {
+        "town": "Chicopee",
+        "population": 55994,
+        "total_aid": 9739822,
+        "allocation": 173.9440297,
+        "gap": 1179.01
+    },
+    {
+        "town": "Chilmark",
+        "population": 894,
+        "total_aid": 3172,
+        "allocation": 3.548098434,
+        "gap": -10447.39
+    },
+    {
+        "town": "Clarksburg",
+        "population": 1615,
+        "total_aid": 307692,
+        "allocation": 190.5213622,
+        "gap": 929.46
+    },
+    {
+        "town": "Clinton",
+        "population": 14196,
+        "total_aid": 1991079,
+        "allocation": 140.2563398,
+        "gap": 892.69
+    },
+    {
+        "town": "Cohasset",
+        "population": 7409,
+        "total_aid": 435162,
+        "allocation": 58.73424214,
+        "gap": -865.55
+    },
+    {
+        "town": "Colrain",
+        "population": 1855,
+        "total_aid": 244112,
+        "allocation": 131.5967655,
+        "gap": 776.68
+    },
+    {
+        "town": "Concord",
+        "population": 17580,
+        "total_aid": 981239,
+        "allocation": 55.81564278,
+        "gap": -866.93
+    },
+    {
+        "town": "Conway",
+        "population": 1899,
+        "total_aid": 151164,
+        "allocation": 79.60189573,
+        "gap": 249.74
+    },
+    {
+        "town": "Cummington",
+        "population": 972,
+        "total_aid": 70560,
+        "allocation": 72.59259259,
+        "gap": 1006.68
+    },
+    {
+        "town": "Dalton",
+        "population": 6553,
+        "total_aid": 962329,
+        "allocation": 146.853197,
+        "gap": 743.54
+    },
+    {
+        "town": "Danvers",
+        "population": 27232,
+        "total_aid": 2409018,
+        "allocation": 88.46276439,
+        "gap": 524.71
+    },
+    {
+        "town": "Dartmouth",
+        "population": 34420,
+        "total_aid": 2132179,
+        "allocation": 61.9459326,
+        "gap": 463.34
+    },
+    {
+        "town": "Dedham",
+        "population": 24825,
+        "total_aid": 2765940,
+        "allocation": 111.4175227,
+        "gap": 526.71
+    },
+    {
+        "town": "Deerfield",
+        "population": 4692,
+        "total_aid": 406247,
+        "allocation": 86.58290708,
+        "gap": 401.84
+    },
+    {
+        "town": "Dennis",
+        "population": 15434,
+        "total_aid": 460638,
+        "allocation": 29.84566541,
+        "gap": -568.33
+    },
+    {
+        "town": "Dighton",
+        "population": 6779,
+        "total_aid": 654018,
+        "allocation": 96.47706151,
+        "gap": 520.76
+    },
+    {
+        "town": "Douglas",
+        "population": 8099,
+        "total_aid": 617250,
+        "allocation": 76.21311273,
+        "gap": 421.29
+    },
+    {
+        "town": "Dover",
+        "population": 5723,
+        "total_aid": 162705,
+        "allocation": 28.43001922,
+        "gap": -2335.33
+    },
+    {
+        "town": "Dracut",
+        "population": 29415,
+        "total_aid": 2963502,
+        "allocation": 100.7479857,
+        "gap": 625.71
+    },
+    {
+        "town": "Dudley",
+        "population": 11224,
+        "total_aid": 1511226,
+        "allocation": 134.6423735,
+        "gap": 566.86
+    },
+    {
+        "town": "Dunstable",
+        "population": 3375,
+        "total_aid": 208034,
+        "allocation": 61.6397037,
+        "gap": 136.39
+    },
+    {
+        "town": "Duxbury",
+        "population": 14362,
+        "total_aid": 749739,
+        "allocation": 52.20296616,
+        "gap": 15.51
+    },
+    {
+        "town": "East Bridgewater",
+        "population": 14097,
+        "total_aid": 1266059,
+        "allocation": 89.81052706,
+        "gap": 568.41
+    },
+    {
+        "town": "East Brookfield",
+        "population": 2088,
+        "total_aid": 245303,
+        "allocation": 117.4822797,
+        "gap": 279.3
+    },
+    {
+        "town": "East Longmeadow",
+        "population": 15936,
+        "total_aid": 1224304,
+        "allocation": 76.82630522,
+        "gap": 924.3
+    },
+    {
+        "town": "Eastham",
+        "population": 5463,
+        "total_aid": 126013,
+        "allocation": 23.06663006,
+        "gap": -709.68
+    },
+    {
+        "town": "Easthampton",
+        "population": 16324,
+        "total_aid": 2377410,
+        "allocation": 145.6389365,
+        "gap": 843.69
+    },
+    {
+        "town": "Easton",
+        "population": 23005,
+        "total_aid": 1852233,
+        "allocation": 80.51436644,
+        "gap": 425.93
+    },
+    {
+        "town": "Edgartown",
+        "population": 4054,
+        "total_aid": 56341,
+        "allocation": 13.89763197,
+        "gap": -5490
+    },
+    {
+        "town": "Egremont",
+        "population": 1343,
+        "total_aid": 53367,
+        "allocation": 39.73715562,
+        "gap": -379.69
+    },
+    {
+        "town": "Erving",
+        "population": 1549,
+        "total_aid": 56849,
+        "allocation": 36.7004519,
+        "gap": -2316.36
+    },
+    {
+        "town": "Essex",
+        "population": 3342,
+        "total_aid": 207087,
+        "allocation": 61.96499102,
+        "gap": 54.42
+    },
+    {
+        "town": "Everett",
+        "population": 38303,
+        "total_aid": 5843460,
+        "allocation": 152.5588074,
+        "gap": 1061.64
+    },
+    {
+        "town": "Fairhaven",
+        "population": 16111,
+        "total_aid": 1907302,
+        "allocation": 118.3850785,
+        "gap": 789.33
+    },
+    {
+        "town": "Fall River",
+        "population": 90885,
+        "total_aid": 20156220,
+        "allocation": 221.777191,
+        "gap": 1379.76
+    },
+    {
+        "town": "Falmouth",
+        "population": 32824,
+        "total_aid": 1172624,
+        "allocation": 35.72459176,
+        "gap": -326.84
+    },
+    {
+        "town": "Fitchburg",
+        "population": 42161,
+        "total_aid": 7218116,
+        "allocation": 171.2036242,
+        "gap": 1141.94
+    },
+    {
+        "town": "Florida",
+        "population": 675,
+        "total_aid": 42100,
+        "allocation": 62.37037037,
+        "gap": -93.68
+    },
+    {
+        "town": "Foxborough",
+        "population": 17087,
+        "total_aid": 1259852,
+        "allocation": 73.73160883,
+        "gap": 366.41
+    },
+    {
+        "town": "Framingham",
+        "population": 67185,
+        "total_aid": 8415039,
+        "allocation": 125.2517526,
+        "gap": 924.65
+    },
+    {
+        "town": "Franklin",
+        "population": 32079,
+        "total_aid": 2089973,
+        "allocation": 65.15081518,
+        "gap": 174.72
+    },
+    {
+        "town": "Freetown",
+        "population": 9076,
+        "total_aid": 803160,
+        "allocation": 88.49272807,
+        "gap": 547.84
+    },
+    {
+        "town": "Gardner",
+        "population": 20972,
+        "total_aid": 3584191,
+        "allocation": 170.9036334,
+        "gap": 987.92
+    },
+    {
+        "town": "Gay Head (Aquinnah)",
+        "population": 370,
+        "total_aid": 1976,
+        "allocation": 5.340540541,
+        "gap": -2430.28
+    },
+    {
+        "town": "Georgetown",
+        "population": 8726,
+        "total_aid": 605914,
+        "allocation": 69.43777218,
+        "gap": 335.6
+    },
+    {
+        "town": "Gill",
+        "population": 1396,
+        "total_aid": 205734,
+        "allocation": 147.3739255,
+        "gap": 781.88
+    },
+    {
+        "town": "Gloucester",
+        "population": 30534,
+        "total_aid": 3378096,
+        "allocation": 110.6339163,
+        "gap": 628.29
+    },
+    {
+        "town": "Goshen",
+        "population": 957,
+        "total_aid": 67666,
+        "allocation": 70.70637409,
+        "gap": 888.9
+    },
+    {
+        "town": "Gosnold",
+        "population": 85,
+        "total_aid": 1774,
+        "allocation": 20.87058824,
+        "gap": -5195.56
+    },
+    {
+        "town": "Grafton",
+        "population": 17800,
+        "total_aid": 1322498,
+        "allocation": 74.29764045,
+        "gap": 434.89
+    },
+    {
+        "town": "Granby",
+        "population": 6305,
+        "total_aid": 746820,
+        "allocation": 118.4488501,
+        "gap": 749.09
+    },
+    {
+        "town": "Granville",
+        "population": 1643,
+        "total_aid": 135608,
+        "allocation": 82.53682288,
+        "gap": 623.85
+    },
+    {
+        "town": "Great Barrington",
+        "population": 7358,
+        "total_aid": 641908,
+        "allocation": 87.23946725,
+        "gap": 497.95
+    },
+    {
+        "town": "Greenfield",
+        "population": 17537,
+        "total_aid": 2685303,
+        "allocation": 153.1221418,
+        "gap": 1157.46
+    },
+    {
+        "town": "Groton",
+        "population": 10781,
+        "total_aid": 655194,
+        "allocation": 60.77302662,
+        "gap": 226.78
+    },
+    {
+        "town": "Groveland",
+        "population": 7456,
+        "total_aid": 615686,
+        "allocation": 82.57591202,
+        "gap": 409.08
+    },
+    {
+        "town": "Hadley",
+        "population": 4753,
+        "total_aid": 383877,
+        "allocation": 80.76520093,
+        "gap": 566.18
+    },
+    {
+        "town": "Halifax",
+        "population": 7790,
+        "total_aid": 767798,
+        "allocation": 98.56200257,
+        "gap": 639.17
+    },
+    {
+        "town": "Hamilton",
+        "population": 8251,
+        "total_aid": 568272,
+        "allocation": 68.87310629,
+        "gap": 240.41
+    },
+    {
+        "town": "Hampden",
+        "population": 5386,
+        "total_aid": 581924,
+        "allocation": 108.0438173,
+        "gap": 809.76
+    },
+    {
+        "town": "Hancock",
+        "population": 1264,
+        "total_aid": 47754,
+        "allocation": 37.78006329,
+        "gap": -971.22
+    },
+    {
+        "town": "Hanover",
+        "population": 14115,
+        "total_aid": 1791747,
+        "allocation": 126.9392136,
+        "gap": 286.57
+    },
+    {
+        "town": "Hanson",
+        "population": 10139,
+        "total_aid": 1083133,
+        "allocation": 106.8283854,
+        "gap": 246.98
+    },
+    {
+        "town": "Hardwick",
+        "population": 2673,
+        "total_aid": 393766,
+        "allocation": 147.3123831,
+        "gap": 679.86
+    },
+    {
+        "town": "Harvard",
+        "population": 6156,
+        "total_aid": 1252599,
+        "allocation": 203.4761209,
+        "gap": 159.06
+    },
+    {
+        "town": "Harwich",
+        "population": 12254,
+        "total_aid": 364333,
+        "allocation": 29.73176106,
+        "gap": -401.13
+    },
+    {
+        "town": "Hatfield",
+        "population": 3262,
+        "total_aid": 263917,
+        "allocation": 80.90649908,
+        "gap": 473.56
+    },
+    {
+        "town": "Haverhill",
+        "population": 61588,
+        "total_aid": 8312994,
+        "allocation": 134.9774956,
+        "gap": 891.61
+    },
+    {
+        "town": "Hawley",
+        "population": 337,
+        "total_aid": 36605,
+        "allocation": 108.620178,
+        "gap": 1045.93
+    },
+    {
+        "town": "Heath",
+        "population": 796,
+        "total_aid": 70768,
+        "allocation": 88.90452261,
+        "gap": 820.89
+    },
+    {
+        "town": "Hingham",
+        "population": 23270,
+        "total_aid": 1334874,
+        "allocation": 57.3645896,
+        "gap": -505.11
+    },
+    {
+        "town": "Hinsdale",
+        "population": 1909,
+        "total_aid": 188327,
+        "allocation": 98.65217391,
+        "gap": 905.47
+    },
+    {
+        "town": "Holbrook",
+        "population": 10738,
+        "total_aid": 1248008,
+        "allocation": 116.2235053,
+        "gap": 780.84
+    },
+    {
+        "town": "Holden",
+        "population": 17658,
+        "total_aid": 1617133,
+        "allocation": 91.5807566,
+        "gap": 696.85
+    },
+    {
+        "town": "Holland",
+        "population": 2566,
+        "total_aid": 170719,
+        "allocation": 66.53117693,
+        "gap": 772.94
+    },
+    {
+        "town": "Holliston",
+        "population": 14193,
+        "total_aid": 1309824,
+        "allocation": 92.28662016,
+        "gap": 571.77
+    },
+    {
+        "town": "Holyoke",
+        "population": 40005,
+        "total_aid": 8590161,
+        "allocation": 214.7271841,
+        "gap": 1468.67
+    },
+    {
+        "town": "Hopedale",
+        "population": 6241,
+        "total_aid": 551538,
+        "allocation": 88.37333761,
+        "gap": 214.76
+    },
+    {
+        "town": "Hopkinton",
+        "population": 14657,
+        "total_aid": 664434,
+        "allocation": 45.33219622,
+        "gap": 80.58
+    },
+    {
+        "town": "Hubbardston",
+        "population": 4479,
+        "total_aid": 381006,
+        "allocation": 85.06496986,
+        "gap": 383.81
+    },
+    {
+        "town": "Hudson",
+        "population": 20005,
+        "total_aid": 1686649,
+        "allocation": 84.31137216,
+        "gap": 673.06
+    },
+    {
+        "town": "Hull",
+        "population": 11123,
+        "total_aid": 1792503,
+        "allocation": 161.1528365,
+        "gap": 553.54
+    },
+    {
+        "town": "Huntington",
+        "population": 2233,
+        "total_aid": 291504,
+        "allocation": 130.5436632,
+        "gap": 706.74
+    },
+    {
+        "town": "Ipswich",
+        "population": 13412,
+        "total_aid": 1357726,
+        "allocation": 101.2321801,
+        "gap": 38.82
+    },
+    {
+        "town": "Kingston",
+        "population": 12484,
+        "total_aid": 811851,
+        "allocation": 65.03132009,
+        "gap": 408.72
+    },
+    {
+        "town": "Lakeville",
+        "population": 10623,
+        "total_aid": 692065,
+        "allocation": 65.14779253,
+        "gap": 370.49
+    },
+    {
+        "town": "Lancaster",
+        "population": 7034,
+        "total_aid": 808506,
+        "allocation": 114.9425647,
+        "gap": 636.06
+    },
+    {
+        "town": "Lanesborough",
+        "population": 2853,
+        "total_aid": 291766,
+        "allocation": 102.2663863,
+        "gap": 883.89
+    },
+    {
+        "town": "Lawrence",
+        "population": 70592,
+        "total_aid": 16607385,
+        "allocation": 235.2587404,
+        "gap": 1849.88
+    },
+    {
+        "town": "Lee",
+        "population": 5740,
+        "total_aid": 526757,
+        "allocation": 91.7695122,
+        "gap": 703.86
+    },
+    {
+        "town": "Leicester",
+        "population": 11140,
+        "total_aid": 1468595,
+        "allocation": 131.8307899,
+        "gap": 694.9
+    },
+    {
+        "town": "Lenox",
+        "population": 5084,
+        "total_aid": 450838,
+        "allocation": 88.67781275,
+        "gap": 70.71
+    },
+    {
+        "town": "Leominster",
+        "population": 42293,
+        "total_aid": 4840828,
+        "allocation": 114.4593195,
+        "gap": 795.94
+    },
+    {
+        "town": "Leverett",
+        "population": 1787,
+        "total_aid": 150975,
+        "allocation": 84.48517068,
+        "gap": 352.35
+    },
+    {
+        "town": "Lexington",
+        "population": 30929,
+        "total_aid": 1296276,
+        "allocation": 41.91134534,
+        "gap": -190.27
+    },
+    {
+        "town": "Leyden",
+        "population": 809,
+        "total_aid": 69641,
+        "allocation": 86.08281829,
+        "gap": 791.46
+    },
+    {
+        "town": "Lincoln",
+        "population": 8653,
+        "total_aid": 575819,
+        "allocation": 66.54559112,
+        "gap": -1019.07
+    },
+    {
+        "town": "Littleton",
+        "population": 8975,
+        "total_aid": 601236,
+        "allocation": 66.99008357,
+        "gap": 576.65
+    },
+    {
+        "town": "Longmeadow",
+        "population": 15527,
+        "total_aid": 1181711,
+        "allocation": 76.10684614,
+        "gap": 673.25
+    },
+    {
+        "town": "Lowell",
+        "population": 104400,
+        "total_aid": 21304471,
+        "allocation": 204.0658142,
+        "gap": 1321.55
+    },
+    {
+        "town": "Ludlow",
+        "population": 22161,
+        "total_aid": 2583866,
+        "allocation": 116.5951897,
+        "gap": 1180.53
+    },
+    {
+        "town": "Lunenburg",
+        "population": 10157,
+        "total_aid": 894449,
+        "allocation": 88.06232155,
+        "gap": 738.47
+    },
+    {
+        "town": "Lynn",
+        "population": 87532,
+        "total_aid": 18937447,
+        "allocation": 216.3488439,
+        "gap": 1294.14
+    },
+    {
+        "town": "Lynnfield",
+        "population": 12035,
+        "total_aid": 879672,
+        "allocation": 73.09281263,
+        "gap": 63.81
+    },
+    {
+        "town": "Malden",
+        "population": 56151,
+        "total_aid": 10611641,
+        "allocation": 188.9840074,
+        "gap": 954.92
+    },
+    {
+        "town": "Manchester",
+        "population": 5205,
+        "total_aid": 188099,
+        "allocation": 36.13813641,
+        "gap": -1861.34
+    },
+    {
+        "town": "Mansfield",
+        "population": 23303,
+        "total_aid": 1886682,
+        "allocation": 80.96305197,
+        "gap": 560.82
+    },
+    {
+        "town": "Marblehead",
+        "population": 19962,
+        "total_aid": 963171,
+        "allocation": 48.25022543,
+        "gap": -716.58
+    },
+    {
+        "town": "Marion",
+        "population": 5183,
+        "total_aid": 190849,
+        "allocation": 36.82211075,
+        "gap": -574.16
+    },
+    {
+        "town": "Marlborough",
+        "population": 38469,
+        "total_aid": 4604312,
+        "allocation": 119.6888924,
+        "gap": 748.73
+    },
+    {
+        "town": "Marshfield",
+        "population": 24888,
+        "total_aid": 1832321,
+        "allocation": 73.62266956,
+        "gap": 197.46
+    },
+    {
+        "town": "Mashpee",
+        "population": 14367,
+        "total_aid": 311192,
+        "allocation": 21.6601935,
+        "gap": -390.71
+    },
+    {
+        "town": "Mattapoisett",
+        "population": 6519,
+        "total_aid": 342810,
+        "allocation": 52.58628624,
+        "gap": 4.82
+    },
+    {
+        "town": "Maynard",
+        "population": 10629,
+        "total_aid": 1328816,
+        "allocation": 125.0179697,
+        "gap": 728.69
+    },
+    {
+        "town": "Medfield",
+        "population": 12274,
+        "total_aid": 1226088,
+        "allocation": 99.89310738,
+        "gap": 225.78
+    },
+    {
+        "town": "Medford",
+        "population": 55578,
+        "total_aid": 10259690,
+        "allocation": 184.5998417,
+        "gap": 690.61
+    },
+    {
+        "town": "Medway",
+        "population": 12901,
+        "total_aid": 1031914,
+        "allocation": 79.98713278,
+        "gap": 664.11
+    },
+    {
+        "town": "Melrose",
+        "population": 27093,
+        "total_aid": 4337759,
+        "allocation": 160.1062636,
+        "gap": 586.2
+    },
+    {
+        "town": "Mendon",
+        "population": 5703,
+        "total_aid": 345651,
+        "allocation": 60.60862704,
+        "gap": 67.37
+    },
+    {
+        "town": "Merrimac",
+        "population": 6609,
+        "total_aid": 711660,
+        "allocation": 107.6804358,
+        "gap": 411.78
+    },
+    {
+        "town": "Methuen",
+        "population": 44371,
+        "total_aid": 4598863,
+        "allocation": 103.645692,
+        "gap": 826.26
+    },
+    {
+        "town": "Middleborough",
+        "population": 21375,
+        "total_aid": 2085358,
+        "allocation": 97.56060819,
+        "gap": 734.61
+    },
+    {
+        "town": "Middlefield",
+        "population": 559,
+        "total_aid": 44965,
+        "allocation": 80.43828265,
+        "gap": 640.08
+    },
+    {
+        "town": "Middleton",
+        "population": 9241,
+        "total_aid": 462794,
+        "allocation": 50.08051077,
+        "gap": 266.1
+    },
+    {
+        "town": "Milford",
+        "population": 27616,
+        "total_aid": 2583471,
+        "allocation": 93.54978998,
+        "gap": 804.71
+    },
+    {
+        "town": "Millbury",
+        "population": 13579,
+        "total_aid": 1497772,
+        "allocation": 110.3006112,
+        "gap": 722.75
+    },
+    {
+        "town": "Millis",
+        "population": 8034,
+        "total_aid": 885551,
+        "allocation": 110.225417,
+        "gap": 691.3
+    },
+    {
+        "town": "Millville",
+        "population": 2960,
+        "total_aid": 344528,
+        "allocation": 116.3945946,
+        "gap": 619.08
+    },
+    {
+        "town": "Milton",
+        "population": 26186,
+        "total_aid": 2717762,
+        "allocation": 103.7868327,
+        "gap": 229.44
+    },
+    {
+        "town": "Monroe",
+        "population": 96,
+        "total_aid": 15552,
+        "allocation": 162,
+        "gap": 901.45
+    },
+    {
+        "town": "Monson",
+        "population": 9073,
+        "total_aid": 1104115,
+        "allocation": 121.692384,
+        "gap": 901.81
+    },
+    {
+        "town": "Montague",
+        "population": 8175,
+        "total_aid": 1212188,
+        "allocation": 148.2798777,
+        "gap": 1019.34
+    },
+    {
+        "town": "Monterey",
+        "population": 957,
+        "total_aid": 39107,
+        "allocation": 40.86415883,
+        "gap": -998.69
+    },
+    {
+        "town": "Montgomery",
+        "population": 730,
+        "total_aid": 73404,
+        "allocation": 100.5534247,
+        "gap": 412.43
+    },
+    {
+        "town": "Mount Washington",
+        "population": 135,
+        "total_aid": 25355,
+        "allocation": 187.8148148,
+        "gap": -2736.53
+    },
+    {
+        "town": "Nahant",
+        "population": 3630,
+        "total_aid": 319586,
+        "allocation": 88.04022039,
+        "gap": -226.66
+    },
+    {
+        "town": "Nantucket",
+        "population": 11322,
+        "total_aid": 67017,
+        "allocation": 5.91918389,
+        "gap": -7331.15
+    },
+    {
+        "town": "Natick",
+        "population": 32338,
+        "total_aid": 3223110,
+        "allocation": 99.66942915,
+        "gap": 74.6
+    },
+    {
+        "town": "Needham",
+        "population": 29037,
+        "total_aid": 1476550,
+        "allocation": 50.85063884,
+        "gap": -337.73
+    },
+    {
+        "town": "New Ashford",
+        "population": 248,
+        "total_aid": 17180,
+        "allocation": 69.27419355,
+        "gap": 182.51
+    },
+    {
+        "town": "New Bedford",
+        "population": 91112,
+        "total_aid": 19457251,
+        "allocation": 213.5531105,
+        "gap": 1529.61
+    },
+    {
+        "town": "New Braintree",
+        "population": 1135,
+        "total_aid": 111657,
+        "allocation": 98.37621145,
+        "gap": 635.43
+    },
+    {
+        "town": "New Marlborough",
+        "population": 1508,
+        "total_aid": 49535,
+        "allocation": 32.84814324,
+        "gap": -109.51
+    },
+    {
+        "town": "New Salem",
+        "population": 957,
+        "total_aid": 87758,
+        "allocation": 91.70114943,
+        "gap": 727.25
+    },
+    {
+        "town": "Newbury",
+        "population": 6912,
+        "total_aid": 438043,
+        "allocation": 63.37427662,
+        "gap": 38.49
+    },
+    {
+        "town": "Newburyport",
+        "population": 17594,
+        "total_aid": 2157204,
+        "allocation": 122.610208,
+        "gap": 245.08
+    },
+    {
+        "town": "Newton",
+        "population": 84600,
+        "total_aid": 4970628,
+        "allocation": 58.75446809,
+        "gap": -484.32
+    },
+    {
+        "town": "Norfolk",
+        "population": 11188,
+        "total_aid": 811132,
+        "allocation": 72.50017876,
+        "gap": 327.46
+    },
+    {
+        "town": "North Adams",
+        "population": 13816,
+        "total_aid": 3752495,
+        "allocation": 271.6050232,
+        "gap": 1345.37
+    },
+    {
+        "town": "North Andover",
+        "population": 27759,
+        "total_aid": 1733403,
+        "allocation": 62.44472063,
+        "gap": 379.62
+    },
+    {
+        "town": "North Attleborough",
+        "population": 27825,
+        "total_aid": 2433430,
+        "allocation": 87.45480683,
+        "gap": 303.31
+    },
+    {
+        "town": "North Brookfield",
+        "population": 5057,
+        "total_aid": 673975,
+        "allocation": 133.2756575,
+        "gap": 794.9
+    },
+    {
+        "town": "North Reading",
+        "population": 14463,
+        "total_aid": 1501819,
+        "allocation": 103.8386918,
+        "gap": 229.8
+    },
+    {
+        "town": "Northampton",
+        "population": 28370,
+        "total_aid": 3717624,
+        "allocation": 131.0406768,
+        "gap": 771.86
+    },
+    {
+        "town": "Northborough",
+        "population": 14863,
+        "total_aid": 943470,
+        "allocation": 63.47776357,
+        "gap": 378.96
+    },
+    {
+        "town": "Northbridge",
+        "population": 14720,
+        "total_aid": 1785406,
+        "allocation": 121.2911685,
+        "gap": 622.88
+    },
+    {
+        "town": "Northfield",
+        "population": 3311,
+        "total_aid": 305594,
+        "allocation": 92.29658713,
+        "gap": 513.75
+    },
+    {
+        "town": "Norton",
+        "population": 19315,
+        "total_aid": 1757961,
+        "allocation": 91.01532488,
+        "gap": 593.43
+    },
+    {
+        "town": "Norwell",
+        "population": 10336,
+        "total_aid": 906717,
+        "allocation": 87.72416796,
+        "gap": -11.71
+    },
+    {
+        "town": "Norwood",
+        "population": 28459,
+        "total_aid": 3934274,
+        "allocation": 138.2435785,
+        "gap": 670.2
+    },
+    {
+        "town": "Oak Bluffs",
+        "population": 3954,
+        "total_aid": 61514,
+        "allocation": 15.55741022,
+        "gap": -1319.28
+    },
+    {
+        "town": "Oakham",
+        "population": 1946,
+        "total_aid": 162277,
+        "allocation": 83.39003083,
+        "gap": 282.43
+    },
+    {
+        "town": "Orange",
+        "population": 7699,
+        "total_aid": 1366932,
+        "allocation": 177.5466944,
+        "gap": 1003.32
+    },
+    {
+        "town": "Orleans",
+        "population": 6256,
+        "total_aid": 145288,
+        "allocation": 23.22378517,
+        "gap": -1858.35
+    },
+    {
+        "town": "Otis",
+        "population": 1396,
+        "total_aid": 30765,
+        "allocation": 22.03796562,
+        "gap": -352.85
+    },
+    {
+        "town": "Oxford",
+        "population": 13813,
+        "total_aid": 1739231,
+        "allocation": 125.9126185,
+        "gap": 748.46
+    },
+    {
+        "town": "Palmer",
+        "population": 13124,
+        "total_aid": 1696284,
+        "allocation": 129.2505334,
+        "gap": 948.11
+    },
+    {
+        "town": "Paxton",
+        "population": 4832,
+        "total_aid": 457701,
+        "allocation": 94.72288907,
+        "gap": 475.52
+    },
+    {
+        "town": "Peabody",
+        "population": 51726,
+        "total_aid": 6105613,
+        "allocation": 118.037602,
+        "gap": 472.04
+    },
+    {
+        "town": "Pelham",
+        "population": 1399,
+        "total_aid": 134637,
+        "allocation": 96.23802716,
+        "gap": 779.85
+    },
+    {
+        "town": "Pembroke",
+        "population": 18848,
+        "total_aid": 1421815,
+        "allocation": 75.43585526,
+        "gap": 599.64
+    },
+    {
+        "town": "Pepperell",
+        "population": 11508,
+        "total_aid": 1262405,
+        "allocation": 109.6980361,
+        "gap": 557.87
+    },
+    {
+        "town": "Peru",
+        "population": 830,
+        "total_aid": 96598,
+        "allocation": 116.3831325,
+        "gap": 599.97
+    },
+    {
+        "town": "Petersham",
+        "population": 1327,
+        "total_aid": 96968,
+        "allocation": 73.07309721,
+        "gap": 531.66
+    },
+    {
+        "town": "Phillipston",
+        "population": 1787,
+        "total_aid": 156021,
+        "allocation": 87.30889759,
+        "gap": 539.79
+    },
+    {
+        "town": "Pittsfield",
+        "population": 42432,
+        "total_aid": 7302808,
+        "allocation": 172.1061463,
+        "gap": 1144.92
+    },
+    {
+        "town": "Plainfield",
+        "population": 595,
+        "total_aid": 42434,
+        "allocation": 71.31764706,
+        "gap": 854.26
+    },
+    {
+        "town": "Plainville",
+        "population": 8289,
+        "total_aid": 641687,
+        "allocation": 77.41428399,
+        "gap": 538.72
+    },
+    {
+        "town": "Plymouth",
+        "population": 56845,
+        "total_aid": 3314295,
+        "allocation": 58.30407248,
+        "gap": 414.66
+    },
+    {
+        "town": "Plympton",
+        "population": 2800,
+        "total_aid": 200664,
+        "allocation": 71.66571429,
+        "gap": 640.37
+    },
+    {
+        "town": "Princeton",
+        "population": 3520,
+        "total_aid": 250431,
+        "allocation": 71.14517045,
+        "gap": 540.31
+    },
+    {
+        "town": "Provincetown",
+        "population": 3417,
+        "total_aid": 116995,
+        "allocation": 34.23909862,
+        "gap": -1526.81
+    },
+    {
+        "town": "Quincy",
+        "population": 91073,
+        "total_aid": 16150797,
+        "allocation": 177.3390247,
+        "gap": 848.45
+    },
+    {
+        "town": "Randolph",
+        "population": 31040,
+        "total_aid": 4396472,
+        "allocation": 141.6389175,
+        "gap": 843.22
+    },
+    {
+        "town": "Raynham",
+        "population": 13648,
+        "total_aid": 961807,
+        "allocation": 70.47237691,
+        "gap": 233.86
+    },
+    {
+        "town": "Reading",
+        "population": 23512,
+        "total_aid": 2742082,
+        "allocation": 116.6247873,
+        "gap": 446.84
+    },
+    {
+        "town": "Rehoboth",
+        "population": 11515,
+        "total_aid": 881695,
+        "allocation": 76.56925749,
+        "gap": 284.26
+    },
+    {
+        "town": "Revere",
+        "population": 51693,
+        "total_aid": 8700801,
+        "allocation": 168.3168127,
+        "gap": 1269.12
+    },
+    {
+        "town": "Richmond",
+        "population": 1571,
+        "total_aid": 91509,
+        "allocation": 58.24888606,
+        "gap": -159.19
+    },
+    {
+        "town": "Rochester",
+        "population": 5312,
+        "total_aid": 359241,
+        "allocation": 67.6282003,
+        "gap": 421.92
+    },
+    {
+        "town": "Rockland",
+        "population": 18086,
+        "total_aid": 2236010,
+        "allocation": 123.6320911,
+        "gap": 776.04
+    },
+    {
+        "town": "Rockport",
+        "population": 7675,
+        "total_aid": 370109,
+        "allocation": 48.22267101,
+        "gap": 59.62
+    },
+    {
+        "town": "Rowe",
+        "population": 347,
+        "total_aid": 3332,
+        "allocation": 9.602305476,
+        "gap": -8064.57
+    },
+    {
+        "town": "Rowley",
+        "population": 5826,
+        "total_aid": 456773,
+        "allocation": 78.40250601,
+        "gap": 478.9
+    },
+    {
+        "town": "Royalston",
+        "population": 1353,
+        "total_aid": 152063,
+        "allocation": 112.3895048,
+        "gap": 407.5
+    },
+    {
+        "town": "Russell",
+        "population": 1769,
+        "total_aid": 208900,
+        "allocation": 118.089316,
+        "gap": 891.52
+    },
+    {
+        "town": "Rutland",
+        "population": 8068,
+        "total_aid": 782441,
+        "allocation": 96.9807883,
+        "gap": 562.04
+    },
+    {
+        "town": "Salem",
+        "population": 41361,
+        "total_aid": 5834758,
+        "allocation": 141.0690747,
+        "gap": 974.7
+    },
+    {
+        "town": "Salisbury",
+        "population": 8608,
+        "total_aid": 534432,
+        "allocation": 62.08550186,
+        "gap": 424.56
+    },
+    {
+        "town": "Sandisfield",
+        "population": 849,
+        "total_aid": 29310,
+        "allocation": 34.5229682,
+        "gap": 132.76
+    },
+    {
+        "town": "Sandwich",
+        "population": 19960,
+        "total_aid": 953340,
+        "allocation": 47.76252505,
+        "gap": 344.46
+    },
+    {
+        "town": "Saugus",
+        "population": 27946,
+        "total_aid": 3103116,
+        "allocation": 111.0397195,
+        "gap": 578.91
+    },
+    {
+        "town": "Savoy",
+        "population": 707,
+        "total_aid": 98003,
+        "allocation": 138.6181047,
+        "gap": 731.51
+    },
+    {
+        "town": "Scituate",
+        "population": 18297,
+        "total_aid": 1701540,
+        "allocation": 92.99557304,
+        "gap": -2.81
+    },
+    {
+        "town": "Seekonk",
+        "population": 13869,
+        "total_aid": 1040834,
+        "allocation": 75.04751604,
+        "gap": 734.77
+    },
+    {
+        "town": "Sharon",
+        "population": 18044,
+        "total_aid": 1184040,
+        "allocation": 65.61959654,
+        "gap": 293.75
+    },
+    {
+        "town": "Sheffield",
+        "population": 3297,
+        "total_aid": 206062,
+        "allocation": 62.49984835,
+        "gap": 648.31
+    },
+    {
+        "town": "Shelburne",
+        "population": 2031,
+        "total_aid": 221196,
+        "allocation": 108.9098966,
+        "gap": 678.62
+    },
+    {
+        "town": "Sherborn",
+        "population": 4285,
+        "total_aid": 183212,
+        "allocation": 42.75659277,
+        "gap": -823.74
+    },
+    {
+        "town": "Shirley",
+        "population": 8110,
+        "total_aid": 1109735,
+        "allocation": 136.8353884,
+        "gap": 670.14
+    },
+    {
+        "town": "Shrewsbury",
+        "population": 33973,
+        "total_aid": 2356176,
+        "allocation": 69.35436965,
+        "gap": 293.15
+    },
+    {
+        "town": "Shutesbury",
+        "population": 1836,
+        "total_aid": 143436,
+        "allocation": 78.12418301,
+        "gap": 850.35
+    },
+    {
+        "town": "Somerset",
+        "population": 18556,
+        "total_aid": 1297302,
+        "allocation": 69.91280448,
+        "gap": 739.65
+    },
+    {
+        "town": "Somerville",
+        "population": 76460,
+        "total_aid": 21311532,
+        "allocation": 278.7278577,
+        "gap": 1187.27
+    },
+    {
+        "town": "South Hadley",
+        "population": 17387,
+        "total_aid": 2209062,
+        "allocation": 127.0525105,
+        "gap": 858.87
+    },
+    {
+        "town": "Southampton",
+        "population": 5991,
+        "total_aid": 538950,
+        "allocation": 89.95993991,
+        "gap": 637.74
+    },
+    {
+        "town": "Southborough",
+        "population": 9724,
+        "total_aid": 369948,
+        "allocation": 38.04483752,
+        "gap": -473.03
+    },
+    {
+        "town": "Southbridge",
+        "population": 17487,
+        "total_aid": 2975671,
+        "allocation": 170.164751,
+        "gap": 1151.48
+    },
+    {
+        "town": "Southwick",
+        "population": 9706,
+        "total_aid": 1066935,
+        "allocation": 109.9253039,
+        "gap": 682.6
+    },
+    {
+        "town": "Spencer",
+        "population": 12017,
+        "total_aid": 1913110,
+        "allocation": 159.2002996,
+        "gap": 600.24
+    },
+    {
+        "town": "Springfield",
+        "population": 155575,
+        "total_aid": 32020398,
+        "allocation": 205.8196883,
+        "gap": 1577.35
+    },
+    {
+        "town": "Sterling",
+        "population": 7786,
+        "total_aid": 586397,
+        "allocation": 75.31428204,
+        "gap": 448.01
+    },
+    {
+        "town": "Stockbridge",
+        "population": 2196,
+        "total_aid": 84313,
+        "allocation": 38.393898,
+        "gap": -740.09
+    },
+    {
+        "town": "Stoneham",
+        "population": 21560,
+        "total_aid": 3143525,
+        "allocation": 145.8035714,
+        "gap": 617.57
+    },
+    {
+        "town": "Stoughton",
+        "population": 27169,
+        "total_aid": 2708574,
+        "allocation": 99.69354779,
+        "gap": 715.63
+    },
+    {
+        "town": "Stow",
+        "population": 6671,
+        "total_aid": 356070,
+        "allocation": 53.37580573,
+        "gap": 351.67
+    },
+    {
+        "town": "Sturbridge",
+        "population": 8859,
+        "total_aid": 655305,
+        "allocation": 73.97053844,
+        "gap": 572.3
+    },
+    {
+        "town": "Sudbury",
+        "population": 17714,
+        "total_aid": 1184015,
+        "allocation": 66.84063453,
+        "gap": -114.7
+    },
+    {
+        "town": "Sunderland",
+        "population": 3909,
+        "total_aid": 427516,
+        "allocation": 109.3671016,
+        "gap": 609.33
+    },
+    {
+        "town": "Sutton",
+        "population": 9180,
+        "total_aid": 660269,
+        "allocation": 71.92472767,
+        "gap": 413.38
+    },
+    {
+        "town": "Swampscott",
+        "population": 14044,
+        "total_aid": 1094842,
+        "allocation": 77.95798918,
+        "gap": 223.39
+    },
+    {
+        "town": "Swansea",
+        "population": 16175,
+        "total_aid": 1588632,
+        "allocation": 98.21527048,
+        "gap": 825.01
+    },
+    {
+        "town": "Taunton",
+        "population": 55815,
+        "total_aid": 7114121,
+        "allocation": 127.4589447,
+        "gap": 818.19
+    },
+    {
+        "town": "Templeton",
+        "population": 7963,
+        "total_aid": 1179482,
+        "allocation": 148.1203064,
+        "gap": 620.83
+    },
+    {
+        "town": "Tewksbury",
+        "population": 30597,
+        "total_aid": 2354150,
+        "allocation": 76.94054973,
+        "gap": 527.38
+    },
+    {
+        "town": "Tisbury",
+        "population": 3916,
+        "total_aid": 82939,
+        "allocation": 21.17951992,
+        "gap": -1914.78
+    },
+    {
+        "town": "Tolland",
+        "population": 466,
+        "total_aid": 15633,
+        "allocation": 33.5472103,
+        "gap": -1236.64
+    },
+    {
+        "town": "Topsfield",
+        "population": 6144,
+        "total_aid": 518803,
+        "allocation": 84.44059245,
+        "gap": -54.54
+    },
+    {
+        "town": "Townsend",
+        "population": 9687,
+        "total_aid": 1111624,
+        "allocation": 114.7542067,
+        "gap": 779.92
+    },
+    {
+        "town": "Truro",
+        "population": 2123,
+        "total_aid": 25446,
+        "allocation": 11.98586905,
+        "gap": -2135.71
+    },
+    {
+        "town": "Tyngsborough",
+        "population": 11980,
+        "total_aid": 817416,
+        "allocation": 68.23171953,
+        "gap": 586.26
+    },
+    {
+        "town": "Tyringham",
+        "population": 340,
+        "total_aid": 10739,
+        "allocation": 31.58529412,
+        "gap": -772.2
+    },
+    {
+        "town": "Upton",
+        "population": 6722,
+        "total_aid": 450325,
+        "allocation": 66.9927105,
+        "gap": 129.1
+    },
+    {
+        "town": "Uxbridge",
+        "population": 12887,
+        "total_aid": 1163833,
+        "allocation": 90.31062311,
+        "gap": 504.68
+    },
+    {
+        "town": "Wakefield",
+        "population": 25199,
+        "total_aid": 2849501,
+        "allocation": 113.0799238,
+        "gap": 643.86
+    },
+    {
+        "town": "Wales",
+        "population": 1905,
+        "total_aid": 199783,
+        "allocation": 104.8729659,
+        "gap": 830.5
+    },
+    {
+        "town": "Walpole",
+        "population": 23461,
+        "total_aid": 2155690,
+        "allocation": 91.88397767,
+        "gap": 372.78
+    },
+    {
+        "town": "Waltham",
+        "population": 60605,
+        "total_aid": 8122362,
+        "allocation": 134.0213184,
+        "gap": 756.41
+    },
+    {
+        "town": "Ware",
+        "population": 9888,
+        "total_aid": 1460280,
+        "allocation": 147.6820388,
+        "gap": 1091.12
+    },
+    {
+        "town": "Wareham",
+        "population": 21349,
+        "total_aid": 1673496,
+        "allocation": 78.38755914,
+        "gap": 794.33
+    },
+    {
+        "town": "Warren",
+        "population": 5287,
+        "total_aid": 765257,
+        "allocation": 144.7431436,
+        "gap": 914.77
+    },
+    {
+        "town": "Warwick",
+        "population": 748,
+        "total_aid": 107572,
+        "allocation": 143.8128342,
+        "gap": 490.11
+    },
+    {
+        "town": "Washington",
+        "population": 541,
+        "total_aid": 79890,
+        "allocation": 147.6709797,
+        "gap": 561.51
+    },
+    {
+        "town": "Watertown",
+        "population": 33120,
+        "total_aid": 5641884,
+        "allocation": 170.3467391,
+        "gap": 466.2
+    },
+    {
+        "town": "Wayland",
+        "population": 13503,
+        "total_aid": 764572,
+        "allocation": 56.62238021,
+        "gap": -461.56
+    },
+    {
+        "town": "Webster",
+        "population": 16877,
+        "total_aid": 2094234,
+        "allocation": 124.0880488,
+        "gap": 972.48
+    },
+    {
+        "town": "Wellesley",
+        "population": 27412,
+        "total_aid": 1095717,
+        "allocation": 39.97216547,
+        "gap": -1537.22
+    },
+    {
+        "town": "Wellfleet",
+        "population": 2789,
+        "total_aid": 49439,
+        "allocation": 17.72642524,
+        "gap": -1761.42
+    },
+    {
+        "town": "Wendell",
+        "population": 1002,
+        "total_aid": 147409,
+        "allocation": 147.1147705,
+        "gap": 833.57
+    },
+    {
+        "town": "Wenham",
+        "population": 4778,
+        "total_aid": 362308,
+        "allocation": 75.82838008,
+        "gap": -220.77
+    },
+    {
+        "town": "West Boylston",
+        "population": 8109,
+        "total_aid": 673921,
+        "allocation": 83.10778148,
+        "gap": 654.51
+    },
+    {
+        "town": "West Bridgewater",
+        "population": 6699,
+        "total_aid": 553110,
+        "allocation": 82.56605464,
+        "gap": 565.29
+    },
+    {
+        "town": "West Brookfield",
+        "population": 3863,
+        "total_aid": 411975,
+        "allocation": 106.6463888,
+        "gap": 690.69
+    },
+    {
+        "town": "West Newbury",
+        "population": 4406,
+        "total_aid": 250622,
+        "allocation": 56.88197912,
+        "gap": -174.66
+    },
+    {
+        "town": "West Springfield",
+        "population": 28165,
+        "total_aid": 3031424,
+        "allocation": 107.6308894,
+        "gap": 1056.96
+    },
+    {
+        "town": "West Stockbridge",
+        "population": 1432,
+        "total_aid": 82240,
+        "allocation": 57.4301676,
+        "gap": 117.33
+    },
+    {
+        "town": "West Tisbury",
+        "population": 2701,
+        "total_aid": 157108,
+        "allocation": 58.16660496,
+        "gap": -2065.9
+    },
+    {
+        "town": "Westborough",
+        "population": 18391,
+        "total_aid": 980165,
+        "allocation": 53.29590561,
+        "gap": 233.19
+    },
+    {
+        "town": "Westfield",
+        "population": 42133,
+        "total_aid": 5324736,
+        "allocation": 126.3792277,
+        "gap": 1004.26
+    },
+    {
+        "town": "Westford",
+        "population": 22624,
+        "total_aid": 1797543,
+        "allocation": 79.4529261,
+        "gap": 318.63
+    },
+    {
+        "town": "Westhampton",
+        "population": 1593,
+        "total_aid": 122567,
+        "allocation": 76.94099184,
+        "gap": 689.31
+    },
+    {
+        "town": "Westminster",
+        "population": 7478,
+        "total_aid": 553703,
+        "allocation": 74.04426317,
+        "gap": 326.55
+    },
+    {
+        "town": "Weston",
+        "population": 11954,
+        "total_aid": 316391,
+        "allocation": 26.46737494,
+        "gap": -2951.57
+    },
+    {
+        "town": "Westport",
+        "population": 15504,
+        "total_aid": 1029055,
+        "allocation": 66.37351651,
+        "gap": 204.2
+    },
+    {
+        "town": "Westwood",
+        "population": 14330,
+        "total_aid": 617080,
+        "allocation": 43.06210747,
+        "gap": -275.75
+    },
+    {
+        "town": "Weymouth",
+        "population": 54005,
+        "total_aid": 7375304,
+        "allocation": 136.5670586,
+        "gap": 634.62
+    },
+    {
+        "town": "Whately",
+        "population": 1573,
+        "total_aid": 113512,
+        "allocation": 72.16274634,
+        "gap": 797.21
+    },
+    {
+        "town": "Whitman",
+        "population": 14189,
+        "total_aid": 2048158,
+        "allocation": 144.348298,
+        "gap": 549.34
+    },
+    {
+        "town": "Wilbraham",
+        "population": 14179,
+        "total_aid": 1237908,
+        "allocation": 87.30573383,
+        "gap": 667.23
+    },
+    {
+        "town": "Williamsburg",
+        "population": 2522,
+        "total_aid": 256078,
+        "allocation": 101.5376685,
+        "gap": 541.86
+    },
+    {
+        "town": "Williamstown",
+        "population": 8028,
+        "total_aid": 807552,
+        "allocation": 100.5919283,
+        "gap": 566.18
+    },
+    {
+        "town": "Wilmington",
+        "population": 22373,
+        "total_aid": 2103236,
+        "allocation": 94.00777723,
+        "gap": 664.12
+    },
+    {
+        "town": "Winchendon",
+        "population": 10316,
+        "total_aid": 1422984,
+        "allocation": 137.9395114,
+        "gap": 1001.88
+    },
+    {
+        "town": "Winchester",
+        "population": 21497,
+        "total_aid": 1251470,
+        "allocation": 58.21603014,
+        "gap": -356.1
+    },
+    {
+        "town": "Windsor",
+        "population": 868,
+        "total_aid": 87837,
+        "allocation": 101.1947005,
+        "gap": 612.63
+    },
+    {
+        "town": "Winthrop",
+        "population": 19235,
+        "total_aid": 3565783,
+        "allocation": 185.3799324,
+        "gap": 878.69
+    },
+    {
+        "town": "Woburn",
+        "population": 38987,
+        "total_aid": 5063784,
+        "allocation": 129.88391,
+        "gap": 777.79
+    },
+    {
+        "town": "Worcester",
+        "population": 182421,
+        "total_aid": 35150026,
+        "allocation": 192.6862916,
+        "gap": 1289.64
+    },
+    {
+        "town": "Worthington",
+        "population": 1277,
+        "total_aid": 106245,
+        "allocation": 83.19890368,
+        "gap": 800.72
+    },
+    {
+        "town": "Wrentham",
+        "population": 11224,
+        "total_aid": 788586,
+        "allocation": 70.25890948,
+        "gap": 280.59
+    },
+    {
+        "town": "Yarmouth",
+        "population": 23848,
+        "total_aid": 1067932,
+        "allocation": 44.78077826,
+        "gap": 17.39
+    }
+]

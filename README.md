@@ -1,4 +1,7 @@
-# Angular Template for CTData Projects
+# CT State-to-Town Equitable Aid Calculator
+
+Table, graphics and algorithm for implementing aid calculator as specified in Federal Reserve Bank of Boston New England
+Public Policy Center's [Working Paper 11-2: Designing Formulas for Distributing Reductions in State Aid](http://www.bostonfed.org/economic/neppc/wp/2011/neppcwp112.pdf)
 
 ### Includes:
 - gulp tasks for compiling sass and building angular project file from modularized file structure
@@ -8,16 +11,9 @@
 
 ### Getting started
 
-First install the local node dependencies which we need for managing serving, sass compilation
-and building the final app.js file
+NPM is used to manage front-end dependencies.
 
 ```npm install``` will do the trick
-
-Then install the front-end dependencies using bower.
-
-```bower install``` will do the trick.
-
-The front-end files will end up in the ```static/dist/bower_components``` directory.
 
 There are a few basic gulp commands specified for getting started.
 
