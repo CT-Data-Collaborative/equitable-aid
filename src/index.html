@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>CTData Angular App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+  <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/ui-bootstrap-csp.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/project.css">
+
+  <script src="js/libs/d3.min.js"></script>
+  <script src="js/libs/d3-jetpack.js"></script>
+  <script src="js/libs/angular.min.js"></script>
+  <script src="js/libs/angular-animate.min.js"></script>
+  <script src="js/libs/ui-bootstrap.js"></script>
+  <script src="js/libs/ng-lodash.min.js"></script>
+  <script src="js/app.js"></script>
+</head>
+<body>
+<div id="wrap">
+  <div class="navbar-header">
+    <nav class="navbar navbar-dark navbar-static-top bg-inverse">
+      <div class="container-fluid">
+        <div>
+          <ul class="nav navbar-nav pull-right">
+            <li class="logo"><a class="logo-link" href="http://ctdata.org">Created by the Connecticut Data Collaborative</a>
+                  <span class="logo-small">
+                    <div class="logo-circle dark-blue"></div>
+                    <div class="logo-circle medium-blue"></div>
+                    <div class="logo-circle light-blue"></div>
+                    <div class="logo-circle extra-light-blue"></div>
+            </li>
+            <li><a href="https://twitter.com/ctopendata">
+              <i class="fa fa-inverse fa-twitter fa-lg"></i>
+            </a>
+            </li>
+            <li><a href="https://www.facebook.com/pages/CT-Data-Collaborative/150954425018093"><i class="fa fa-inverse fa-facebook fa-lg"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div> <!-- End Nav -->
+  <div id="main">
+    <div id="page-content-wrapper" ng-controller="DataVizController">
+      <div class="top-row">
+        <div class="arrow_box">
+          <div class="top-row-title">
+            <h1><a href="#">CTData Budget Simulator</a></h1>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid main-internal">
+        <div class="row">
+          <div class="col-sm-4 col-md-2 input">
+            <h2>Select Model Parameters</h2>
+            <form>
+              <fieldset class="form-group">
+                <label for="percentChange">Percent Decrease (%)</label>
+                <input type="number" min="0" max="100" class="form-control" id="percentChange" ng-model="modelParems.percent_cut">
+              </fieldset>
+              <fieldset class="form-group">
+                <label for="min">Min Cut (%)</label>
+                <input type="number" min="0" class="form-control" id="min" ng-model="modelParems.min_cut">
+              </fieldset>
+              <fieldset class="form-group">
+                <label for="max">Max Cut (%)</label>
+                <input type="number" min="0" class="form-control" id="max" ng-model="modelParems.max_cut">
+              </fieldset>
+              <fieldset class="form-group">
+                <label for="baseline">Baseline Percentile (0 to 100)</label>
+                <input type="number" min="0" max="100" class="form-control" id="baseline" ng-model="modelParems.baseline_per">
+              </fieldset>
+            </form>
+          </div>
+          <div class="col-sm-8 col-md-10 output">
+            <h2>Simulation Output</h2>
+            <h4>Baseline cut: {{ baseline | currency}}</h4>
+            <table class="ctdata-table">
+              <thead>
+              <th class="col-name town">Town</th>
+              <th class="col-name">Pop.</th>
+              <th class="col-name">Gap</th>
+              <th class="col-name">Previous</th>
+              <th class="col-name">Even-cut</th>
+              <th class="col-name">Simulated</th>
+              <th class="col-name">Sim. % Change</th>
+              <th class="col-name">Aid Change (pc)</th>
+              <th class="col-name">Aid Change (tot.)</th>
+              <th class="col-name">Category</th>
+              </thead>
+              <tbody>
+              <tr ng-repeat="town in simulatedTowns">
+                <td class="name">{{town.town}}</td>
+                <td class="value">{{town.population | number}}</td>
+                <td class="value">{{town.gap | currency}}</td>
+                <td class="value">{{town.allocation | currency}}</td>
+                <td class="value">{{town.even_cut_allocation | currency}}</td>
+                <td class="value">{{town.sim_allocation | currency}}</td>
+                <td class="value">{{town.per_change | percentage:1}}</td>
+                <td class="value">{{(town.sim_allocation - town.allocation) | currency}}</td>
+                <td class="value">{{(town.sim_allocation - town.allocation) * town.population | currency:"$":0}}</td>
+                <td class="value">{{town.category}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="copyright">
+    <p>CTData.org is a Project of the Connecticut Data Collaborative. Copyright <i class="fa fa-copyright fa-inverse"></i> 2015 CT Data Collaborative</p>
+  </div>
+</div>
+<!-- Latest JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- I haven't actually checked to see if removing this causes problems with the ui-bootstrap -->
+<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+</body>
+</html>
