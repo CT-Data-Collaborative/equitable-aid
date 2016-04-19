@@ -90,3 +90,23 @@
     max-height: 75vh;
     overflow: scroll;
 }
+
+/* Pill nav styling */
+li.uib-tab.nav-item {
+    border-radius: 0.25rem;
+    margin: 0.25rem;
+
+    background-color: $extra-light-grey;
+
+    uib-tab-heading, uib-tab-heading i {
+        color: $extra-dark-grey;
+    }
+}
+li.uib-tab.nav-item.active {
+    background-color: $ctdata-extra-dark-blue;
+
+    uib-tab-heading, uib-tab-heading i {
+        color: $white;
+    }
+}
+/* END Pill nav styling */
