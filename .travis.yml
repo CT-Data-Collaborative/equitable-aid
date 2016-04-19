@@ -7,6 +7,4 @@ deploy:
   acl: public_read
   on:
     repo: CT-Data-Collaborative/equitable-aid
-  branches:
-    only:
-    - master
+    branch: master
