@@ -67,8 +67,12 @@ angular.module('app')
             .append("div")
                 .classed("legend", true);
 
+        legend.append("h5")
+            .classed("legend-title", true)
+            .text("Legend");
+
         legendEntries = legend.selectAll("div.legend-entry")
-            .data(["Allocation", "Adj. Allocation"])
+            .data(["Allocation", "Sim. Allocation", "Even Cut Allocation"])
             .enter()
             .append("div")
                 .attr("class", function(d) {
@@ -96,7 +100,7 @@ angular.module('app')
         // draw Chart
         var container_width = d3.select("div.tab-content").node().getBoundingClientRect().width;
         var width = container_width;
-        var height = container_width * (0.45);
+        var height = container_width * (0.4);
 
         var margin = {
             top: 0.05 * height,
@@ -181,7 +185,7 @@ angular.module('app')
             .domain(d3.extent(
                 lo.chain(data)
                     .map(function(o) {
-                        return [o["allocation"], o["adj_allocation"]]
+                        return [o["allocation"], o["sim_allocation"], o["even_cut_allocation"]]
                     })
                     .flatten()
                     .value()
@@ -213,7 +217,7 @@ angular.module('app')
 
         // draw points
         var pointGroups = chart.selectAll("g.point-group")
-            .data(["Allocation", "Adj. Allocation"])
+            .data(["Allocation", "Sim. Allocation", "Even Cut Allocation"])
             .enter()
                 .append("g")
                 .classed("point-group", true)

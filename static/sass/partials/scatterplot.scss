@@ -17,7 +17,10 @@ scatterplot {
                 &.allocation {
                     background-color: $ctdata-extra-dark-blue;
                 }
-                &.adj_allocation {
+                &.sim_allocation {
+                    background-color: $green;
+                }
+                &.even_cut_allocation {
                     background-color: $red;
                 }
             }
@@ -43,7 +46,10 @@ scatterplot {
         path.point.allocation {
             fill: $ctdata-extra-dark-blue;
         }
-        path.point.adj_allocation {
+        path.point.sim_allocation {
+            fill: $green;
+        }
+        path.point.even_cut_allocation {
             fill: $red;
         }
         /* END Points */
