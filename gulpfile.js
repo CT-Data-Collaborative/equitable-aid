@@ -6,7 +6,6 @@ var uglify = require('gulp-uglify')
 var ngAnnotate = require('gulp-ng-annotate')
 var connect = require('gulp-connect')
 
-
 gulp.task('js_dependencies', function() {
     gulp.src([
         'node_modules/angular/angular.min.js',
@@ -28,9 +27,6 @@ gulp.task('js', function() {
     gulp.src(['src/static/js/**/module.js', 'src/static/js/**/*/*.js'])
      .pipe(sourcemaps.init())
       .pipe(concat('app.js'))
-      //.pipe(ngAnnotate())
-      //.pipe(uglify())
-     //.pipe(sourcemaps.write())
      .pipe(gulp.dest('./dist/js/'))
 });
 
@@ -40,12 +36,8 @@ gulp.task('sass', function() {
      .pipe(gulp.dest('./dist/css'));
 });
 
-// will server on localhost:8080 or 0.0.0.0:8080
-gulp.task('webserver', function() {
-  connect.server()
-});
 
-gulp.task('serve', function () {
+gulp.task('serve', ['build'], function () {
   // will server on localhost:8080 or 0.0.0.0:8080
   connect.server({
       root: 'dist/'
