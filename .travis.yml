@@ -2,6 +2,9 @@ language: node_js
 before_script:
   - npm install -g gulp
 script: gulp
+branches:
+  only:
+    - master
 deploy:
   skip_cleanup: true
   provider: s3
