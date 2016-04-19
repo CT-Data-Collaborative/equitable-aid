@@ -28,10 +28,12 @@ gulp.task('webserver', function() {
   connect.server()
 });
 
-gulp.task('default', function () {
+gulp.task('serve', function () {
   // will server on localhost:8080 or 0.0.0.0:8080
   connect.server(),
   gulp.watch('static/js/**/*.js', ['js']),
   gulp.watch('static/sass/**/*.scss', ['sass'])
-})
+});
+
+gulp.task('default', ['js', 'sass']);
 
