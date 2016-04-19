@@ -155,7 +155,7 @@ angular.module('app')
     dataProvider.loadData = function() {
         var request = $http({
             method: "get",
-            url: '../data/ma_data.json'
+            url: '../data/data.json'
         });
         return( request.then(handleSuccess, handleError) );
     };
@@ -210,6 +210,11 @@ angular.module('app')
 
 }]);
 
+angular.module('app').filter('percentage', ['$filter', function ($filter) {
+    return function (input, decimals) {
+        return $filter('number')(input * 100, decimals) + '%';
+    };
+}]);
 angular.module('app')
 .directive('simpletable', function() {
     // This function should reflect whatever your d3 table function is called.

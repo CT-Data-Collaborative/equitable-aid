@@ -9,7 +9,7 @@ angular.module('app')
     dataProvider.loadData = function() {
         var request = $http({
             method: "get",
-            url: '../data/ma_data.json'
+            url: '../data/data.json'
         });
         return( request.then(handleSuccess, handleError) );
     };

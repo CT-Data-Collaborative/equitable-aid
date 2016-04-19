@@ -84,27 +84,31 @@
                 </div>
                 <div class="col-sm-8 col-md-10 output">
                   <h2>Simulation Output</h2>
-                  <h4>Baseline cut ($): {{ baseline | number:2}}</h4>
+                  <h4>Baseline cut: {{ baseline | currency}}</h4>
                   <table class="ctdata-table">
                     <thead>
                       <th class="col-name town">Town</th>
                       <th class="col-name">Pop.</th>
                       <th class="col-name">Gap</th>
-                      <th class="col-name">Prev. $</th>
-                      <th class="col-name">Sim. $</th>
-                      <th class="col-name">Even-cut $</th>
+                      <th class="col-name">Previous</th>
+                      <th class="col-name">Even-cut</th>
+                      <th class="col-name">Simulated</th>
                       <th class="col-name">Sim. % Change</th>
+                      <th class="col-name">Aid Change (pc)</th>
+                      <th class="col-name">Aid Change (tot.)</th>
                       <th class="col-name">Category</th>
                     </thead>
                     <tbody>
                       <tr ng-repeat="town in simulatedTowns">
                         <td class="name">{{town.town}}</td>
-                        <td class="value">{{town.population}}</td>
-                        <td class="value">{{town.gap}}</td>
-                        <td class="value">{{town.allocation | number:2}}</td>
-                        <td class="value">{{town.sim_allocation | number:2}}</td>
-                        <td class="value">{{town.even_cut_allocation | number:2}}</td>
-                        <td class="value">{{town.per_change * 100 | number:2}}</td>
+                        <td class="value">{{town.population | number}}</td>
+                        <td class="value">{{town.gap | currency}}</td>
+                        <td class="value">{{town.allocation | currency}}</td>
+                        <td class="value">{{town.even_cut_allocation | currency}}</td>
+                        <td class="value">{{town.sim_allocation | currency}}</td>
+                        <td class="value">{{town.per_change | percentage:1}}</td>
+                        <td class="value">{{(town.sim_allocation - town.allocation) | currency}}</td>
+                        <td class="value">{{(town.sim_allocation - town.allocation) * town.population | currency:"$":0}}</td>
                         <td class="value">{{town.category}}</td>
                       </tr>
                     </tbody>
