@@ -10,8 +10,9 @@ gulp.task('js_dependencies', function() {
     gulp.src([
         'node_modules/angular/angular.min.js',
         'node_modules/angular-animate/angular-animate.min.js',
-        'node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js',
+        'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
         'node_modules/d3/d3.min.js',
+        'node_modules/d3-tip/index.js',
         'node_modules/d3-jetpack/d3-jetpack.js',
         'node_modules/ng-lodash/build/ng-lodash.min.js'
     ]).pipe(gulp.dest('dist/js/libs'));
