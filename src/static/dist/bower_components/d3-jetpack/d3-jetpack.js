@@ -154,7 +154,7 @@
 
     if (typeof d3 === 'object' && d3.version) jetpack(d3);
     else if (typeof define === 'function' && define.amd) {
-        define(['d3'], jetpack);
+        define(['../d3/d3'], jetpack);
     }
 
 })();
