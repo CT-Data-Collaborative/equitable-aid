@@ -40,11 +40,12 @@ gulp.task('sass', function() {
 
 gulp.task('serve', ['build'], function () {
   // will server on localhost:8080 or 0.0.0.0:8080
-  connect.server({
-      root: 'dist/'
-  }),
-  gulp.watch('static/js/**/*.js', ['build']),
-  gulp.watch('static/sass/**/*.scss', ['build'])
+    connect.server({
+         root: 'dist/'
+     });
+    gulp.watch('src/js/**/*.js', ['build']);
+    gulp.watch('src/sass/**/*.scss', ['build']);
+    gulp.watch('src/index.html', ['build']);
 });
 
 gulp.task('build', ['js', 'js_dependencies', 'css_dependencies', 'sass'], function() {

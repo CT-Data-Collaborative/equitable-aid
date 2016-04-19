@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>CTData Angular App</title>
+    <title>CTData Budget Equity Simulator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -54,11 +54,33 @@
           <div class="top-row">
             <div class="arrow_box">
               <div class="top-row-title">
-                <h1><a href="#">CTData Budget Simulator</a></h1>
+                <h1><a href="#">CTData Budget Equity Simulator</a></h1>
               </div>
             </div>
           </div>
           <div class="container-fluid main-internal">
+            <div class="row">
+              <div class="col-sm-8 col-sm-offset-2">
+                <h4>The New England Public Policy Center at the Federal Reserve Bank of Boston developed a framework that distributes reductions in state aid based on underlying local fiscal health. Under this framework, municipalities facing fiscal distress would receive smaller aid cuts compared to municipalities with fiscal surpluses. Therefore it provides a more rational and equitable method of cutting aid than commonly used ad hoc or across-the-board cuts. Fiscal health is determined according a given municipalities "fiscal health".
+                </h4>
+                <h4>What is municipal gap?</h4>
+                <ul>
+                  <li>Difference between a municipalities capacity to raise revenue and cost drivers</li>
+                  <li>Capacity to raise revenue: equalized net grand list * standard mill rate (does not look at actual revenues since they reflect local tax rates and subject to control of local officials).</li>
+                  <li>Costs: statistical analysis identfied five cost factors strongly related to non-school spending levels (unemployment rate, population density, private sector wage index, town mainetenance road mileage, and jobs per capita)</li>
+                  <li>Looks at municipal fiscal health that is outside the direct control of local officials</li>
+                  <li>Structural deficiencies and NOT current situation</li>
+                  <li>NOT a measure of actual spending</li>
+                </ul>
+                <hr>
+                <h4>To explore the impact of different budget cut scenarios, first choose between percentage-based cuts or
+                dollar-based cuts:</h4>
+                <div class="btn-group">
+                  <label ng-model="calctype" uib-btn-radio="'percentage'" class="btn btn-primary active">Percentage-based</label>
+                  <label ng-model="calctype" uib-btn-radio="'dollar'" class="btn btn-primary">Dollar-based</label>
+                </div>
+              </div>
+            </div>
             <div class="row">
               <div class="col-xs-12 col-md-2 input">
                 <h2>Select Model Parameters</h2>
@@ -122,7 +144,7 @@
                     <uib-tab-heading>
                       Scatterplot <i class="fa fa-bar-chart"></i>
                     </uib-tab-heading>
-                    <scatterplot data=simulatedTowns />
+                    <!--<scatterplot data=simulatedTowns />-->
                   </uib-tab>
                 </uib-tabset>
               </div>

@@ -4,6 +4,7 @@ angular.module('app')
     function($scope, $http, $log, lodash, townData, calculate){
         var lo = lodash;
         $scope.calculate = calculate.calculate;
+        $scope.calctype = 'percentage';
 
         var dataPromise = townData.loadData();
         dataPromise.then(function(results) {
@@ -14,6 +15,12 @@ angular.module('app')
                 min_cut: 5,
                 baseline_per: 20.0
             };
+        });
+
+        $scope.$watch(function() {
+            return $scope.calctype;
+        }, function() {
+            console.log($scope.calctype);
         });
 
         $scope.$watchCollection(function() {

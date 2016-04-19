@@ -30,6 +30,7 @@ angular.module('app')
     }
 
     function handleSuccess( response ) {
+        console.log(response.data)
         return( response.data );
     }
     return dataProvider;
