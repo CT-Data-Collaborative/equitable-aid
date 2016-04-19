@@ -15,6 +15,7 @@ angular.module('app')
     }
 
     var currencyFormat = d3.format("$,.0f");
+    var shortCurrencyFormat = d3.format("$.0s");
     var percentFormat = d3.format(",.0%");
     var changeFormat = function(val) {
         if (val > 0) {
@@ -100,7 +101,14 @@ angular.module('app')
         // draw Chart
         var container_width = d3.select("div.tab-content").node().getBoundingClientRect().width;
         var width = container_width;
-        var height = container_width * (0.4);
+
+        // Calculate height based on width
+        var height = container_width * (0.30);
+        if (container_width <= 350) {
+            height = container_width * (0.6);
+        } else if (container_width <= 768) {
+            height = container_width * (0.5);
+        }
 
         var margin = {
             top: 0.05 * height,
@@ -109,19 +117,19 @@ angular.module('app')
             left : 0.05 * width
         };
 
-        if (container_width < 768) {
+        if (container_width <= 350) {
             margin = {
                 top: 0.05 * height,
-                right: 0.05 * width,
-                bottom: 0.15 * height,
-                left : 0.1 * width
+                right: 0.08 * width,
+                bottom: 0.22 * height,
+                left : 0.24 * width
             };
-        } if (container_width < 350) {
+        } else if (container_width <= 768) {
             margin = {
                 top: 0.05 * height,
                 right: 0.05 * width,
-                bottom: 0.2 * height,
-                left : 0.18 * width
+                bottom: 0.16 * height,
+                left : 0.1 * width
             };
         }
 
@@ -172,6 +180,16 @@ angular.module('app')
             .orient("bottom")
             .tickFormat(currencyFormat);
 
+        /*if (container_width <= 350) {
+            xAxis
+                .ticks(4)
+                .tickFormat(shortCurrencyFormat);
+        } else */if (container_width <= 500) {
+            xAxis
+                .ticks(4)
+                .tickFormat(shortCurrencyFormat);
+        }
+
         xAxis = chart.append("g")
             .classed({
                 "axis" : true,
@@ -202,6 +220,16 @@ angular.module('app')
             .scale(y)
             .orient("left")
             .tickFormat(currencyFormat);
+
+        if (container_width <= 350) {
+            yAxis
+                .ticks(4)
+                // .tickFormat(shortCurrencyFormat);
+        }/* else if (container_width <= 769) {
+            yAxis
+                .ticks(4)
+                .tickFormat(shortCurrencyFormat);
+        }*/
 
         var yAxis = chart.append("g")
             .classed({
