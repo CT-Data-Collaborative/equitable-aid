@@ -1,0 +1,49 @@
+<p>Select the % decrease from FY15 aid level:</p>
+<div class="parameters-slider">
+    <span>0%</span>
+    <span slider
+          slider-id="cutSlider"
+          ng-model="cutslider.value"
+          value="cutSliderOptions.value"
+          min="cutSliderOptions.min"
+          max="cutSliderOptions.max"
+          range="cutSliderOptions.range"
+          formatter="singleVarFormatterFn(value, '', '%')"
+          class="slider-elem"
+    ></span>
+    <span>100%</span>
+</div>
+<br><br>
+<p>Select the baseline gap:</p>
+<div class="parameters-slider">
+    <span>${{gapSliderOptions.min}}</span>
+    <span slider
+          slider-id="gapSlider"
+          ng-model="gapslider.value"
+          value="gapSliderOptions.value"
+          min="gapSliderOptions.min"
+          max="gapSliderOptions.max"
+          range="gapSliderOptions.range"
+          formatter="singleVarFormatterFn(value, '$', '')"
+          class="slider-elem"
+    ></span>
+    <span>${{gapSliderOptions.max}}</span>
+</div>
+<br><br>
+
+<p>Select the min and max cut as % of FY15 aid level:</p>
+<div class="parameters-slider">
+    <span>0%</span>
+    <span slider
+          slider-id="rangeSlider"
+          ng-model="slider.value"
+          value="testOptions.value"
+          min="testOptions.min"
+          max="testOptions.max"
+          range="testOptions.range"
+          formatter="rangeFormatterFn(value)"
+          class="slider-elem"
+    ></span>
+    <span>100%</span>
+</div>
+<br><br>

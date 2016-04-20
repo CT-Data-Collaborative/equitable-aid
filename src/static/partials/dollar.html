@@ -1,0 +1,18 @@
+<form>
+    <fieldset class="form-group">
+        <label for="dollarChange">Dollar Decrease ($)</label>
+        <input type="number" min="0" max="100" class="form-control" id="dollarChange" ng-model="dollarModelParems.percent_cut">
+    </fieldset>
+    <fieldset class="form-group">
+        <label for="min">Min Cut ($)</label>
+        <input type="number" min="0" class="form-control" id="min" ng-model="dollarModelParems.min_cut">
+    </fieldset>
+    <fieldset class="form-group">
+        <label for="max">Max Cut ()</label>
+        <input type="number" min="0" class="form-control" id="max" ng-model="dollarModelParems.max_cut">
+    </fieldset>
+    <fieldset class="form-group">
+        <label for="baseline">Baseline Percentile (0 to 100)</label>
+        <input type="number" min="0" max="100" class="form-control" id="baseline" ng-model="dollarModelParems.baseline_per">
+    </fieldset>
+</form>

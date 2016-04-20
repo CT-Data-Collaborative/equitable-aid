@@ -1,5 +1,5 @@
 angular.module('app')
-    .service('calculate', function() {
+    .service('percalculate', function() {
 
         var calcObj = {calculate: calculate};
         return (calcObj);
@@ -15,11 +15,8 @@ angular.module('app')
             var min_cut = parems.min_cut/-100;
             baseline_per = 100 - parems.baseline_per;
             var allocations = data.map(function(x) { return x.total_aid});
-            var total_allocation = allocations.reduce(function (prev, curr) {
-                    return prev + curr;}) * (1 + percent_cut);
-            var gap_array = data.map(function(x) { return x.gap;});
-            gap_array.sort(function(a,b) { return b-a;});
-            var baseline = percentile(gap_array, baseline_per/100);
+            var total_allocation = allocations.reduce(buildSum) * (1 + percent_cut);
+            var baseline = parems.gap_cutoff;
             calcObj.baseline = baseline;
             r2 = get_r2(data, baseline, total_allocation, max_cut, min_cut);
             data.forEach(function(e) {
@@ -43,6 +40,11 @@ angular.module('app')
         // ---
         // Helpers
         // ---
+
+        function buildSum(prev, curr) {
+            "use strict";
+            return prev + curr;
+        };
 
         function isBetter(v) {
             if(v <= 0) {
@@ -123,17 +125,22 @@ angular.module('app')
         }
 
         function get_r2(data, baseline, total_allocation, max_cut, min_cut) {
+            // round 1
             data.forEach(function(e) {
                 e.category = categorize(e, baseline);
             });
             var init_r2 = calc_r(data, total_allocation, max_cut, min_cut, baseline);
+            // round 2
             data.forEach(function(e) {
                 e.category = categorize(e, baseline, max_cut, min_cut, init_r2);
             });
             var new_r2 = calc_r(data, total_allocation, max_cut, min_cut, baseline);
+            // round 3
             data.forEach(function(e) {
                 e.category = categorize(e, baseline, max_cut, min_cut, new_r2);
             });
+            var new_r2 = calc_r(data, total_allocation, max_cut, min_cut, baseline);
+            // round 4
             return new_r2;
         }
 

@@ -1,5 +1,6 @@
 var app = angular.module('app', [
     'ngAnimate',
     'ui.bootstrap',
-    'ngLodash'
+    'ngLodash',
+    'ui.bootstrap-slider'
     ]);
