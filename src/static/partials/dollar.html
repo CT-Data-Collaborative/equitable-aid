@@ -1,4 +1,6 @@
-<p>Select how much to cut from the FY15 total aid level:</p>
+<p>Over FY14 and FY15, the average total aid allocation was {{ total_aid | bigcurrency }} or
+    {{ total_aid / total_population | currency }} per capita.</p>
+<p>Select how much to cut in per capita terms:</p>
 <div class="parameters-slider">
     <span>{{0 | currency }}</span>
     <span slider
@@ -11,11 +13,10 @@
           formatter="singleVarFormatterFn(value, 'currency')"
           class="slider-elem"
     ></span>
-    <span>{{ total_aid | bigcurrency }}</span>
+    <span>{{ total_aid / total_population | currency }}</span>
 </div>
-<p>This will result in a per capita cut of: {{ dollarCutMinmaxSliderOptions.max | currency }}</p>
-<br><br>
-
+<p>This will result in a statewide cut of: {{ dollarCutSlider.value * total_population | bigcurrency }}</p>
+<hr>
 <p>Select the gap cutoff. A negative gap indicates a surplus. A positive gap indicates a deficit. The gap cutoff is
     used to categorize municipalities. Those with gaps less than the cutoff will be assign to the max cut category. Those
     with gaps more than the cutoff will either be assigned a proportional cut or the minimum cut.</p>
@@ -33,10 +34,11 @@
     ></span>
     <span>${{gapSliderOptions.max}}</span>
 </div>
-<br><br>
-<p>Based on the dollar cut amount set above ({{ dollarModelParems.dollar_cut | bigcurrency }}), the per capita
-    dollar cut is: {{ dollarCutMinmaxSliderOptions.max | currency }}.</p>
-<p>Select the min and max per capita $ cut:</p>
+<hr>
+<p>The per capita dollar cut is: {{ dollarModelParems.dollar_cut | bigcurrency }} and the total amount to be cut is
+{{ dollarModelParems.dollar_cut * total_population | bigcurrency }}.</p>
+<p>Select the min and max per capita $ cut. In order for the simulation to correctly allocate municipalities, the minimum
+cut should be less than the per capita value and the max cut should be more.</p>
 <div class="parameters-slider">
     <span>{{0 | currency }}</span>
     <span slider
@@ -49,6 +51,6 @@
           formatter="rangeFormatterFn(value, 'currency')"
           class="slider-elem"
     ></span>
-    <span> {{ (dollarModelParems.dollar_cut / total_population) | currency }}</span>
+    <span> {{ dollarModelParems.dollar_cut * 3 | currency }}</span>
 </div>
 <br><br>

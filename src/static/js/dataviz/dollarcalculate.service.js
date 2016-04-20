@@ -10,6 +10,7 @@ angular.module('app')
         // --
 
         function calculate(data, parems) {
+            console.log(parems);
             //var dollar_cut = parems.dollar_cut;
             //var max_cut = -parems.max_cut;
             //var min_cut = -parems.min_cut;

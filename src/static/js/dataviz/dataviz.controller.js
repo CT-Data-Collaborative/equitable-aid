@@ -62,23 +62,23 @@ angular.module('app')
             // We need to initialize dollar model parameter object here b/c we need total aid
             $scope.dollarModelParems = {
                 dollar_cut: $scope.total_aid * .2,
-                max_cut: $scope.total_aid * .25,
-                min_cut: $scope.total_aid * .05,
+                max_cut: $scope.total_aid * 1.5,
+                min_cut: $scope.total_aid * .5,
                 gap_cutoff: 0
             };
 
             // Initialize slider position to be equivalent to the 20% mark for consistency
             $scope.dollarCutSlider = {
-                value: $scope.total_aid * .2
+                value: (($scope.total_aid / $scope.total_population) * .2)
             };
 
             $scope.dollarCutSliderOptions = {
                 min: 0,
-                max: $scope.total_aid,
+                max: $scope.total_aid / $scope.total_population,
                 step: 1,
                 precision: 1,
                 range: false,
-                value: ($scope.total_aid * .2)
+                value: (($scope.total_aid / $scope.total_population) * .2)
             };
 
             //
@@ -88,11 +88,11 @@ angular.module('app')
 
             $scope.dollarCutMinmaxSliderOptions = {
                 min: 0,
-                max: ($scope.total_aid_cut / $scope.total_population),
+                max: ($scope.total_aid_cut / $scope.total_population) * 3,
                 step: 1,
                 precision: 1,
                 range: true,
-                value: [($scope.total_aid_cut / $scope.total_population) * .05, ($scope.total_aid_cut / $scope.total_population) * .25]
+                value: [($scope.total_aid_cut / $scope.total_population) * .5, ($scope.total_aid_cut / $scope.total_population) * 1.5]
             };
         });
         // -----------------------------------------
@@ -201,7 +201,7 @@ angular.module('app')
         }, function() {
             if ($scope.dollarModelParems) {
                 $scope.dollarModelParems.dollar_cut = $scope.dollarCutSlider.value;
-                $scope.dollarCutMinmaxSliderOptions.max = $scope.dollarCutSlider.value / $scope.total_population;
+                $scope.dollarCutMinmaxSliderOptions.max = $scope.dollarCutSlider.value * 3;
             }
         });
 
@@ -247,8 +247,12 @@ angular.module('app')
         // TODO add in watch to trigger on calculation-type changes
         // -----------------------------------------
 
+        // Main watch driving calculation dispatching. Unclear if this will fire correctly when a user
+        // toggles. The correct behavior here is to update simulatedTowns with the correct output data based on
+        // the calctype that the user has selected. Might need to add in a promise. Will know more after I implement
+        // the dollar calculation.
         $scope.$watch(function() {
-            return [$scope.percentModelParems, $scope.dollarModelParems];
+            return [$scope.percentModelParems, $scope.dollarModelParems, $scope.calctype];
         }, function() {
             if ($scope.calctype == 'percentage') {
                 if (typeof($scope.percentModelParems) != 'undefined') {
