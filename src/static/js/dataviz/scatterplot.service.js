@@ -203,7 +203,11 @@ angular.module('app')
             .domain(d3.extent(
                 lo.chain(data)
                     .map(function(o) {
-                        return [o["allocation"], o["sim_allocation"], o["even_cut_allocation"]]
+                        return [
+                            o["allocation"] / o["population"],
+                            o["sim_allocation"] / o["population"],
+                            o["even_cut_allocation"] / o["population"]
+                        ]
                     })
                     .flatten()
                     .value()
@@ -245,7 +249,7 @@ angular.module('app')
 
         // draw points
         var pointGroups = chart.selectAll("g.point-group")
-            .data(["Allocation", "Sim. Allocation", "Even Cut Allocation"])
+            .data(["Allocation", "Even Cut Allocation", "Sim. Allocation"])
             .enter()
                 .append("g")
                 .classed("point-group", true)

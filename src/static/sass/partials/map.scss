@@ -1,0 +1,116 @@
+map {
+    min-height: 75vh;
+    display: block;
+
+    /* Legend */
+    div.legend-container {
+        margin-left: 2rem;
+
+        div.legend-entry {
+            cursor: default;
+
+            span.title {
+                margin-left: 0.25rem;
+            }
+            
+            span.color {
+                display: inline-block;
+                height: 1rem;
+                width: 1rem;
+
+                &.color_1 {
+                    background-color: $ctdata-extra-dark-blue;
+                }
+                &.color_2 {
+                    background-color: $purple;
+                }
+                &.color_3 {
+                    background-color: $red;
+                }
+            }
+        }
+    }
+    /* END Legend */
+    
+    /* Table */
+    div.table-container {
+        div.state h4,
+        div.town h4,
+        div.grants h4 {
+            margin: 0.5rem 0;
+        }
+        div.state p,
+        div.town p {
+            margin: 0.25rem 0;
+        }
+        div.state p span:first-child,
+        div.town p span:first-child {
+                font-weight: $heavy;
+                padding-right: 0.3rem;
+        }
+        div.state p span:first-child:after,
+        div.town p span:first-child:after {
+                content: "\003A";
+        }
+    }
+    /* END Table */
+
+
+    /* map */
+    div.map {
+        path.mappath {
+            fill-opacity: 1;
+            stroke-opacity: 1;
+            stroke: $extra-dark-grey;
+            stroke-width: 1px;
+
+            &.color_1 {
+                fill: $ctdata-extra-dark-blue;
+            }
+            &.color_2 {
+                fill: $purple;
+            }
+            &.color_3 {
+                fill: $red;
+            }
+
+            &.highlight {
+                stroke-width: 3px;
+                stroke: $ctdata-extra-light-blue;
+            }
+        }
+    }
+    /* END map */
+}
+
+/* Tooltip */
+.map-tooltip {
+    position: relative;
+    background: $extra-dark-grey;
+    border: 5px solid $extra-dark-grey;
+    color: $white;
+}
+.map-tooltip:after, .map-tooltip:before {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.map-tooltip:after {
+    border-color: rgba(74, 74, 74, 0);
+    border-top-color: $extra-dark-grey;
+    border-width: 7px;
+    margin-left: -7px;
+}
+.map-tooltip:before {
+    border-color: rgba(74, 74, 74, 0);
+    border-top-color: $extra-dark-grey;
+    border-width: 14px;
+    margin-left: -14px;
+}
+/* END Tooltip */
