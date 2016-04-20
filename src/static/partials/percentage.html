@@ -3,7 +3,7 @@
     <span>0%</span>
     <span slider
           slider-id="cutSlider"
-          ng-model="cutslider.value"
+          ng-model="cutSlider.value"
           value="cutSliderOptions.value"
           min="cutSliderOptions.min"
           max="cutSliderOptions.max"
@@ -22,7 +22,7 @@ with gaps more than the cutoff will either be assigned a proportional cut or the
     <span>${{gapSliderOptions.min}}</span>
     <span slider
           slider-id="gapSlider"
-          ng-model="gapslider.value"
+          ng-model="gapSlider.value"
           value="gapSliderOptions.value"
           min="gapSliderOptions.min"
           max="gapSliderOptions.max"
@@ -39,11 +39,11 @@ with gaps more than the cutoff will either be assigned a proportional cut or the
     <span>0%</span>
     <span slider
           slider-id="rangeSlider"
-          ng-model="slider.value"
-          value="testOptions.value"
-          min="testOptions.min"
-          max="testOptions.max"
-          range="testOptions.range"
+          ng-model="minmaxSlider.value"
+          value="minmaxSliderOptions.value"
+          min="minmaxSliderOptions.min"
+          max="minmaxSliderOptions.max"
+          range="minmaxSliderOptions.range"
           formatter="rangeFormatterFn(value)"
           class="slider-elem"
     ></span>
