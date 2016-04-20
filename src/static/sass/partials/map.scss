@@ -1,40 +1,57 @@
 map {
-    div.table-container {
-        border: 1px solid red;
-    }
-    div.map-container {
-        border: 1px solid blue;
-    }
+    min-height: 75vh;
+    display: block;
+
     /* Legend */
-    /*div.legend-container {
+    div.legend-container {
         margin-left: 2rem;
 
         div.legend-entry {
             cursor: default;
+
             span.title {
                 margin-left: 0.25rem;
             }
+            
             span.color {
                 display: inline-block;
                 height: 1rem;
                 width: 1rem;
 
-                &.allocation {
+                &.color_1 {
                     background-color: $ctdata-extra-dark-blue;
                 }
-                &.sim_allocation {
-                    background-color: $green;
+                &.color_2 {
+                    background-color: $purple;
                 }
-                &.even_cut_allocation {
+                &.color_3 {
                     background-color: $red;
                 }
             }
         }
-    }*/
+    }
     /* END Legend */
     
     /* Table */
-    div.table {
+    div.table-container {
+        div.state h4,
+        div.town h4,
+        div.grants h4 {
+            margin: 0.5rem 0;
+        }
+        div.state p,
+        div.town p {
+            margin: 0.25rem 0;
+        }
+        div.state p span:first-child,
+        div.town p span:first-child {
+                font-weight: $heavy;
+                padding-right: 0.3rem;
+        }
+        div.state p span:first-child:after,
+        div.town p span:first-child:after {
+                content: "\003A";
+        }
     }
     /* END Table */
 
@@ -47,18 +64,19 @@ map {
             stroke: $extra-dark-grey;
             stroke-width: 1px;
 
-            &.color_0 {
-                fill: #000;
-                fill-opacity: 0;
-            }
             &.color_1 {
-                fill: $red;
+                fill: $ctdata-extra-dark-blue;
             }
             &.color_2 {
                 fill: $purple;
             }
             &.color_3 {
-                fill: $ctdata-extra-dark-blue;
+                fill: $red;
+            }
+
+            &.highlight {
+                stroke-width: 3px;
+                stroke: $ctdata-extra-light-blue;
             }
         }
     }
