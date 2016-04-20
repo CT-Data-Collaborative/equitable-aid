@@ -21,35 +21,77 @@ angular.module('app')
         // -----------------------------------------
         // Load and initialize data
         // -----------------------------------------
+
         var dataPromise = townData.loadData();
         dataPromise.then(function(results) {
             $scope.towns = results;
+
+            // Gap sliders depend on data from this dataset.
             var gap_array = $scope.towns.map(function(x) { return x.gap;});
-            gap_array.sort(function(a,b) { return b-a;});
             $scope.gapSliderOptions = {
-                min: gap_array.slice(-1)[0],
-                max: gap_array[0],
+                min: lo.min(gap_array),
+                max: lo.max(gap_array),
                 step: 1,
                 precision: 1,
                 range: false,
                 value: 0
             };
-            var aid_array = $scope.towns.map(function(x) { return x.total_aid;});
-            $scope.total_aid = lo.reduce(aid_array, function(sum, n) { return sum+n }, 0);
+
+            $scope.total_aid = lo
+                .chain($scope.towns)
+                .map(function(t) { return t.total_aid;})
+                .reduce(function(sum, n) { return sum+n }, 0)
+                .value()
+
+            $scope.total_population = lo
+                .chain($scope.towns)
+                .map(function(t) { return t.population; })
+                .reduce(function(sum, n) { return sum+n}, 0)
+                .value();
+
+            $scope.total_aid_cut = $scope.total_aid - ($scope.total_aid * 0.8);
+
             $scope.percentModelParems = {
                 percent_cut: 20,
                 max_cut: 25,
                 min_cut: 5,
-                baseline_per: 20.0,
                 gap_cutoff: 0
             };
-            $scope.total_aid_cut = $scope.total_aid - ($scope.total_aid * (1 - ($scope.percentModelParems.percent_cut/100)));
+
+            // We need to initialize dollar model parameter object here b/c we need total aid
             $scope.dollarModelParems = {
-                dollar_cut: 10000000,
-                max_cut: 1000000,
-                min_cut: 10000,
-                baseline_per: 20.0,
+                dollar_cut: $scope.total_aid * .2,
+                max_cut: $scope.total_aid * .25,
+                min_cut: $scope.total_aid * .05,
                 gap_cutoff: 0
+            };
+
+            // Initialize slider position to be equivalent to the 20% mark for consistency
+            $scope.dollarCutSlider = {
+                value: $scope.total_aid * .2
+            };
+
+            $scope.dollarCutSliderOptions = {
+                min: 0,
+                max: $scope.total_aid,
+                step: 1,
+                precision: 1,
+                range: false,
+                value: ($scope.total_aid * .2)
+            };
+
+            //
+            $scope.dollarCutMinmaxSlider = {
+                value: [($scope.total_aid_cut / $scope.total_population) * .05, ($scope.total_aid_cut / $scope.total_population) * .25]
+            };
+            
+            $scope.dollarCutMinmaxSliderOptions = {
+                min: 0,
+                max: ($scope.total_aid_cut / $scope.total_population),
+                step: 1,
+                precision: 1,
+                range: true,
+                value: [($scope.total_aid_cut / $scope.total_population) * .05, ($scope.total_aid_cut / $scope.total_population) * .25]
             };
         });
         // -----------------------------------------
@@ -78,9 +120,6 @@ angular.module('app')
             range: true,
             value: [5, 25]
         };
-        $scope.rangeFormatterFn = function (value) {
-            return value[0] + '%' + " - " + value[1] + '%';
-        };
 
         $scope.$watchCollection(function() {
             return $scope.minmaxSlider;
@@ -107,8 +146,17 @@ angular.module('app')
             value: 20
         };
 
-        $scope.singleVarFormatterFn = function (value, pre, suff) {
-            return pre + value + suff;
+        $scope.singleVarFormatterFn = function (value, type) {
+            fV = d3.format("$.2s");
+            if (type=='currency') {
+                return fV(value);
+            } else {
+                return value + '%'
+            }
+        };
+
+        $scope.rangeFormatterFn = function (value, type) {
+            return $scope.singleVarFormatterFn(value[0], type) + " - " + $scope.singleVarFormatterFn(value[1], type);
         };
 
         $scope.$watchCollection(function() {
@@ -139,6 +187,61 @@ angular.module('app')
         // -----------------------------------------
 
         // -----------------------------------------
+        // Dollar cut slider variables
+        // -----------------------------------------
+
+        //
+        // Dollar-cut slider. Declared here, but set using variables from town data
+        //
+        $scope.dollarCutSlider;
+        $scope.dollarCutSliderOptions;
+        $scope.$watchCollection(function() {
+            return $scope.dollarCutSlider;
+        }, function() {
+            if ($scope.dollarModelParems) {
+                $scope.dollarModelParems.dollar_cut = $scope.dollarCutSlider.value;
+                $scope.dollarCutMinmaxSliderOptions.max = $scope.dollarCutSlider.value / $scope.total_population;
+            }
+        });
+
+        // -----------------------------------------
+        // Dollar-cut gap slider variables
+        // -----------------------------------------
+
+        // We can use the same slider element.
+        // But we will declare a second watch to update additional model parems
+        $scope.$watchCollection(function() {
+            return $scope.gapSlider;
+        }, function() {
+            $scope.gap_cutoff = $scope.gapSlider.value;
+            if ($scope.dollarModelParems) {
+                $scope.dollarModelParems.gap_cutoff = $scope.gapSlider.value;
+            }
+        });
+
+        // -----------------------------------------
+        // Dollar cut min max slider variables
+        // -----------------------------------------
+
+        //
+        // Dollar-cut min max slider. Declared here, but set using variables from town data
+        //
+        $scope.dollarCutMinmaxSlider;
+        $scope.dollarCutMinmaxSliderOptions;
+        $scope.$watchCollection(function() {
+            return $scope.dollarCutMinmaxSlider;
+        }, function() {
+            if ($scope.dollarModelParems) {
+                $scope.dollarModelParems.max_cut = $scope.dollarCutMinmaxSlider.value[1];
+                $scope.dollarModelParems.min_cut = $scope.dollarCutMinmaxSlider.value[0];
+            }
+        });
+        // -----------------------------------------
+        // End of dollar-cut slider variables
+        // -----------------------------------------
+
+
+        // -----------------------------------------
         // Main watch function.
         // TODO add in watch to trigger on calculation-type changes
         // -----------------------------------------
@@ -149,6 +252,13 @@ angular.module('app')
                 $scope.simulatedTowns = $scope.towns;
                 $scope.simulatedTowns = $scope.percalculate($scope.simulatedTowns, $scope.percentModelParems);
                 $scope.total_aid_cut = $scope.total_aid - ($scope.total_aid * (1 - ($scope.percentModelParems.percent_cut/100)));
+                $scope.simulated_total_aid_cut = lo
+                    .chain($scope.simulatedTowns)
+                    .map(function(town) {
+                        return (town.sim_allocation - town.allocation) * town.population;
+                    })
+                    .reduce(function(sum, n) { return sum+n }, 0)
+                    .value();
             }
         });
 

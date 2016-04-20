@@ -1,18 +1,54 @@
-<form>
-    <fieldset class="form-group">
-        <label for="dollarChange">Dollar Decrease ($)</label>
-        <input type="number" min="0" max="100" class="form-control" id="dollarChange" ng-model="dollarModelParems.percent_cut">
-    </fieldset>
-    <fieldset class="form-group">
-        <label for="min">Min Cut ($)</label>
-        <input type="number" min="0" class="form-control" id="min" ng-model="dollarModelParems.min_cut">
-    </fieldset>
-    <fieldset class="form-group">
-        <label for="max">Max Cut ()</label>
-        <input type="number" min="0" class="form-control" id="max" ng-model="dollarModelParems.max_cut">
-    </fieldset>
-    <fieldset class="form-group">
-        <label for="baseline">Baseline Percentile (0 to 100)</label>
-        <input type="number" min="0" max="100" class="form-control" id="baseline" ng-model="dollarModelParems.baseline_per">
-    </fieldset>
-</form>
+<p>Select how much to cut from the FY15 total aid level:</p>
+<div class="parameters-slider">
+    <span>{{0 | currency }}</span>
+    <span slider
+          slider-id="dollarCutSlider"
+          ng-model="dollarCutSlider.value"
+          value="dollarCutSliderOptions.value"
+          min="dollarCutSliderOptions.min"
+          max="dollarCutSliderOptions.max"
+          range="dollarCutSliderOptions.range"
+          formatter="singleVarFormatterFn(value, 'currency')"
+          class="slider-elem"
+    ></span>
+    <span>{{ total_aid | bigcurrency }}</span>
+</div>
+<p>This will result in a per capita cut of: {{ dollarCutMinmaxSliderOptions.max | currency }}</p>
+<br><br>
+
+<p>Select the gap cutoff. A negative gap indicates a surplus. A positive gap indicates a deficit. The gap cutoff is
+    used to categorize municipalities. Those with gaps less than the cutoff will be assign to the max cut category. Those
+    with gaps more than the cutoff will either be assigned a proportional cut or the minimum cut.</p>
+<div class="parameters-slider">
+    <span>${{gapSliderOptions.min}}</span>
+    <span slider
+          slider-id="dollarCutGapSlider"
+          ng-model="gapSlider.value"
+          value="gapSliderOptions.value"
+          min="gapSliderOptions.min"
+          max="gapSliderOptions.max"
+          range="gapSliderOptions.range"
+          formatter="singleVarFormatterFn(value, 'currency')"
+          class="slider-elem"
+    ></span>
+    <span>${{gapSliderOptions.max}}</span>
+</div>
+<br><br>
+<p>Based on the dollar cut amount set above ({{ dollarModelParems.dollar_cut | bigcurrency }}), the per capita
+    dollar cut is: {{ dollarCutMinmaxSliderOptions.max | currency }}.</p>
+<p>Select the min and max per capita $ cut:</p>
+<div class="parameters-slider">
+    <span>{{0 | currency }}</span>
+    <span slider
+          slider-id="dollarCutRangeSlider"
+          ng-model="dollarMinmaxSlider.value"
+          value="dollarCutMinmaxSliderOptions.value"
+          min="dollarCutMinmaxSliderOptions.min"
+          max="dollarCutMinmaxSliderOptions.max"
+          range="dollarCutMinmaxSliderOptions.range"
+          formatter="rangeFormatterFn(value, 'currency')"
+          class="slider-elem"
+    ></span>
+    <span> {{ (dollarModelParems.dollar_cut / total_population) | currency }}</span>
+</div>
+<br><br>

@@ -8,7 +8,7 @@
           min="cutSliderOptions.min"
           max="cutSliderOptions.max"
           range="cutSliderOptions.range"
-          formatter="singleVarFormatterFn(value, '', '%')"
+          formatter="singleVarFormatterFn(value, 'percent')"
           class="slider-elem"
     ></span>
     <span>100%</span>
@@ -27,7 +27,7 @@ with gaps more than the cutoff will either be assigned a proportional cut or the
           min="gapSliderOptions.min"
           max="gapSliderOptions.max"
           range="gapSliderOptions.range"
-          formatter="singleVarFormatterFn(value, '$', '')"
+          formatter="singleVarFormatterFn(value, 'percent')"
           class="slider-elem"
     ></span>
     <span>${{gapSliderOptions.max}}</span>
@@ -44,7 +44,7 @@ with gaps more than the cutoff will either be assigned a proportional cut or the
           min="minmaxSliderOptions.min"
           max="minmaxSliderOptions.max"
           range="minmaxSliderOptions.range"
-          formatter="rangeFormatterFn(value)"
+          formatter="rangeFormatterFn(value, 'percent')"
           class="slider-elem"
     ></span>
     <span>100%</span>

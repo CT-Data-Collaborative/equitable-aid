@@ -70,6 +70,9 @@
                 <div ng-show="whichCalc()">
                   <div ng-include="'partials/percentage.html'"></div>
                 </div ng-show>
+                <div ng-hide="whichCalc()">
+                  <div ng-include="'partials/dollar.html'"></div>
+                </div>
               </div>
               <div class="col-xs-12 col-md-9 output">
                 <h2>Simulation Output</h2>
@@ -77,7 +80,8 @@
                 <h4>Min cut: {{ percentModelParems.min_cut }}%</h4>
                 <h4>Max cut: {{ percentModelParems.max_cut }}%</h4>
                 <h4>FY15 Total Aid: {{ total_aid | currency }}</h4>
-                <h4>Simulated Aid Cut: {{total_aid_cut | currency }}</h4>
+                <h4>Simulated Aid Cut based on %: {{total_aid_cut | currency }}</h4>
+                <h4>Actual Simulated Aid Cut based on simulation: {{ simulated_total_aid_cut | currency }}</h4>
                 <uib-tabset active="0" type="pills">
                   <uib-tab index="0">
                     <uib-tab-heading>
