@@ -50,7 +50,7 @@ gulp.task('serve', ['build'], function () {
 });
 
 gulp.task('build', ['js', 'js_dependencies', 'css_dependencies', 'sass'], function() {
-    gulp.src(['src/data/*.json']).pipe(gulp.dest('dist/data/'));
+    gulp.src(['src/data/*.json', 'src/data/*.geojson']).pipe(gulp.dest('dist/data/'));
     gulp.src(['src/index.html']).pipe(gulp.dest('dist/'));
     gulp.src(['src/static/partials/*.html']).pipe(gulp.dest('dist/partials'));
 });
