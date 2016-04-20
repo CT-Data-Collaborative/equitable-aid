@@ -10,33 +10,33 @@ angular.module('app')
         // --
 
         function calculate(data, parems) {
-            var dollar_cut = parems.dollar_cut;
-            var max_cut = -parems.max_cut;
-            var min_cut = -parems.min_cut;
-
-            var allocations = data.map(function(x) { return x.total_aid});
-            var total_allocation = allocations.reduce(function (prev, curr) {
-                    return prev + curr;}) * (1 + dollar_cut);
-            var gap_array = data.map(function(x) { return x.gap;});
-            gap_array.sort(function(a,b) { return b-a;});
-            var baseline = percentile(gap_array, baseline_per/100);
-            calcObj.baseline = baseline;
-            r2 = get_r2(data, baseline, total_allocation, max_cut, min_cut);
-            data.forEach(function(e) {
-                if (e.category == 'max') {
-                    e.per_change = max_cut;
-                } else if (e.category == 'min') {
-                    e.per_change = min_cut;
-                } else {
-                    e.per_change = r2 * (e.gap - baseline) / e.allocation - 1;
-                }
-                e.sim_allocation = e.allocation * (1 + e.per_change );
-                e.sim_allocation_difference = e.sim_allocation - e.allocation;
-                e.even_cut_allocation = e.allocation * (1 + dollar_cut);
-                e.even_cut_allocation_difference = e.even_cut_allocation - e.allocation;
-                e.sim_better = (e.sim_allocation - e.even_cut_allocation) >= 0;
-            });
-            return data;
+            //var dollar_cut = parems.dollar_cut;
+            //var max_cut = -parems.max_cut;
+            //var min_cut = -parems.min_cut;
+            //
+            //var allocations = data.map(function(x) { return x.total_aid});
+            //var total_allocation = allocations.reduce(function (prev, curr) {
+            //        return prev + curr;}) * (1 + dollar_cut);
+            //var gap_array = data.map(function(x) { return x.gap;});
+            //gap_array.sort(function(a,b) { return b-a;});
+            //var baseline = percentile(gap_array, baseline_per/100);
+            //calcObj.baseline = baseline;
+            //r2 = get_r2(data, baseline, total_allocation, max_cut, min_cut);
+            //data.forEach(function(e) {
+            //    if (e.category == 'max') {
+            //        e.per_change = max_cut;
+            //    } else if (e.category == 'min') {
+            //        e.per_change = min_cut;
+            //    } else {
+            //        e.per_change = r2 * (e.gap - baseline) / e.allocation - 1;
+            //    }
+            //    e.sim_allocation = e.allocation * (1 + e.per_change );
+            //    e.sim_allocation_difference = e.sim_allocation - e.allocation;
+            //    e.even_cut_allocation = e.allocation * (1 + dollar_cut);
+            //    e.even_cut_allocation_difference = e.even_cut_allocation - e.allocation;
+            //    e.sim_better = (e.sim_allocation - e.even_cut_allocation) >= 0;
+            //});
+            //return data;
         }
 
 

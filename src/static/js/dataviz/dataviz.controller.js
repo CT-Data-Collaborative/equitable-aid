@@ -1,13 +1,14 @@
 angular.module('app')
 .controller('DataVizController',
-    ['$scope', '$http', '$log', 'lodash', 'townData', 'percalculate',
-    function($scope, $http, $log, lodash, townData, percalculate){
+    ['$scope', '$http', '$log', 'lodash', 'townData', 'percalculate', 'dollarcalculate',
+    function($scope, $http, $log, lodash, townData, percalculate, dollarcalculate){
         var lo = lodash;
 
         // -----------------------------------------
         // Vars and functions for handling calculation type
         // -----------------------------------------
         $scope.percalculate = percalculate.calculate;
+        $scope.dollarcalculate = dollarcalculate.calculate;
         $scope.calctype = 'percentage';
 
         $scope.whichCalc = function() {
@@ -41,7 +42,7 @@ angular.module('app')
                 .chain($scope.towns)
                 .map(function(t) { return t.total_aid;})
                 .reduce(function(sum, n) { return sum+n }, 0)
-                .value()
+                .value();
 
             $scope.total_population = lo
                 .chain($scope.towns)
@@ -84,7 +85,7 @@ angular.module('app')
             $scope.dollarCutMinmaxSlider = {
                 value: [($scope.total_aid_cut / $scope.total_population) * .05, ($scope.total_aid_cut / $scope.total_population) * .25]
             };
-            
+
             $scope.dollarCutMinmaxSliderOptions = {
                 min: 0,
                 max: ($scope.total_aid_cut / $scope.total_population),
@@ -245,21 +246,22 @@ angular.module('app')
         // Main watch function.
         // TODO add in watch to trigger on calculation-type changes
         // -----------------------------------------
-        $scope.$watchCollection(function() {
-            return $scope.percentModelParems;
-        }, function() {
-            if (typeof($scope.percentModelParems) != 'undefined') {
-                $scope.simulatedTowns = $scope.towns;
-                $scope.simulatedTowns = $scope.percalculate($scope.simulatedTowns, $scope.percentModelParems);
-                $scope.total_aid_cut = $scope.total_aid - ($scope.total_aid * (1 - ($scope.percentModelParems.percent_cut/100)));
-                $scope.simulated_total_aid_cut = lo
-                    .chain($scope.simulatedTowns)
-                    .map(function(town) {
-                        return (town.sim_allocation - town.allocation) * town.population;
-                    })
-                    .reduce(function(sum, n) { return sum+n }, 0)
-                    .value();
-            }
-        });
 
+        $scope.$watch(function() {
+            return [$scope.percentModelParems, $scope.dollarModelParems];
+        }, function() {
+            if ($scope.calctype == 'percentage') {
+                if (typeof($scope.percentModelParems) != 'undefined') {
+                    $scope.percentSimulatedTowns = $scope.towns;
+                    $scope.percentSimulatedTowns = $scope.percalculate($scope.percentSimulatedTowns, $scope.percentModelParems);
+                    $scope.simulatedTowns = $scope.percentSimulatedTowns;
+                }
+            } else {
+                if (typeof($scope.dollarModelParems) != 'undefined') {
+                    $scope.dollarSimulatedTowns = $scope.towns;
+                    $scope.dollarcalculate($scope.dollarSimulatedTowns, $scope.dollarModelParems);
+                    $scope.simulatedTowns = $scope.dollarSimulatedTowns;
+                }
+            }
+        }, true);
 }]);
