@@ -17,7 +17,7 @@ angular.module('app')
 
         // Percentage-based cut threshold variables
         $scope.slider = {
-            value: [5, 15]
+            value: [5, 25]
         };
         $scope.testOptions = {
             min: 0,
@@ -25,7 +25,7 @@ angular.module('app')
             step: 1,
             precision: 1,
             range: true,
-            value: [5, 15]
+            value: [5, 25]
         };
         $scope.rangeFormatterFn = function (value) {
             return value[0] + '%' + " - " + value[1] + '%';
@@ -79,9 +79,9 @@ angular.module('app')
             "use strict";
             return $scope.gapslider;
         }, function() {
+            $scope.gap_cutoff = $scope.gapslider.value;
             "use strict";
             if ($scope.percentModelParems) {
-                $scope.gap_cutoff = $scope.gapslider.value;
                 $scope.percentModelParems.gap_cutoff = $scope.gapslider.value;
             }
         });
@@ -102,7 +102,7 @@ angular.module('app')
             };
             $scope.percentModelParems = {
                 percent_cut: 20,
-                max_cut: 15,
+                max_cut: 25,
                 min_cut: 5,
                 baseline_per: 20.0,
                 gap_cutoff: 0

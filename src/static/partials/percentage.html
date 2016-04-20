@@ -14,7 +14,10 @@
     <span>100%</span>
 </div>
 <br><br>
-<p>Select the baseline gap:</p>
+
+<p>Select the gap cutoff. A negative gap indicates a surplus. A positive gap indicates a deficit. The gap cutoff is
+used to categorize municipalities. Those with gaps less than the cutoff will be assign to the max cut category. Those
+with gaps more than the cutoff will either be assigned a proportional cut or the minimum cut.</p>
 <div class="parameters-slider">
     <span>${{gapSliderOptions.min}}</span>
     <span slider

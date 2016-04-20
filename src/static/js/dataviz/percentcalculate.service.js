@@ -13,7 +13,6 @@ angular.module('app')
             var percent_cut = parems.percent_cut/-100;
             var max_cut = parems.max_cut/-100;
             var min_cut = parems.min_cut/-100;
-            baseline_per = 100 - parems.baseline_per;
             var allocations = data.map(function(x) { return x.total_aid});
             var total_allocation = allocations.reduce(buildSum) * (1 + percent_cut);
             var baseline = parems.gap_cutoff;
