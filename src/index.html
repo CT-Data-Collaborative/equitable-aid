@@ -27,6 +27,8 @@
     <script src="js/libs/bootstrap-slider.min.js"></script>
     <script src="js/libs/slider.js"></script>
     <script src="js/app.js"></script>
+    <!-- Town GeoJSON -->
+    <script src="data/town.geojson"></script>
   </head>
   <body>
     <div id="wrap">
@@ -90,6 +92,12 @@
                       Scatterplot <i class="fa fa-bar-chart"></i>
                     </uib-tab-heading>
                     <!--<scatterplot data=simulatedTowns />-->
+                  </uib-tab>
+                  <uib-tab index="2">
+                    <uib-tab-heading>
+                      Map <i class="fa fa-map-o"></i>
+                    </uib-tab-heading>
+                    <map data=simulatedTowns />
                   </uib-tab>
                 </uib-tabset>
               </div>
