@@ -204,9 +204,9 @@ angular.module('app')
                 lo.chain(data)
                     .map(function(o) {
                         return [
-                            o["allocation"] / o["population"],
-                            o["sim_allocation"] / o["population"],
-                            o["even_cut_allocation"] / o["population"]
+                            o["allocation"],
+                            o["sim_allocation"],
+                            o["even_cut_allocation"]
                         ]
                     })
                     .flatten()
@@ -256,6 +256,11 @@ angular.module('app')
                 .datum(function(d) {
                     return d;
                 });
+
+
+            console.log(y.domain())
+            console.log(y.range())
+
 
             pointGroups.each(function(pointType, pointGroupIndex) {
                 group = d3.select(this);
