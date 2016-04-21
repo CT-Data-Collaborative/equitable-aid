@@ -258,8 +258,8 @@ angular.module('app')
                 });
 
 
-            console.log(y.domain())
-            console.log(y.range())
+            //console.log(y.domain())
+            //console.log(y.range())
 
 
             pointGroups.each(function(pointType, pointGroupIndex) {

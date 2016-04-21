@@ -2,13 +2,14 @@
     {{ total_aid / total_population | currency }} per capita.</p>
 <p>Select how much to cut in per capita terms:</p>
 <div class="parameters-slider">
-    <span>{{0 | currency }}</span>
+    <span>{{1 | currency }}</span>
     <span slider
           slider-id="dollarCutSlider"
           ng-model="dollarCutSlider.value"
           value="dollarCutSliderOptions.value"
           min="dollarCutSliderOptions.min"
           max="dollarCutSliderOptions.max"
+          step="dollarCutSliderOptions.step"
           range="dollarCutSliderOptions.range"
           formatter="singleVarFormatterFn(value, 'currency')"
           class="slider-elem"
@@ -48,9 +49,29 @@ cut should be less than the per capita value and the max cut should be more.</p>
           min="dollarCutMinmaxSliderOptions.min"
           max="dollarCutMinmaxSliderOptions.max"
           range="dollarCutMinmaxSliderOptions.range"
+          step="dollarCutMinmaxSliderOptions.step"
           formatter="rangeFormatterFn(value, 'currency')"
           class="slider-elem"
     ></span>
     <span> {{ dollarModelParems.dollar_cut * 3 | currency }}</span>
+</div>
+<hr>
+<p>The current minimum aid allotment is {{ statewide_minimum_aid | currency }}. </p>
+<p>Select the minimum acceptable aid for any given municipality under the simulation.</p>
+<div class="parameters-slider">
+    <span>{{0 | currency }}</span>
+    <span slider
+          slider-id="dollarCutMinimumSlider"
+          ng-model="dollarCutMinimumSlider.value"
+          value="dollarCutMinimumSliderOptions.value"
+          min="dollarCutMinimumSliderOptions.min"
+          max="dollarCutMinimumSliderOptions.max"
+          step="dollarCutMinimumSliderOptions.step"
+          precision="dollarCutMinimumSliderOptions.precision"
+          range="dollarCutMinimumSliderOptions.range"
+          formatter="singleVarFormatterFn(value, 'currency')"
+          class="slider-elem"
+    ></span>
+    <span> {{ statewide_minimum_aid | currency }}</span>
 </div>
 <br><br>

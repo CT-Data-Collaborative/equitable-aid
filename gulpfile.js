@@ -46,7 +46,7 @@ gulp.task('serve', ['build'], function () {
     connect.server({
          root: 'dist/'
      });
-    gulp.watch(['src/js/**/*.js','src/sass/**/*.scss', 'src/index.html','src/partials/*.html'],  ['build']);
+    gulp.watch(['src/**/*.*'],  ['build']);
 });
 
 gulp.task('build', ['js', 'js_dependencies', 'css_dependencies', 'sass'], function() {

@@ -41,10 +41,18 @@ angular.module('app')
                 value: 0
             };
 
+            // Initial previous year aid total
             $scope.total_aid = lo
                 .chain($scope.towns)
                 .map(function(t) { return t.total_aid;})
                 .reduce(function(sum, n) { return sum+n }, 0)
+                .value();
+
+            // mimimum aid
+            $scope.statewide_minimum_aid = lo
+                .chain($scope.towns)
+                .map(function(t) { return t.allocation;})
+                .min()
                 .value();
 
             $scope.total_population = lo
@@ -53,8 +61,12 @@ angular.module('app')
                 .reduce(function(sum, n) { return sum+n}, 0)
                 .value();
 
+            // Initialize aid cut at 20% to correspond with values set in sliders.
+            // TODO Refactor this to use common value for multiplier
             $scope.total_aid_cut = $scope.total_aid - ($scope.total_aid * 0.8);
 
+            // Initial values for percent cut model. These models correspond to values
+            // being set within the sliders. Need to tie these together more directly
             $scope.percentModelParems = {
                 percent_cut: 20,
                 max_cut: 25,
@@ -62,8 +74,9 @@ angular.module('app')
                 gap_cutoff: 0
             };
 
-            // We need to initialize dollar model parameter object here b/c we need total aid
             $scope.dollarModelParems = {
+                existing_aid: $scope.total_aid,
+                state_population: $scope.total_population,
                 dollar_cut: $scope.total_aid * .2,
                 max_cut: $scope.total_aid * 1.5,
                 min_cut: $scope.total_aid * .5,
@@ -76,15 +89,14 @@ angular.module('app')
             };
 
             $scope.dollarCutSliderOptions = {
-                min: 0,
+                min: 1,
                 max: $scope.total_aid / $scope.total_population,
-                step: 1,
-                precision: 1,
+                step:.25,
+                precision: .25,
                 range: false,
                 value: (($scope.total_aid / $scope.total_population) * .2)
             };
 
-            //
             $scope.dollarCutMinmaxSlider = {
                 value: [($scope.total_aid_cut / $scope.total_population) * .05, ($scope.total_aid_cut / $scope.total_population) * .25]
             };
@@ -92,10 +104,23 @@ angular.module('app')
             $scope.dollarCutMinmaxSliderOptions = {
                 min: 0,
                 max: ($scope.total_aid_cut / $scope.total_population) * 3,
-                step: 1,
-                precision: 1,
+                step:.25,
+                precision:.25,
                 range: true,
                 value: [($scope.total_aid_cut / $scope.total_population) * .5, ($scope.total_aid_cut / $scope.total_population) * 1.5]
+            };
+
+            $scope.dollarCutMinimumSlider = {
+                value: $scope.statewide_minimum_aid / 2
+            };
+
+            $scope.dollarCutMinimumSliderOptions = {
+                min: 0,
+                max: $scope.statewide_minimum_aid,
+                step:.25,
+                precision:.25,
+                range: false,
+                value: $scope.statewide_minimum_aid / 2
             };
         });
         // -----------------------------------------
@@ -151,7 +176,7 @@ angular.module('app')
         };
 
         $scope.singleVarFormatterFn = function (value, type) {
-            fV = d3.format("$.2s");
+            fV = d3.format("$.4s");
             if (type=='currency') {
                 return fV(value);
             } else {
@@ -203,8 +228,18 @@ angular.module('app')
             return $scope.dollarCutSlider;
         }, function() {
             if ($scope.dollarModelParems) {
+                var rangeVals = $scope.dollarCutMinmaxSlider.value;
                 $scope.dollarModelParems.dollar_cut = $scope.dollarCutSlider.value;
                 $scope.dollarCutMinmaxSliderOptions.max = $scope.dollarCutSlider.value * 3;
+                if (rangeVals[1] == 0 && $scope.dollarCutSlider.value != 0) {
+                    $scope.dollarCutMinmaxSlider.value = [$scope.dollarCutSlider.value *.5, $scope.dollarCutSlider.value * 2.5];
+                } else {
+                    if (rangeVals[1] >= ($scope.dollarCutSlider.value * 3)) {
+                        $scope.dollarCutMinmaxSlider.value = [rangeVals[0], ($scope.dollarCutSlider.value * 3)]
+                    } else {
+                        $scope.dollarCutMinmaxSlider.value = rangeVals;
+                    }
+                }
             }
         });
 
@@ -239,7 +274,18 @@ angular.module('app')
                 $scope.dollarModelParems.max_cut = $scope.dollarCutMinmaxSlider.value[1];
                 $scope.dollarModelParems.min_cut = $scope.dollarCutMinmaxSlider.value[0];
             }
+
         });
+        $scope.dollarCutMinimumSlider;
+        $scope.dollarCutMinimumSliderOptions;
+        $scope.$watchCollection(function() {
+            return $scope.dollarCutMinimumSlider;
+        }, function() {
+            if ($scope.dollarModelParems) {
+                $scope.dollarModelParems.min_aid = $scope.dollarCutMinimumSlider.value;
+            }
+        });
+
         // -----------------------------------------
         // End of dollar-cut slider variables
         // -----------------------------------------
@@ -266,7 +312,7 @@ angular.module('app')
             } else {
                 if (typeof($scope.dollarModelParems) != 'undefined') {
                     $scope.dollarSimulatedTowns = $scope.towns;
-                    $scope.dollarcalculate($scope.dollarSimulatedTowns, $scope.dollarModelParems);
+                    $scope.dollarSimulatedTowns = $scope.dollarcalculate($scope.dollarSimulatedTowns, $scope.dollarModelParems);
                     $scope.simulatedTowns = $scope.dollarSimulatedTowns;
                 }
             }
