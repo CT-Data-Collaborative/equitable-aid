@@ -33,6 +33,40 @@ angular.module('app')
             return d.properties.NAME;
         })
 
+    function toggleTowns(oldTown, newTown) {
+        var allTowns = d3.selectAll("path.mappath");
+
+        // if no old town - lowlight all, highlight new
+        if (oldTown.size() === 0) {
+            allTowns.classed({
+                "highlight" : false,
+                "lowlight" : true
+            });
+
+            newTown.classed({
+                "highlight" : true,
+                "lowlight" : false
+            });
+        } else if (oldTown.attr("data-town") !== newTown.attr("data-town")) {
+            // if old town != new town - lowlight old, highlight new
+            oldTown.classed({
+                "highlight" : false,
+                "lowlight" : true
+            });
+
+            newTown.classed({
+                "highlight" : true,
+                "lowlight" : false
+            });
+        } else {
+            // if old town == new town - remove all highlight/lowlight
+            allTowns.classed({
+                "highlight" : false,
+                "lowlight" : false
+            });
+        }
+    }
+
     //var makeTownTable = function(selection, data, makeGrants) {
     //    selection.selectAll("div.town, div.grants").remove();
     //
@@ -149,7 +183,7 @@ angular.module('app')
     // Declare custom dispatch. We will need to bind this back to
     // the mapService.chart function before returning mapService
     var dispatch = d3.dispatch('customClick');
-    mapService.chart = function(container, data){
+    mapService.chart = function(container, data, selectedTown){
         // Join data to geojson
         var geoJoinedData = {
             "type" : "FeatureCollection",
@@ -162,9 +196,6 @@ angular.module('app')
         })
 
         container = d3.select(container);
-
-        // add bootstrap class to container
-        container.classed("row", true);
 
         // if there is already a table drawn, we don't want to lose that
         // get town and redraw "table"
@@ -344,14 +375,28 @@ angular.module('app')
             place.append("path")
                 .attr("d", path)
                 .attr("class", function(d) {
-                    return [
+                    var classes = [
                         "mappath",
                         colors((d.properties.DATA["category"] || null))
-                    ].join(" ");
+                    ];
+
+                    // If there is a town already selected (ie this is a redraw due to screen size change etc)
+                    // add the appropriate highlight/lowlight classes
+                    if (selectedTown.selected.NAME !== "") {
+                        if (selectedTown.selected.NAME == d.properties.NAME) {
+                            classes.push("highlight");
+                        } else {
+                            classes.push("lowlight");
+                        }
+                    }
+
+                    return classes.join(" ");
+                })
+                .attr("data-town", function(d) {
+                    return d.properties.NAME;
                 })
                 .classed("mappath", true);
         })
-
         // END draw Map
 
         // Draw "table"
@@ -418,14 +463,12 @@ angular.module('app')
             // we register our custom dispatch like so...
             //.on("click", dispatch.customClick);
             .on("click", function(d) {
-                // TODO Add click handler to deactive town
-                // add highlight to town
-                d3.selectAll("path.highlight")
-                    .classed("highlight", false);
+                // handle highlight/lowlight 
+                var oldTown = d3.selectAll("path.highlight");
+                var newTown = d3.select(this)
+                    .selectAll("path.mappath");
 
-                d3.select(this)
-                    .selectAll("path.mappath")
-                    .classed("highlight", true);
+                toggleTowns(oldTown, newTown);
 
                 // Call our custom dispatch method and pass the town
                 // object up to our angular directive

@@ -1,5 +1,11 @@
 map {
-    min-height: 75vh;
+    min-height: 60vh!important;
+    @media screen and (min-width: 768px) and (max-width: 995px) {
+        min-height: 45vh!important;
+    }
+    @media screen and (max-width: 767px) {
+        min-height: 35vh!important;
+    }
     display: block;
 
     /* Legend */
@@ -32,30 +38,6 @@ map {
     }
     /* END Legend */
     
-    /* Table */
-    div.table-container {
-        div.state h4,
-        div.town h4,
-        div.grants h4 {
-            margin: 0.5rem 0;
-        }
-        div.state p,
-        div.town p {
-            margin: 0.25rem 0;
-        }
-        div.state p span:first-child,
-        div.town p span:first-child {
-                font-weight: $heavy;
-                padding-right: 0.3rem;
-        }
-        div.state p span:first-child:after,
-        div.town p span:first-child:after {
-                content: "\003A";
-        }
-    }
-    /* END Table */
-
-
     /* map */
     div.map {
         path.mappath {
@@ -76,7 +58,11 @@ map {
 
             &.highlight {
                 stroke-width: 3px;
-                stroke: $ctdata-extra-light-blue;
+            }
+
+            &.lowlight {
+                fill-opacity: 0.5;
+                stroke-opacity: 0.5;
             }
         }
     }
@@ -114,3 +100,24 @@ map {
     margin-left: -14px;
 }
 /* END Tooltip */
+
+/* "Table" data */
+div.state h4,
+div.town h4,
+div.grants h4 {
+    margin: 0.5rem 0;
+}
+div.state p,
+div.town p {
+    margin: 0.25rem 0;
+}
+div.state p span:first-child,
+div.town p span:first-child {
+        font-weight: $heavy;
+        padding-right: 0.3rem;
+}
+div.state p span:first-child:after,
+div.town p span:first-child:after {
+        content: "\003A";
+}
+/* END "Table" data */
