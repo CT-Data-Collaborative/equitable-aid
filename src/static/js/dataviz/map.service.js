@@ -33,120 +33,120 @@ angular.module('app')
             return d.properties.NAME;
         })
 
-    var makeTownTable = function(selection, data, makeGrants) {
-        selection.selectAll("div.town, div.grants").remove();
-
-        var townData = [
-            {"title" : "FY15 Aid", "value" : currencyFormat(data["total_aid"])},
-            {"title" : "Even Cut Allocation", "value" : currencyFormat(data["even_cut_allocation"])},
-            {"title" : "Simulated Allocation", "value" : currencyFormat(data["sim_allocation"])},
-            {"title" : "Simulated Percent Cut", "value" : changeFormat(data["per_change"])},
-            {"title" : "Category", "value" : data["category"]}
-        ];
-
-        var town = selection.append("div")
-            .classed({
-                "town" : true/*,
-                "col-xs-6" : true,
-                "col-sm-4" : true*/
-            })
-            .attr("data-town", data["town"]);
-
-        town.append("h4")
-            .text(data["town"]);
-
-        town.selectAll("p")
-            .data(townData)
-            .enter()
-            .append("p")
-                .selectAll("span")
-                .data(function(d) {
-                    return lo.values(d);
-                })
-                .enter()
-                .append("span")
-                    .text(function(d) { return d; })
-
-        // accumulator for grant totals
-        var grantTotal = 0;
-
-        var grantData = [
-            "Colleges & Hospitals PILOT",
-            "DECD PILOT Grant",
-            "DECD Tax Abatement",
-            "Disability Exemption",
-            "Elderly Circuit Breaker",
-            "Elderly Freeze",
-            "LoCIP",
-            "Pequot Grants",
-            "State Property PILOT",
-            "Town Aid Road",
-            "Veterans' Exemption"
-        ].map(function(grant) {
-            grantTotal += data[grant];
-            return {
-                "Grant" : grant,
-                "FY 15" : currencyFormat(data[grant]),
-                "Simulated Cut" : currencyFormat(data[grant] * (1 + data["per_change"]))
-            }
-        })
-
-        grantTotal = {
-            "Grant" : "Total",
-            "FY 15" : currencyFormat(grantTotal),
-            "Simulated Cut" : currencyFormat(grantTotal * (1 + data["per_change"]))
-        };
-
-        grantData.push(grantTotal);
-
-        var grantCols = [
-            "Grant",
-            "FY 15",
-            "Simulated Cut"
-        ];
-
-        var grants = selection.append("div")
-            .classed({
-                "grants" : true/*,
-                "col-xs-12" : true,
-                "col-sm-4" : true*/
-            });
-
-        grants.append("h4")
-            .text(data["town"] + " Grants");
-
-        grantTable = grants.append("table")
-            .classed("ctdata-table", true);
-        grantThead = grantTable.append("thead");
-        grantTbody = grantTable.append("tbody");
-
-        grantThead.append("tr")
-            .selectAll("th")
-            .data(grantCols)
-            .enter()
-                .append("th")
-                .classed("col-name", true)
-                .text(function(d) { return d; })
-
-        grantTbody.selectAll("tr")
-            .data(grantData)
-            .enter()
-                .append("tr")
-                .datum(function(d) { return d; })
-                .each(function(rowData) {
-                    var row = d3.select(this);
-
-                    row.selectAll("td")
-                        .data(grantCols)
-                        .enter()
-                        .append("td")
-                            .attr("class", function(d, i) {
-                                return (i === 0 ? "name" : "value");
-                            })
-                            .text(function(d) { return rowData[d]; })
-                });
-    }
-
+    //var makeTownTable = function(selection, data, makeGrants) {
+    //    selection.selectAll("div.town, div.grants").remove();
+    //
+    //    var townData = [
+    //        {"title" : "FY15 Aid", "value" : currencyFormat(data["total_aid"])},
+    //        {"title" : "Even Cut Allocation", "value" : currencyFormat(data["even_cut_allocation"])},
+    //        {"title" : "Simulated Allocation", "value" : currencyFormat(data["sim_allocation"])},
+    //        {"title" : "Simulated Percent Cut", "value" : changeFormat(data["per_change"])},
+    //        {"title" : "Category", "value" : data["category"]}
+    //    ];
+    //
+    //    var town = selection.append("div")
+    //        .classed({
+    //            "town" : true/*,
+    //            "col-xs-6" : true,
+    //            "col-sm-4" : true*/
+    //        })
+    //        .attr("data-town", data["town"]);
+    //
+    //    town.append("h4")
+    //        .text(data["town"]);
+    //
+    //    town.selectAll("p")
+    //        .data(townData)
+    //        .enter()
+    //        .append("p")
+    //            .selectAll("span")
+    //            .data(function(d) {
+    //                return lo.values(d);
+    //            })
+    //            .enter()
+    //            .append("span")
+    //                .text(function(d) { return d; })
+    //
+    //    // accumulator for grant totals
+    //    var grantTotal = 0;
+    //
+    //    var grantData = [
+    //        "Colleges & Hospitals PILOT",
+    //        "DECD PILOT Grant",
+    //        "DECD Tax Abatement",
+    //        "Disability Exemption",
+    //        "Elderly Circuit Breaker",
+    //        "Elderly Freeze",
+    //        "LoCIP",
+    //        "Pequot Grants",
+    //        "State Property PILOT",
+    //        "Town Aid Road",
+    //        "Veterans' Exemption"
+    //    ].map(function(grant) {
+    //        grantTotal += data[grant];
+    //        return {
+    //            "Grant" : grant,
+    //            "FY 15" : currencyFormat(data[grant]),
+    //            "Simulated Cut" : currencyFormat(data[grant] * (1 + data["per_change"]))
+    //        }
+    //    })
+    //
+    //    grantTotal = {
+    //        "Grant" : "Total",
+    //        "FY 15" : currencyFormat(grantTotal),
+    //        "Simulated Cut" : currencyFormat(grantTotal * (1 + data["per_change"]))
+    //    };
+    //
+    //    grantData.push(grantTotal);
+    //
+    //    var grantCols = [
+    //        "Grant",
+    //        "FY 15",
+    //        "Simulated Cut"
+    //    ];
+    //
+    //    var grants = selection.append("div")
+    //        .classed({
+    //            "grants" : true/*,
+    //            "col-xs-12" : true,
+    //            "col-sm-4" : true*/
+    //        });
+    //
+    //    grants.append("h4")
+    //        .text(data["town"] + " Grants");
+    //
+    //    grantTable = grants.append("table")
+    //        .classed("ctdata-table", true);
+    //    grantThead = grantTable.append("thead");
+    //    grantTbody = grantTable.append("tbody");
+    //
+    //    grantThead.append("tr")
+    //        .selectAll("th")
+    //        .data(grantCols)
+    //        .enter()
+    //            .append("th")
+    //            .classed("col-name", true)
+    //            .text(function(d) { return d; })
+    //
+    //    grantTbody.selectAll("tr")
+    //        .data(grantData)
+    //        .enter()
+    //            .append("tr")
+    //            .datum(function(d) { return d; })
+    //            .each(function(rowData) {
+    //                var row = d3.select(this);
+    //
+    //                row.selectAll("td")
+    //                    .data(grantCols)
+    //                    .enter()
+    //                    .append("td")
+    //                        .attr("class", function(d, i) {
+    //                            return (i === 0 ? "name" : "value");
+    //                        })
+    //                        .text(function(d) { return rowData[d]; })
+    //            });
+    //}
+    var dispatch = d3.dispatch('customClick');
     mapService.chart = function(container, data){
         // Join data to geojson
         var geoJoinedData = {
@@ -166,12 +166,12 @@ angular.module('app')
 
         // if there is already a table drawn, we don't want to lose that
         // get town and redraw "table"
-        var tableTown = d3.select("div.table-container div.town");
-        if (tableTown.size() > 0) {
-            var tableTown = tableTown.attr("data-town");
-        } else {
-            tableTown = false;
-        }
+        //var tableTown = d3.select("div.table-container div.town");
+        //if (tableTown.size() > 0) {
+        //    var tableTown = tableTown.attr("data-town");
+        //} else {
+        //    tableTown = false;
+        //}
 
         // clear container
         container.selectAll("*").remove();
@@ -203,14 +203,14 @@ angular.module('app')
                 .append("div")
                 .classed("legend", true);
 
-        var table = container.append("div")
-            .attr("class", function() {
-                return [
-                    "table-container",
-                    "col-sm-4",
-                    "col-xs-12"
-                ].join(" ");
-            });
+        //var table = container.append("div")
+        //    .attr("class", function() {
+        //        return [
+        //            "table-container",
+        //            "col-sm-4",
+        //            "col-xs-12"
+        //        ].join(" ");
+        //    });
         // END Draw containers
 
         // draw Map
@@ -354,52 +354,52 @@ angular.module('app')
 
         // Draw "table"
         // State values
-        var stateValues = [
-            {"key" : "total_aid", "title" : "FY15 Aid", "value" : 0},
-            {"key" : "even_cut_allocation", "title" : "Even Cut Allocation", "value" : 0},
-            {"key" : "sim_allocation", "title" : "Simulated Allocation", "value" : 0}
-        ];
+        //var stateValues = [
+        //    {"key" : "total_aid", "title" : "FY15 Aid", "value" : 0},
+        //    {"key" : "even_cut_allocation", "title" : "Even Cut Allocation", "value" : 0},
+        //    {"key" : "sim_allocation", "title" : "Simulated Allocation", "value" : 0}
+        //];
 
-        stateValues = lo.chain(stateValues)
-            .map(function(o) {
-                o.value = lo.chain(data)
-                    .map(function(d) { return d[o.key]; })
-                    .reduce(function(total, value) { return total + value; })
-                    .value();
+        //stateValues = lo.chain(stateValues)
+        //    .map(function(o) {
+        //        o.value = lo.chain(data)
+        //            .map(function(d) { return d[o.key]; })
+        //            .reduce(function(total, value) { return total + value; })
+        //            .value();
+        //
+        //        o.value = currencyFormat(o.value);
+        //
+        //        return o;
+        //    })
+        //    .value()
 
-                o.value = currencyFormat(o.value);
+        //var state = table.append("div")
+        //    .classed({
+        //        "state" : true/*,
+        //        "col-xs-6" : true,
+        //        "col-sm-4" : true*/
+        //    });
+        //
+        //state.append("h4")
+        //    // .text("Connecticut Totals");
+        //    .text("Connecticut Totals");
 
-                return o;
-            })
-            .value()
-
-        var state = table.append("div")
-            .classed({
-                "state" : true/*,
-                "col-xs-6" : true,
-                "col-sm-4" : true*/
-            });
-
-        state.append("h4")
-            // .text("Connecticut Totals");
-            .text("Connecticut Totals");
-
-        state.selectAll("p")
-            .data(stateValues)
-            .enter()
-                .append("p")
-                .selectAll("span")
-                .data(function(d) { return [d.title, d.value]; })
-                .enter()
-                .append("span")
-                    .text(function(d) { return d; })
+        //state.selectAll("p")
+        //    .data(stateValues)
+        //    .enter()
+        //        .append("p")
+        //        .selectAll("span")
+        //        .data(function(d) { return [d.title, d.value]; })
+        //        .enter()
+        //        .append("span")
+        //            .text(function(d) { return d; })
 
         // Town values - only if we have a town already
-        if (false !== tableTown) {
-            var townData = lo.find(data, {"town" : tableTown});
-
-            table.call(makeTownTable, townData);
-        }
+        //if (false !== tableTown) {
+        //    var townData = lo.find(data, {"town" : tableTown});
+        //
+        //    table.call(makeTownTable, townData);
+        //}
         // END Draw "table"
 
         // hover events
@@ -412,7 +412,9 @@ angular.module('app')
                 // tooltip
                 tip.hide(d);
             })
+            //.on("click", dispatch.customClick);
             .on("click", function(d) {
+                // TODO Add click handler to deactive town
                 // add highlight to town
                 d3.selectAll("path.highlight")
                     .classed("highlight", false);
@@ -421,11 +423,12 @@ angular.module('app')
                     .selectAll("path.mappath")
                     .classed("highlight", true);
 
-                var townData = lo.find(data, {"town" : d.properties.NAME})
-                table.call(makeTownTable, townData);
+                //var clickedTown = lo.find(data, {"town" : d.properties.NAME});
+                dispatch.customClick(d);
+                //table.call(makeTownTable, townData);
             })
         // END hover events
     }
-
+    d3.rebind(mapService.chart, dispatch, 'on');
     return mapService;
 }])

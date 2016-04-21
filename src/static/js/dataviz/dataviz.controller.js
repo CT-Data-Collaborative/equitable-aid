@@ -3,7 +3,18 @@ angular.module('app')
     ['$scope', '$http', '$log', 'lodash', 'townData', 'percalculate', 'dollarcalculate',
     function($scope, $http, $log, lodash, townData, percalculate, dollarcalculate){
         var lo = lodash;
-
+        $scope.selectedTown = {selected: 'test'};
+        //var makeUpdateSelected = function() {
+        //    function inner(town) {
+        //        $scope.selectedTown.selected = town;
+        //    }
+        //    return inner;
+        //};
+        $scope.updateSelected = function(town, target) {
+            target.selected = town;
+            console.log(town);
+            console.log(target);
+        };
         // -----------------------------------------
         // Vars and functions for handling calculation type
         // -----------------------------------------
