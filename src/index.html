@@ -96,7 +96,8 @@
                       Map <i class="fa fa-map-o"></i>
                     </uib-tab-heading>
                     <h4>{{selectedTown.selected.NAME}}</h4>
-                    <map data=simulatedTowns selected-town="selectedTown" />
+                    <map class="col-xs-12 col-md-8" data=simulatedTowns selected-town="selectedTown"></map>
+                    <ng-include src="'partials/grantTable.html'"></ng-include>
                   </uib-tab>
                 </uib-tabset>
               </div>
