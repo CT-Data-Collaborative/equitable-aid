@@ -18,7 +18,7 @@ angular.module('app')
                 scope.render();
             }, true);
 
-            $window.onresize = scope.render;
+            angular.element($window).bind('resize', scope.render);
         }
     }
 }])

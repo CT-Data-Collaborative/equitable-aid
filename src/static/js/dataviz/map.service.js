@@ -106,7 +106,7 @@ angular.module('app')
 
 
         // draw Map
-        var container_width = 0.6 * d3.select("div.tab-content").node().getBoundingClientRect().width;
+        var container_width = $(container.node()).actual('width');
         var width = container_width;
 
         // Calculate height based on width

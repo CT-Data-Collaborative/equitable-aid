@@ -99,7 +99,7 @@ angular.module('app')
         // END draw legend
 
         // draw Chart
-        var container_width = d3.select("div.tab-content").node().getBoundingClientRect().width;
+        var container_width = $(container.node()).actual('width')
         var width = container_width;
 
         // Calculate height based on width
@@ -121,14 +121,14 @@ angular.module('app')
             margin = {
                 top: 0.05 * height,
                 right: 0.08 * width,
-                bottom: 0.22 * height,
+                bottom: 0.28 * height,
                 left : 0.24 * width
             };
         } else if (container_width <= 768) {
             margin = {
                 top: 0.05 * height,
                 right: 0.05 * width,
-                bottom: 0.16 * height,
+                bottom: 0.24 * height,
                 left : 0.1 * width
             };
         }
@@ -219,6 +219,11 @@ angular.module('app')
             .attr("dy", -6)
             .attr("text-anchor", "end")
             .text("Per Capita Gap");
+
+        if (container_width <= 767) {
+            xAxisTitle
+                .attr("dy", 34)
+        }
 
         var yAxis = d3.svg.axis()
             .scale(y)
