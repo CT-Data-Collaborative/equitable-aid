@@ -5,9 +5,7 @@ angular.module('app')
         restrict: 'E',
         scope: {
             data: "=data",
-            updateFn: "=update",
-            selectedtown: "=selectedTown",
-            clicked: "&clicked"
+            selectedTown: "=selectedTown"
         },
         link: function(scope, element, attrs) {
             scope.render = function() {
@@ -15,13 +13,21 @@ angular.module('app')
                     chart(element[0], scope.data);
                 }
             };
+            // Use the custom dispatch method that we registered in the d3 map chart
             chart.on('customClick', function(d,i) {
-                scope.updateFn(d.properties.NAME, scope.selectedTown);
+                // If we don't call $apply, the digest cycle will lag and we won't
+                // see the parent scope updated with this value until we do something (anything)
+                // else (click button, modify parameters). We can't update selectedTown directly
+                // b/c of angular directive/parent scope rules. Doing so would create a new,
+                // local selectedTown object. Accessing the selected property will result in
+                // angular correctly going up the scope tree to the controller object that we
+                // bound to the directive.
+                scope.$apply(scope.selectedTown.selected = d.properties);
             });
             scope.$watch('data', function(data) {
                 scope.render();
             }, true);
-            
+
             $window.onresize = scope.render;
         }
     }

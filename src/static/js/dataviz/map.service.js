@@ -146,6 +146,8 @@ angular.module('app')
     //                        .text(function(d) { return rowData[d]; })
     //            });
     //}
+    // Declare custom dispatch. We will need to bind this back to
+    // the mapService.chart function before returning mapService
     var dispatch = d3.dispatch('customClick');
     mapService.chart = function(container, data){
         // Join data to geojson
@@ -412,6 +414,8 @@ angular.module('app')
                 // tooltip
                 tip.hide(d);
             })
+            // If we didn't need to do additional path highlighting
+            // we register our custom dispatch like so...
             //.on("click", dispatch.customClick);
             .on("click", function(d) {
                 // TODO Add click handler to deactive town
@@ -423,12 +427,14 @@ angular.module('app')
                     .selectAll("path.mappath")
                     .classed("highlight", true);
 
-                //var clickedTown = lo.find(data, {"town" : d.properties.NAME});
+                // Call our custom dispatch method and pass the town
+                // object up to our angular directive
                 dispatch.customClick(d);
                 //table.call(makeTownTable, townData);
             })
         // END hover events
     }
+    // Register our dispatch method that we declared at the start
     d3.rebind(mapService.chart, dispatch, 'on');
     return mapService;
 }])

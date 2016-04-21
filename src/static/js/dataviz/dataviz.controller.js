@@ -3,18 +3,10 @@ angular.module('app')
     ['$scope', '$http', '$log', 'lodash', 'townData', 'percalculate', 'dollarcalculate',
     function($scope, $http, $log, lodash, townData, percalculate, dollarcalculate){
         var lo = lodash;
-        $scope.selectedTown = {selected: 'test'};
-        //var makeUpdateSelected = function() {
-        //    function inner(town) {
-        //        $scope.selectedTown.selected = town;
-        //    }
-        //    return inner;
-        //};
-        $scope.updateSelected = function(town, target) {
-            target.selected = town;
-            console.log(town);
-            console.log(target);
-        };
+
+        // Need to nest actual town data object one level deeper than expected
+        // to handle directive scoping issues. See comments in directive for more.
+        $scope.selectedTown = {selected: {DATA: {}, NAME: 'test', FIPS: ''}};
         // -----------------------------------------
         // Vars and functions for handling calculation type
         // -----------------------------------------

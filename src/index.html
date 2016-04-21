@@ -95,8 +95,8 @@
                     <uib-tab-heading>
                       Map <i class="fa fa-map-o"></i>
                     </uib-tab-heading>
-                    <h4>{{selectedTown}}</h4>
-                    <map data=simulatedTowns update=updateSelected selectedtown=selectedTown />
+                    <h4>{{selectedTown.selected.NAME}}</h4>
+                    <map data=simulatedTowns selected-town="selectedTown" />
                   </uib-tab>
                 </uib-tabset>
               </div>
