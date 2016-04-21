@@ -1,12 +1,12 @@
 angular.module('app')
 .controller('DataVizController',
-    ['$scope', '$http', '$log', 'lodash', 'townData', 'percalculate', 'dollarcalculate',
-    function($scope, $http, $log, lodash, townData, percalculate, dollarcalculate){
+    ['$scope', '$http', '$log', 'lodash', 'townData', 'dataProcessor', 'percalculate', 'dollarcalculate',
+    function($scope, $http, $log, lodash, townData, dataProcessor, percalculate, dollarcalculate){
         var lo = lodash;
 
         // Need to nest actual town data object one level deeper than expected
         // to handle directive scoping issues. See comments in directive for more.
-        $scope.selectedTown = {selected: {DATA: {}, NAME: 'test', FIPS: ''}};
+        $scope.selectedTown = {selected: {DATA: {}, NAME: '', FIPS: ''}};
         // -----------------------------------------
         // Vars and functions for handling calculation type
         // -----------------------------------------
@@ -244,6 +244,25 @@ angular.module('app')
         // End of dollar-cut slider variables
         // -----------------------------------------
 
+        // -----------------------------------------
+        // Watch function on selected Town
+        //  and processing function for grant data
+        // -----------------------------------------
+        $scope.updateGrantData = function() {
+            console.log("Updating grant data")
+            if ($scope.selectedTown.selected.NAME !== "") {
+                $scope.selectedTown.selected.DATA.grants = dataProcessor.processGrantCuts($scope.selectedTown);
+            }
+        }
+
+        $scope.$watchCollection(function() {
+            return $scope.selectedTown;
+        }, function() {
+            $scope.updateGrantData();
+        });
+        // -----------------------------------------
+        // End of Watch function on selected Town, processing function for grant data
+        // -----------------------------------------
 
         // -----------------------------------------
         // Main watch function.
@@ -262,12 +281,16 @@ angular.module('app')
                     $scope.percentSimulatedTowns = $scope.towns;
                     $scope.percentSimulatedTowns = $scope.percalculate($scope.percentSimulatedTowns, $scope.percentModelParems);
                     $scope.simulatedTowns = $scope.percentSimulatedTowns;
+                    $scope.stateTotals = dataProcessor.getStateTotals($scope.simulatedTowns);
+                    $scope.updateGrantData();
                 }
             } else {
                 if (typeof($scope.dollarModelParems) != 'undefined') {
                     $scope.dollarSimulatedTowns = $scope.towns;
                     $scope.dollarcalculate($scope.dollarSimulatedTowns, $scope.dollarModelParems);
                     $scope.simulatedTowns = $scope.dollarSimulatedTowns;
+                    $scope.stateTotals = dataProcessor.getStateTotals($scope.simulatedTowns);
+                    $scope.updateGrantData();
                 }
             }
         }, true);

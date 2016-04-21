@@ -1,6 +1,9 @@
 table.ctdata-table {
     margin-bottom: 2rem;
 
+    &.ctdata-table-wide {
+        width: 100%;
+    }
 
     tr:hover {
         background: $ctdata-light-blue;

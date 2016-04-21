@@ -10,7 +10,7 @@ angular.module('app')
         link: function(scope, element, attrs) {
             scope.render = function() {
                 if (undefined !== scope.data && scope.data.length > 0) {
-                    chart(element[0], scope.data);
+                    chart(element[0], scope.data, scope.selectedTown);
                 }
             };
             // Use the custom dispatch method that we registered in the d3 map chart
@@ -22,7 +22,13 @@ angular.module('app')
                 // local selectedTown object. Accessing the selected property will result in
                 // angular correctly going up the scope tree to the controller object that we
                 // bound to the directive.
-                scope.$apply(scope.selectedTown.selected = d.properties);
+                if (scope.selectedTown.selected == d.properties) {
+                    scope.$apply(scope.selectedTown.selected = {DATA: {}, NAME: '', FIPS: ''});
+                } else {
+                    scope.$apply(scope.selectedTown.selected = d.properties);
+                }
+
+                scope.$parent.$digest();
             });
             scope.$watch('data', function(data) {
                 scope.render();

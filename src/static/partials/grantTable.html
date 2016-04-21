@@ -1,0 +1,112 @@
+<div class="col-xs-12 col-sm-6 col-md-4 state">
+    <h5>Connecticut</h5>
+    <p>
+        <span>FY 15 Aid</span>
+        <span>{{ stateTotals["total_aid"] | currency }}</span>
+    </p>
+    <p>
+        <span>Even Cut Aid</span>
+        <span>{{ stateTotals["even_cut_allocation"] | currency }}</span>
+    </p>
+    <p>
+        <span>Simulated Aid</span>
+        <span>{{ stateTotals["sim_allocation"] | currency }}</span>
+    </p>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-4 town" ng-hide="selectedTown.selected.NAME==''">
+    <h4>{{ selectedTown.selected.NAME }}</h4>
+    <p>
+        <span>FY15 Aid</span>
+        <span>{{ selectedTown.selected.DATA["total_aid"] | currency }}</span>
+    </p>
+    <p>
+        <span>Even Cut Allocation</span>
+        <span>{{ selectedTown.selected.DATA["even_cut_allocation"] | currency }}</span>
+    </p>
+    <p>
+        <span>Simulated Allocation</span>
+        <span>{{ selectedTown.selected.DATA["sim_allocation"] | currency }}</span>
+    </p>
+    <p>
+        <span>Simulated Percent Cut</span>
+        <span>{{ selectedTown.selected.DATA["per_change"] | percentage }}</span>
+    </p>
+    <p>
+        <span>Category</span>
+        <span>{{ selectedTown.selected.DATA["category"] }}</span>
+    </p>
+</div>
+<div class="col-xs-12 grants" ng-hide="selectedTown.selected.NAME==''">
+    <h4>State Nonschool Grants</h4>
+    <table class="ctdata-table ctdata-table-wide">
+        <thead>
+            <tr>
+                <td class="col-name town">Grant</td>
+                <td class="col-name">FY 15</td>
+                <td class="col-name">Simulated Allocation</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="name">Colleges &amp; Hospitals PILOT</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["Colleges & Hospitals PILOT"]["FY 15"] | currency }}</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["Colleges & Hospitals PILOT"]["Simulated Cut"] | currency }}</td>
+            </tr>
+            <tr>
+                <td class="name">DECD PILOT Grant</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["DECD PILOT Grant"]["FY 15"] | currency }}</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["DECD PILOT Grant"]["Simulated Cut"] | currency }}</td>
+            </tr>
+            <tr>
+                <td class="name">DECD Tax Abatement</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["DECD Tax Abatement"]["FY 15"] | currency }}</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["DECD Tax Abatement"]["Simulated Cut"] | currency }}</td>
+            </tr>
+            <tr>
+                <td class="name">Disability Exemption</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["Disability Exemption"]["FY 15"] | currency }}</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["Disability Exemption"]["Simulated Cut"] | currency }}</td>
+            </tr>
+            <tr>
+                <td class="name">Elderly Circuit Breaker</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["Elderly Circuit Breaker"]["FY 15"] | currency }}</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["Elderly Circuit Breaker"]["Simulated Cut"] | currency }}</td>
+            </tr>
+            <tr>
+                <td class="name">Elderly Freeze</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["Elderly Freeze"]["FY 15"] | currency }}</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["Elderly Freeze"]["Simulated Cut"] | currency }}</td>
+            </tr>
+            <tr>
+                <td class="name">LoCIP</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["LoCIP"]["FY 15"] | currency }}</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["LoCIP"]["Simulated Cut"] | currency }}</td>
+            </tr>
+            <tr>
+                <td class="name">Pequot Grants</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["Pequot Grants"]["FY 15"] | currency }}</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["Pequot Grants"]["Simulated Cut"] | currency }}</td>
+            </tr>
+            <tr>
+                <td class="name">State Property PILOT</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["State Property PILOT"]["FY 15"] | currency }}</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["State Property PILOT"]["Simulated Cut"] | currency }}</td>
+            </tr>
+            <tr>
+                <td class="name">Town Aid Road</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["Town Aid Road"]["FY 15"] | currency }}</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["Town Aid Road"]["Simulated Cut"] | currency }}</td>
+            </tr>
+            <tr>
+                <td class="name">Veterans' Exemption</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["Veterans' Exemption"]["FY 15"] | currency }}</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["Veterans' Exemption"]["Simulated Cut"] | currency }}</td>
+            </tr>
+            <tr>
+                <td class="name">Total Aid</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["total_aid"]["FY 15"] | currency }}</td>
+                <td class="value">{{ selectedTown.selected.DATA.grants["total_aid"]["Simulated Cut"] | currency }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
