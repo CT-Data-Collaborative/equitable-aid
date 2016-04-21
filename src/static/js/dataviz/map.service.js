@@ -67,119 +67,7 @@ angular.module('app')
         }
     }
 
-    //var makeTownTable = function(selection, data, makeGrants) {
-    //    selection.selectAll("div.town, div.grants").remove();
-    //
-    //    var townData = [
-    //        {"title" : "FY15 Aid", "value" : currencyFormat(data["total_aid"])},
-    //        {"title" : "Even Cut Allocation", "value" : currencyFormat(data["even_cut_allocation"])},
-    //        {"title" : "Simulated Allocation", "value" : currencyFormat(data["sim_allocation"])},
-    //        {"title" : "Simulated Percent Cut", "value" : changeFormat(data["per_change"])},
-    //        {"title" : "Category", "value" : data["category"]}
-    //    ];
-    //
-    //    var town = selection.append("div")
-    //        .classed({
-    //            "town" : true/*,
-    //            "col-xs-6" : true,
-    //            "col-sm-4" : true*/
-    //        })
-    //        .attr("data-town", data["town"]);
-    //
-    //    town.append("h4")
-    //        .text(data["town"]);
-    //
-    //    town.selectAll("p")
-    //        .data(townData)
-    //        .enter()
-    //        .append("p")
-    //            .selectAll("span")
-    //            .data(function(d) {
-    //                return lo.values(d);
-    //            })
-    //            .enter()
-    //            .append("span")
-    //                .text(function(d) { return d; })
-    //
-    //    // accumulator for grant totals
-    //    var grantTotal = 0;
-    //
-    //    var grantData = [
-    //        "Colleges & Hospitals PILOT",
-    //        "DECD PILOT Grant",
-    //        "DECD Tax Abatement",
-    //        "Disability Exemption",
-    //        "Elderly Circuit Breaker",
-    //        "Elderly Freeze",
-    //        "LoCIP",
-    //        "Pequot Grants",
-    //        "State Property PILOT",
-    //        "Town Aid Road",
-    //        "Veterans' Exemption"
-    //    ].map(function(grant) {
-    //        grantTotal += data[grant];
-    //        return {
-    //            "Grant" : grant,
-    //            "FY 15" : currencyFormat(data[grant]),
-    //            "Simulated Cut" : currencyFormat(data[grant] * (1 + data["per_change"]))
-    //        }
-    //    })
-    //
-    //    grantTotal = {
-    //        "Grant" : "Total",
-    //        "FY 15" : currencyFormat(grantTotal),
-    //        "Simulated Cut" : currencyFormat(grantTotal * (1 + data["per_change"]))
-    //    };
-    //
-    //    grantData.push(grantTotal);
-    //
-    //    var grantCols = [
-    //        "Grant",
-    //        "FY 15",
-    //        "Simulated Cut"
-    //    ];
-    //
-    //    var grants = selection.append("div")
-    //        .classed({
-    //            "grants" : true/*,
-    //            "col-xs-12" : true,
-    //            "col-sm-4" : true*/
-    //        });
-    //
-    //    grants.append("h4")
-    //        .text(data["town"] + " Grants");
-    //
-    //    grantTable = grants.append("table")
-    //        .classed("ctdata-table", true);
-    //    grantThead = grantTable.append("thead");
-    //    grantTbody = grantTable.append("tbody");
-    //
-    //    grantThead.append("tr")
-    //        .selectAll("th")
-    //        .data(grantCols)
-    //        .enter()
-    //            .append("th")
-    //            .classed("col-name", true)
-    //            .text(function(d) { return d; })
-    //
-    //    grantTbody.selectAll("tr")
-    //        .data(grantData)
-    //        .enter()
-    //            .append("tr")
-    //            .datum(function(d) { return d; })
-    //            .each(function(rowData) {
-    //                var row = d3.select(this);
-    //
-    //                row.selectAll("td")
-    //                    .data(grantCols)
-    //                    .enter()
-    //                    .append("td")
-    //                        .attr("class", function(d, i) {
-    //                            return (i === 0 ? "name" : "value");
-    //                        })
-    //                        .text(function(d) { return rowData[d]; })
-    //            });
-    //}
+
     // Declare custom dispatch. We will need to bind this back to
     // the mapService.chart function before returning mapService
     var dispatch = d3.dispatch('customClick');
@@ -197,29 +85,9 @@ angular.module('app')
 
         container = d3.select(container);
 
-        // if there is already a table drawn, we don't want to lose that
-        // get town and redraw "table"
-        //var tableTown = d3.select("div.table-container div.town");
-        //if (tableTown.size() > 0) {
-        //    var tableTown = tableTown.attr("data-town");
-        //} else {
-        //    tableTown = false;
-        //}
 
         // clear container
         container.selectAll("*").remove();
-
-        // More debug output
-        // container.append("pre")
-        //     // .text(JSON.stringify(geoJoinedData, null, 4))
-        //     .text(JSON.stringify(geoJoinedData, null, 4))
-        // return;
-
-        // helpful debugging output
-        // container.append("pre")
-        //     // print out data passed to function
-        //     .text(JSON.stringify(data, null, 4));
-        // return;
 
         // Draw containers
         mapContainer = container.append("div")
@@ -236,15 +104,6 @@ angular.module('app')
                 .append("div")
                 .classed("legend", true);
 
-        //var table = container.append("div")
-        //    .attr("class", function() {
-        //        return [
-        //            "table-container",
-        //            "col-sm-4",
-        //            "col-xs-12"
-        //        ].join(" ");
-        //    });
-        // END Draw containers
 
         // draw Map
         var container_width = 0.6 * d3.select("div.tab-content").node().getBoundingClientRect().width;
@@ -252,11 +111,6 @@ angular.module('app')
 
         // Calculate height based on width
         var height = container_width * (0.5);
-        // if (container_width <= 350) {
-        //     height = container_width * (0.6);
-        // } else if (container_width <= 768) {
-        //     height = container_width * (0.5);
-        // }
 
         var margin = {
             top: 0.05 * height,
@@ -265,21 +119,7 @@ angular.module('app')
             left : 0.05 * width
         };
 
-        // if (container_width <= 350) {
-        //     margin = {
-        //         top: 0.05 * height,
-        //         right: 0.08 * width,
-        //         bottom: 0.22 * height,
-        //         left : 0.24 * width
-        //     };
-        // } else if (container_width <= 768) {
-        //     margin = {
-        //         top: 0.05 * height,
-        //         right: 0.05 * width,
-        //         bottom: 0.16 * height,
-        //         left : 0.1 * width
-        //     };
-        // }
+
 
         var svg = mapContainer.append("div")
             .classed("map", true)
@@ -398,56 +238,6 @@ angular.module('app')
                 .classed("mappath", true);
         })
         // END draw Map
-
-        // Draw "table"
-        // State values
-        //var stateValues = [
-        //    {"key" : "total_aid", "title" : "FY15 Aid", "value" : 0},
-        //    {"key" : "even_cut_allocation", "title" : "Even Cut Allocation", "value" : 0},
-        //    {"key" : "sim_allocation", "title" : "Simulated Allocation", "value" : 0}
-        //];
-
-        //stateValues = lo.chain(stateValues)
-        //    .map(function(o) {
-        //        o.value = lo.chain(data)
-        //            .map(function(d) { return d[o.key]; })
-        //            .reduce(function(total, value) { return total + value; })
-        //            .value();
-        //
-        //        o.value = currencyFormat(o.value);
-        //
-        //        return o;
-        //    })
-        //    .value()
-
-        //var state = table.append("div")
-        //    .classed({
-        //        "state" : true/*,
-        //        "col-xs-6" : true,
-        //        "col-sm-4" : true*/
-        //    });
-        //
-        //state.append("h4")
-        //    // .text("Connecticut Totals");
-        //    .text("Connecticut Totals");
-
-        //state.selectAll("p")
-        //    .data(stateValues)
-        //    .enter()
-        //        .append("p")
-        //        .selectAll("span")
-        //        .data(function(d) { return [d.title, d.value]; })
-        //        .enter()
-        //        .append("span")
-        //            .text(function(d) { return d; })
-
-        // Town values - only if we have a town already
-        //if (false !== tableTown) {
-        //    var townData = lo.find(data, {"town" : tableTown});
-        //
-        //    table.call(makeTownTable, townData);
-        //}
-        // END Draw "table"
 
         // hover events
         places

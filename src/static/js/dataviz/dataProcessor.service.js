@@ -16,7 +16,13 @@ angular.module('app')
         lo.keys(stateTotals)
            .map(function(key) {
                stateTotals[key] = lo.chain(data)
-                   .map(function(d) { return d[key]; })
+                   .map(function(d) {
+                       if (key != 'total_aid') {
+                            return d[key] * d.population;
+                       } else {
+                           return d[key];
+                       }
+                   })
                    .reduce(function(total, value) { return total + value; })
                    .value();
            })

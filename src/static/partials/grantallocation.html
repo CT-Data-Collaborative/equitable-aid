@@ -1,0 +1,19 @@
+<div class="col-xs-12 col-md-6 grants" ng-hide="selectedTown.selected.NAME==''">
+    <h4>State Nonschool Grants</h4>
+    <table class="ctdata-table ctdata-table-wide">
+        <thead>
+        <tr>
+            <td class="col-name town">Grant</td>
+            <td class="col-name">FY 15</td>
+            <td class="col-name">Simulated Allocation</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="grant in selectedTown.selected.DATA.grants">
+            <td class="name">{{ grant["Grant"] }}</td>
+            <td class="value">{{ grant["FY 15"] | currency }}</td>
+            <td class="value">{{ grant["Simulated Cut"] | currency }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

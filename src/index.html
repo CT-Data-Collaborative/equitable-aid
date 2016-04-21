@@ -11,7 +11,7 @@
     <!--[if lt IE 9]>
     <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
     <link rel="stylesheet" href="css/ui-bootstrap-csp.css">
     <link rel="stylesheet" href="css/bootstrap-slider.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -44,7 +44,7 @@
           </div>
           <div class="container-fluid main-internal">
             <div class="row">
-              <div class="col-md-8 col-md-offset-2">
+              <div class="col-md-10 col-md-offset-1">
                 <h4>The New England Public Policy Center at the Federal Reserve Bank of Boston developed a framework that distributes reductions in state aid based on underlying local fiscal health. Under this framework, municipalities facing fiscal distress would receive smaller aid cuts compared to municipalities with fiscal surpluses. Therefore it provides a more rational and equitable method of cutting aid than commonly used ad hoc or across-the-board cuts. Fiscal health is determined according a given municipalities "fiscal health".
                 </h4>
                 <h4>What is municipal gap?</h4>
@@ -57,47 +57,49 @@
                   <li>NOT a measure of actual spending</li>
                 </ul>
                 <hr>
-                <h4>To explore the impact of different budget cut scenarios, first choose between percentage-based cuts or
-                dollar-based cuts:</h4>
-                <div class="btn-group">
-                  <label ng-model="calctype" uib-btn-radio="'percentage'" class="btn btn-primary active">Percentage-based</label>
-                  <label ng-model="calctype" uib-btn-radio="'dollar'" class="btn btn-primary">Dollar-based</label>
-                </div>
               </div>
-
             </div>
             <div class="row">
-              <div class="col-xs-12 col-md-3 input">
+              <div class="col-md-10 col-md-offset-1 input">
                 <h2>Select Model Parameters</h2>
-                <div ng-show="whichCalc()">
-                  <div ng-include="'partials/percentage.html'"></div>
-                </div ng-show>
-                <div ng-hide="whichCalc()">
-                  <div ng-include="'partials/dollar.html'"></div>
-                </div>
+                <div ng-include="'partials/percentage.html'"></div>
+                <!--<div ng-show="whichCalc()">-->
+                  <!--<div ng-include="'partials/percentage.html'"></div>-->
+                <!--</div ng-show>-->
+                <!--<div ng-hide="whichCalc()">-->
+                  <!--<div ng-include="'partials/dollar.html'"></div>-->
+                <!--</div>-->
               </div>
-              <div class="col-xs-12 col-md-9 output">
+            </div>
+            <div class="row">
+              <div class="col-md-10 col-md-offset-1 output">
                 <h2>Results</h2>
                 <uib-tabset active="0" type="pills">
                   <uib-tab index="0">
+                    <uib-tab-heading>
+                      Map <i class="fa fa-map-o"></i>
+                    </uib-tab-heading>
+                    <div class="row">
+                      <ng-include src="'partials/grantTable.html'"></ng-include>
+                    </div>
+                    <div class="row">
+                      <div class="mapdiv col-xs-12 col-md-6" >
+                        <map data=simulatedTowns selected-town="selectedTown"></map>
+                      </div>
+                      <ng-include src="'partials/grantallocation.html'"></ng-include>
+                    </div>
+                  </uib-tab>
+                  <uib-tab index="1">
                     <uib-tab-heading>
                       Table <i class="fa fa-table"></i>
                     </uib-tab-heading>
                     <ng-include src="'partials/table.html'"></ng-include>
                   </uib-tab>
-                  <uib-tab index="1">
+                  <uib-tab index="2">
                     <uib-tab-heading>
                       Scatterplot <i class="fa fa-bar-chart"></i>
                     </uib-tab-heading>
                     <scatterplot data=simulatedTowns />
-                  </uib-tab>
-                  <uib-tab index="2">
-                    <uib-tab-heading>
-                      Map <i class="fa fa-map-o"></i>
-                    </uib-tab-heading>
-                    <h4>{{selectedTown.selected.NAME}}</h4>
-                    <map class="col-xs-12 col-md-8" data=simulatedTowns selected-town="selectedTown"></map>
-                    <ng-include src="'partials/grantTable.html'"></ng-include>
                   </uib-tab>
                 </uib-tabset>
               </div>
@@ -107,9 +109,7 @@
       </div>
     </div>
     <ng-include src="'partials/footer.html'"></ng-include>
-    <!-- Latest JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <!-- I haven't actually checked to see if removing this causes problems with the ui-bootstrap -->
-    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
   </body>
 </html>
