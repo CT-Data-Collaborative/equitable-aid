@@ -7,6 +7,22 @@ angular.module('app')
         // Need to nest actual town data object one level deeper than expected
         // to handle directive scoping issues. See comments in directive for more.
         $scope.selectedTown = {selected: {DATA: {}, NAME: '', FIPS: ''}};
+
+        // Keep list of grants in one place
+        $scope.grants = [
+            "Colleges & Hospitals PILOT",
+            "DECD PILOT Grant",
+            "DECD Tax Abatement",
+            "Disability Exemption",
+            "Elderly Circuit Breaker",
+            "Elderly Freeze",
+            "LoCIP",
+            "Pequot Grants",
+            "State Property PILOT",
+            "Town Aid Road",
+            "Veterans' Exemption"
+        ];
+
         // -----------------------------------------
         // Vars and functions for handling calculation type
         // -----------------------------------------
@@ -251,7 +267,7 @@ angular.module('app')
         $scope.updateGrantData = function() {
             console.log("Updating grant data")
             if ($scope.selectedTown.selected.NAME !== "") {
-                $scope.selectedTown.selected.DATA.grants = dataProcessor.processGrantCuts($scope.selectedTown);
+                $scope.selectedTown.selected.DATA.grants = dataProcessor.processGrantCuts($scope.selectedTown, $scope.grants);
             }
         }
 

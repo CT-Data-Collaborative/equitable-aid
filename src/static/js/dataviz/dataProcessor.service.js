@@ -24,30 +24,36 @@ angular.module('app')
         return stateTotals;
     }
 
-    dataProcessor.processGrantCuts = function(selectedTown) {
+    dataProcessor.processGrantCuts = function(selectedTown, grants) {
         var grantData = {};
+        var totalGrant = {
+            "Grant" : "Total Aid",
+            "FY 15" : 0,
+            "Simulated Cut" : 0
+        }
 
-        [
-            "Colleges & Hospitals PILOT",
-            "DECD PILOT Grant",
-            "DECD Tax Abatement",
-            "Disability Exemption",
-            "Elderly Circuit Breaker",
-            "Elderly Freeze",
-            "LoCIP",
-            "Pequot Grants",
-            "State Property PILOT",
-            "Town Aid Road",
-            "Veterans' Exemption",
-            "total_aid"
-        ].map(function(grant) {
-            grantData[grant] = {
+        grantData = grants.map(function(grant) {
+            totalGrant["FY 15"] += selectedTown.selected.DATA[grant],
+            totalGrant["Simulated Cut"] += selectedTown.selected.DATA[grant] * (1 + selectedTown.selected.DATA["per_change"]);
+
+            return {
+                "Grant" : grant,
                 "FY 15" : selectedTown.selected.DATA[grant],
                 "Simulated Cut" : selectedTown.selected.DATA[grant] * (1 + selectedTown.selected.DATA["per_change"])
             }
         })
 
-        return grantData;
+        grantData.push(totalGrant);
+
+        return grantData.sort(function(a, b) {
+            if (a.Grant == "Total Aid") {
+                return 1;
+            } else if (b.Grant == "Total Aid") {
+                return -1;
+            } else {
+              return (a < b ? 1 : -1)
+            }
+        });
     }
 
     return dataProcessor;
