@@ -13,6 +13,7 @@ gulp.task('js_dependencies', function() {
         'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
         'node_modules/d3/d3.min.js',
         'node_modules/d3-tip/index.js',
+        'node_modules/jquery.actual/jquery.actual.min.js',
         'node_modules/d3-jetpack/d3-jetpack.js',
         'node_modules/ng-lodash/build/ng-lodash.min.js',
         'node_modules/angular-bootstrap-slider/slider.js',
