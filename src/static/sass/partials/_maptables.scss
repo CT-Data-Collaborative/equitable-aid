@@ -1,8 +1,11 @@
 /* "Table" data */
-div.state h4,
-div.town h4,
-div.grants h4 {
+div.mapdiv h3, div.mapdivh4,
+div.state h3, div.state h4,
+div.town h3, div.townh4,
+div.grants h3, div.grants h4 {
   margin: 0.5rem 0;
+  padding-top: 2rem;
+  padding-bottom: .5rem;
 }
 div.state p,
 div.town p {
@@ -32,3 +35,4 @@ table.grant-allocation-table {
     }
   }
 }
+

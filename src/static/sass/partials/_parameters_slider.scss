@@ -1,6 +1,36 @@
 .parameters-slider {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  .slider-selection {
+    background: $ctdata-extra-dark-blue;
+  }
+  .slider-handle {
+    background-color: #7a838b;
+    background-image: linear-gradient(to bottom,#7a838b 0,#626970 100%);
+  }
+
   .slider-elem {
-    width: 75%;
+    width: 50%;
     display: inline-block;
+  }
+  div.bounds {
+    display: inline-block;
+    min-width: 5rem;
+
+  }
+  div.bounds:first-of-type {
+    text-align: right;
+    padding-right: .5rem;
+  }
+  div.bounds:last-of-type {
+    padding-left: .5rem;
+  }
+}
+
+@media (min-width: 48em) {
+  .paremeters-slider {
+    .slider-elem {
+      width: 70%;
+    }
   }
 }

@@ -73,12 +73,20 @@
 }
 
 .hero-row {
-    background: $extra-light-grey;
+    background: #7a838b;
     padding-top: 2rem;
     padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    p, h1, h2, h3, h4, h5, li {
+        color: white;
+    }
+    a {
+        color: $ctdata-light-blue;
+    }
 }
 
 .project-logo {
+    padding-bottom: 1.5rem;
     p {
         margin-top: 0;
         margin-bottom:0;
@@ -86,12 +94,29 @@
         padding-bottom: 0;
     }
     .big {
+        margin-left: -.5rem;
+        color: white;
         font-size: 5.5rem;
         font-weight: 300;
+        font-family: Roboto;
     }
     .small {
-        font-size: .85rem;
+        margin-left: -.5rem;
+        color: white;
+        font-size: 1.05rem;
         margin-top: -1rem;
         padding-left: .35rem;
+    }
+}
+
+.settings-section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    p {
+        max-width: 75%;
+        padding-left: 2%;
+    }
+    h4 {
+        padding-bottom: 1rem;
     }
 }

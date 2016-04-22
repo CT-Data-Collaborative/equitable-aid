@@ -1,8 +1,9 @@
 <div class="settings-section">
-    <h4>1. Select the percentage of the prior years' aid to cut.</h4>
-    <p>Over FY14 and FY15, the average total statewide aid allocations was <span style="font-weight: bold">{{ total_aid | bigcurrency }}</span>.</p>
+    <h4>1. Select the percentage of the prior years' aid to cut</h4>
+    <p>Over FY14 and FY15, the average total statewide aid allocations was
+        <span style="font-weight: bold">{{ total_aid | bigcurrency }}</span>. A <span style="font-weight: bold">{{ cutSlider.value/100 | percentage }}</span> cut will result in a savings of <span style="font-weight: bold">{{ total_aid * cutSlider.value / 100 | bigcurrency }}</span>.</p>
     <div class="parameters-slider">
-        <span>0%</span>
+        <div class="bounds">0%</div>
         <span slider
               slider-id="cutSlider"
               ng-model="cutSlider.value"
@@ -14,14 +15,16 @@
               formatter="singleVarFormatterFn(value, 'percent')"
               class="slider-elem"
         ></span>
-        <span>100%</span>
+        <div class="bounds">100%</div>
     </div>
-    <h5>A <span style="font-weight: bold">{{ cutSlider.value/100 | percentage }}</span> cut will result in a savings of <span style="font-weight: bold">{{ total_aid * cutSlider.value / 100 | bigcurrency }}</span>.</h5>
 </div>
 <div class="settings-section">
-    <h4>2. Select the min and max cut % for any given town/city.</h4>
+    <h4>2. Select the min and max cut % for any given town/city</h4>
+    <p>Towns in the minimum category will have <span style="font-weight: bold">{{minmaxSlider.value[0]/100 | percentage }}</span> cut.
+    Towns in the maximum category will have <span style="font-weight: bold">{{minmaxSlider.value[1]/100 | percentage }}</span> cut. All
+    other towns will have a proportional cut.</p>
     <div class="parameters-slider">
-        <span>0%</span>
+        <div class="bounds">0%</div>
         <span slider
               slider-id="rangeSlider"
               ng-model="minmaxSlider.value"
@@ -32,16 +35,25 @@
               formatter="rangeFormatterFn(value, 'percent')"
               class="slider-elem"
         ></span>
-        <span>100%</span>
+        <div class="bounds">100%</div>
     </div>
 </div>
 <div class="settings-section">
-    <h4>3. Select the gap cutoff.</h4>
-    <p>A negative gap indicates a surplus. A positive gap indicates a deficit. The gap cutoff is
-    used to categorize municipalities. Those with gaps less than the cutoff will be assign to the max cut category. Those
-    with gaps more than the cutoff will either be assigned a proportional cut or the minimum cut.</p>
+    <h4>3. Select the gap cutoff</h4>
+    <p>The municipal gap is the difference between a municipalities capacity to raise revenue and its costs. Capacity is
+        determined by multiplying equalized net grand list by the standard mill rate. Costs were identified by the NEPPC
+        using a statistical analysis that identfied five cost factors strongly related to non-school spending levels
+        (unemployment rate, population density, private sector wage index, town mainetenance road mileage, and jobs per
+        capita). Gap is not a reflection of actual spending and revenue, rather it is a measure of the underlying
+        structures in a given municipality. A negative gap indicates a surplus (e.g. more capacity than cost). A
+        positive gap indicates a deficit.</p>
+    <p>The gap cutoff is used to categorize municipalities. Those with gaps less than the cutoff will be assign to
+        the max cut category. Those with gaps more than the cutoff will either be assigned a proportional cut or the
+        minimum cut.</p>
+    <p>Towns and cities with gaps less than <span style="font-weight: bold">{{ gapSlider.value | currency }}</span> will
+        be subject to the maximum % cut. All other towns will have either the minimum or a proportional cut.</p>
     <div class="parameters-slider">
-        <span>${{gapSliderOptions.min}}</span>
+        <div class="bounds">${{gapSliderOptions.min}}</div>
         <span slider
               slider-id="gapSlider"
               ng-model="gapSlider.value"
@@ -52,8 +64,8 @@
               formatter="singleVarFormatterFn(value, 'currency')"
               class="slider-elem"
         ></span>
-        <span>${{gapSliderOptions.max}}</span>
+        <div class="bounds">${{gapSliderOptions.max}}</div>
     </div>
-    <h5>Towns and cities with gaps less than <span style="font-weight: bold">{{ gapSlider.value | currency }}</span> with be subject to the maximum % cut.</h5>
+    <h5></h5>
 </div>
 <hr>

@@ -44,26 +44,27 @@
           <!--</div>-->
           <div class="container-fluid main-internal">
             <div class="row hero-row">
-              <div class="col-md-10 col-md-offset-1">
+              <div class="col-md-7 col-md-offset-1 col-lg-7 col-lg-offset-2">
                 <div class="project-logo">
                   <p class="big">EAC</p>
                   <p class="small">Equitable Aid Calculator</p>
                 </div>
-                <h4>The New England Public Policy Center at the Federal Reserve Bank of Boston developed a framework that distributes reductions in state aid based on underlying local fiscal health. Under this framework, municipalities facing fiscal distress would receive smaller aid cuts compared to municipalities with fiscal surpluses. Therefore it provides a more rational and equitable method of cutting aid than commonly used ad hoc or across-the-board cuts. Fiscal health is determined according a given municipalities "fiscal health".
-                </h4>
-                <h4>What is municipal gap?</h4>
-                <ul>
-                  <li>Difference between a municipalities capacity to raise revenue and cost drivers</li>
-                  <li>Capacity to raise revenue: equalized net grand list * standard mill rate (does not look at actual revenues since they reflect local tax rates and subject to control of local officials).</li>
-                  <li>Costs: statistical analysis identfied five cost factors strongly related to non-school spending levels (unemployment rate, population density, private sector wage index, town mainetenance road mileage, and jobs per capita)</li>
-                  <li>Looks at municipal fiscal health that is outside the direct control of local officials</li>
-                  <li>Structural deficiencies and NOT current situation</li>
-                  <li>NOT a measure of actual spending</li>
-                </ul>
+                <h4>Simulate Connecticut budget cut scenarios and explore the impacts statewide and locally.</h4>
+                <p>The <a href="http://www.bostonfed.org/economic/neppc/index.htm">New England Public Policy Center</a> at the Federal Reserve Bank of Boston has developed a <a href="http://www.bostonfed.org/economic/neppc/wp/2011/neppcwp112.pdf">framework</a> that distributes reductions in state aid based on underlying local fiscal health. Under this framework, a municipalities aid cuts are linked to their fiscal health, providing a more rational and equitable method of cutting aid compared to commonly used ad hoc or across-the-board cuts.
+                </p>
+                <!--<h4>What is municipal gap?</h4>-->
+                <!--<ul>-->
+                  <!--<li>Difference between a municipalities capacity to raise revenue and cost drivers</li>-->
+                  <!--<li>Capacity to raise revenue: equalized net grand list * standard mill rate (does not look at actual revenues since they reflect local tax rates and subject to control of local officials).</li>-->
+                  <!--<li>Costs: statistical analysis identfied five cost factors strongly related to non-school spending levels (unemployment rate, population density, private sector wage index, town mainetenance road mileage, and jobs per capita)</li>-->
+                  <!--<li>Looks at municipal fiscal health that is outside the direct control of local officials</li>-->
+                  <!--<li>Structural deficiencies and NOT current situation</li>-->
+                  <!--<li>NOT a measure of actual spending</li>-->
+                <!--</ul>-->
               </div>
             </div>
             <div class="row">
-              <div class="col-md-10 col-md-offset-1 input">
+              <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 input">
                 <h2>Select Model Parameters</h2>
                 <div ng-include="'partials/percentage.html'"></div>
                 <!--<div ng-show="whichCalc()">-->
@@ -75,7 +76,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-10 col-md-offset-1 output">
+              <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2  output">
                 <h2>Results</h2>
                 <uib-tabset active="0" type="pills">
                   <uib-tab index="0">
@@ -86,7 +87,7 @@
                       <ng-include src="'partials/grantTable.html'"></ng-include>
                     </div>
                     <div class="row">
-                      <div class="mapdiv col-xs-12 col-md-7">
+                      <div class="mapdiv col-xs-12 col-md-6">
                         <h3>Towns and Cities by Category</h3>
                         <map data=simulatedTowns selected-town="selectedTown"></map>
                       </div>
