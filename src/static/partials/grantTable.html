@@ -1,38 +1,30 @@
 <div class="col-xs-12 col-sm-6 state">
     <h3>Connecticut</h3>
     <p>
-        <span>FY 14/15 Average Aid</span>
-        <span>{{ stateTotals["total_aid"] | currency }}</span>
+        <span>FY 14/15 Average Total Aid</span>
+        <span class="value">{{ stateTotals["total_aid"] | currency:"$":0 }}</span>
     </p>
     <p>
         <span>Simulated Aid</span>
-        <span>{{ stateTotals["sim_allocation"] | currency }}</span>
+        <span class="value">{{ stateTotals["sim_allocation"] | currency:"$":0 }}</span>
     </p>
     <p>
         <span>Percent Cut</span>
-        <span>{{ 1 - stateTotals["sim_allocation"] / stateTotals["total_aid"] | percentage:0 }}</span>
+        <span class="value">{{ 1 - stateTotals["sim_allocation"] / stateTotals["total_aid"] | percentage:0 }}</span>
     </p>
 </div>
 <div class="col-xs-12 col-sm-6 town" ng-hide="selectedTown.selected.NAME==''">
     <h3>{{ selectedTown.selected.NAME }}</h3>
     <p>
-        <span>FY 14/15 Average Aid</span>
-        <span>{{ selectedTown.selected.DATA.total_aid | currency }}</span>
+        <span>Average of FY 14/15 Aid</span>
+        <span class="value">{{ selectedTown.selected.DATA.total_aid | currency:"$":0 }}</span>
     </p>
     <p>
-        <span>Even Cut Allocation</span>
-        <span>{{ selectedTown.selected.DATA.even_cut_allocation * selectedTown.selected.DATA.population | currency }}</span>
+        <span>Aid under even-cut scenario ({{ cutSlider.value/100 | percentage }})</span>
+        <span class="value">{{ selectedTown.selected.DATA.even_cut_allocation * selectedTown.selected.DATA.population | currency:"$":0 }}</span>
     </p>
     <p>
-        <span>Simulated Allocation</span>
-        <span>{{ selectedTown.selected.DATA.sim_allocation * selectedTown.selected.DATA.population | currency }}</span>
-    </p>
-    <p>
-        <span>Simulated Percent Cut</span>
-        <span>{{ -selectedTown.selected.DATA.per_change | percentage }}</span>
-    </p>
-    <p>
-        <span>Category</span>
-        <span>{{ selectedTown.selected.DATA.category }}</span>
+        <span>Aid under simulation scenario ({{ -selectedTown.selected.DATA.per_change | percentage }})</span>
+        <span class="value">{{ selectedTown.selected.DATA.sim_allocation * selectedTown.selected.DATA.population | currency:"$":0 }}</span>
     </p>
 </div>

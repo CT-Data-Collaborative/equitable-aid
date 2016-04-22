@@ -93,9 +93,7 @@ angular.module('app')
         mapContainer = container.append("div")
             .attr("class", function() {
                 return [
-                    "map-container",
-                    "col-sm-8",
-                    "col-xs-12"
+                    "map-container"
                 ].join(" ");
             });
 
@@ -107,7 +105,7 @@ angular.module('app')
 
         // draw Map
         var container_width = $(container.node()).actual('width');
-        var width = container_width;
+        var width = container_width * 1.25;
 
         // Calculate height based on width
         var height = container_width * (0.5);
@@ -162,7 +160,7 @@ angular.module('app')
         var hscale = (bounds[1][0] - bounds[0][0]) / width;
         var vscale = (bounds[1][1] - bounds[0][1]) / height;
         var scale = 1 / Math.max(hscale, vscale);
-        var translate = [(width - scale * (bounds[1][0] + bounds[0][0])) / 2, (height - scale * (bounds[1][1] + bounds[0][1])) / 2];
+        var translate = [(width/1.5 - scale * (bounds[1][0] + bounds[0][0])) / 2, (height - scale * (bounds[1][1] + bounds[0][1])) / 2];
 
         projection.scale(scale).translate(translate);
 
@@ -171,9 +169,9 @@ angular.module('app')
             .range(d3.range(0,4).map(function(c) { return "color_"+c; }));
 
         // draw legend
-        legend.append("h5")
-            .classed("legend-title", true)
-            .text("Category");
+        //legend.append("h5")
+        //    .classed("legend-title", true)
+        //    .text("Category");
 
         legend.selectAll("div.legend-entry")
             .data(["min", "proportional", "max"])
@@ -194,7 +192,7 @@ angular.module('app')
 
                     entry.append("span")
                         .classed("title", true)
-                        .text(entryData);
+                        .append("p").text(entryData);
                 })
 
         var places = map.selectAll("g.mapgroup")

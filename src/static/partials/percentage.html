@@ -1,52 +1,59 @@
-<p>Select the % decrease from FY15 aid level:</p>
-<div class="parameters-slider">
-    <span>0%</span>
-    <span slider
-          slider-id="cutSlider"
-          ng-model="cutSlider.value"
-          value="cutSliderOptions.value"
-          min="cutSliderOptions.min"
-          max="cutSliderOptions.max"
-          range="cutSliderOptions.range"
-          formatter="singleVarFormatterFn(value, 'percent')"
-          class="slider-elem"
-    ></span>
-    <span>100%</span>
+<div class="settings-section">
+    <h4>1. Select the percentage of the prior years' aid to cut.</h4>
+    <p>Over FY14 and FY15, the average total statewide aid allocations was <span style="font-weight: bold">{{ total_aid | bigcurrency }}</span>.</p>
+    <div class="parameters-slider">
+        <span>0%</span>
+        <span slider
+              slider-id="cutSlider"
+              ng-model="cutSlider.value"
+              value="cutSliderOptions.value"
+              min="cutSliderOptions.min"
+              max="cutSliderOptions.max"
+              step="cutSliderOptions.step"
+              range="cutSliderOptions.range"
+              formatter="singleVarFormatterFn(value, 'percent')"
+              class="slider-elem"
+        ></span>
+        <span>100%</span>
+    </div>
+    <h5>A <span style="font-weight: bold">{{ cutSlider.value/100 | percentage }}</span> cut will result in a savings of <span style="font-weight: bold">{{ total_aid * cutSlider.value / 100 | bigcurrency }}</span>.</h5>
 </div>
-<br><br>
-
-<p>Select the gap cutoff. A negative gap indicates a surplus. A positive gap indicates a deficit. The gap cutoff is
-used to categorize municipalities. Those with gaps less than the cutoff will be assign to the max cut category. Those
-with gaps more than the cutoff will either be assigned a proportional cut or the minimum cut.</p>
-<div class="parameters-slider">
-    <span>${{gapSliderOptions.min}}</span>
-    <span slider
-          slider-id="gapSlider"
-          ng-model="gapSlider.value"
-          value="gapSliderOptions.value"
-          min="gapSliderOptions.min"
-          max="gapSliderOptions.max"
-          range="gapSliderOptions.range"
-          formatter="singleVarFormatterFn(value, 'percent')"
-          class="slider-elem"
-    ></span>
-    <span>${{gapSliderOptions.max}}</span>
+<div class="settings-section">
+    <h4>2. Select the min and max cut % for any given town/city.</h4>
+    <div class="parameters-slider">
+        <span>0%</span>
+        <span slider
+              slider-id="rangeSlider"
+              ng-model="minmaxSlider.value"
+              value="minmaxSliderOptions.value"
+              min="minmaxSliderOptions.min"
+              max="minmaxSliderOptions.max"
+              range="minmaxSliderOptions.range"
+              formatter="rangeFormatterFn(value, 'percent')"
+              class="slider-elem"
+        ></span>
+        <span>100%</span>
+    </div>
 </div>
-<br><br>
-
-<p>Select the min and max cut as % of FY15 aid level:</p>
-<div class="parameters-slider">
-    <span>0%</span>
-    <span slider
-          slider-id="rangeSlider"
-          ng-model="minmaxSlider.value"
-          value="minmaxSliderOptions.value"
-          min="minmaxSliderOptions.min"
-          max="minmaxSliderOptions.max"
-          range="minmaxSliderOptions.range"
-          formatter="rangeFormatterFn(value, 'percent')"
-          class="slider-elem"
-    ></span>
-    <span>100%</span>
+<div class="settings-section">
+    <h4>3. Select the gap cutoff.</h4>
+    <p>A negative gap indicates a surplus. A positive gap indicates a deficit. The gap cutoff is
+    used to categorize municipalities. Those with gaps less than the cutoff will be assign to the max cut category. Those
+    with gaps more than the cutoff will either be assigned a proportional cut or the minimum cut.</p>
+    <div class="parameters-slider">
+        <span>${{gapSliderOptions.min}}</span>
+        <span slider
+              slider-id="gapSlider"
+              ng-model="gapSlider.value"
+              value="gapSliderOptions.value"
+              min="gapSliderOptions.min"
+              max="gapSliderOptions.max"
+              range="gapSliderOptions.range"
+              formatter="singleVarFormatterFn(value, 'currency')"
+              class="slider-elem"
+        ></span>
+        <span>${{gapSliderOptions.max}}</span>
+    </div>
+    <h5>Towns and cities with gaps less than <span style="font-weight: bold">{{ gapSlider.value | currency }}</span> with be subject to the maximum % cut.</h5>
 </div>
-<br><br>
+<hr>

@@ -35,16 +35,20 @@
       <ng-include src="'partials/header.html'"></ng-include>
       <div id="main">
         <div id="page-content-wrapper" ng-controller="DataVizController">
-          <div class="top-row">
-            <div class="arrow_box">
-              <div class="top-row-title">
-                <h1><a href="#">CTData Budget Equity Simulator</a></h1>
-              </div>
-            </div>
-          </div>
+          <!--<div class="top-row">-->
+            <!--<div class="arrow_box">-->
+              <!--<div class="top-row-title">-->
+                <!--<h1><a href="#">CTData Budget Equity Simulator</a></h1>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
           <div class="container-fluid main-internal">
-            <div class="row">
+            <div class="row hero-row">
               <div class="col-md-10 col-md-offset-1">
+                <div class="project-logo">
+                  <p class="big">EAC</p>
+                  <p class="small">Equitable Aid Calculator</p>
+                </div>
                 <h4>The New England Public Policy Center at the Federal Reserve Bank of Boston developed a framework that distributes reductions in state aid based on underlying local fiscal health. Under this framework, municipalities facing fiscal distress would receive smaller aid cuts compared to municipalities with fiscal surpluses. Therefore it provides a more rational and equitable method of cutting aid than commonly used ad hoc or across-the-board cuts. Fiscal health is determined according a given municipalities "fiscal health".
                 </h4>
                 <h4>What is municipal gap?</h4>
@@ -56,7 +60,6 @@
                   <li>Structural deficiencies and NOT current situation</li>
                   <li>NOT a measure of actual spending</li>
                 </ul>
-                <hr>
               </div>
             </div>
             <div class="row">
@@ -83,7 +86,8 @@
                       <ng-include src="'partials/grantTable.html'"></ng-include>
                     </div>
                     <div class="row">
-                      <div class="mapdiv col-xs-12 col-md-6" >
+                      <div class="mapdiv col-xs-12 col-md-7">
+                        <h3>Towns and Cities by Category</h3>
                         <map data=simulatedTowns selected-town="selectedTown"></map>
                       </div>
                       <ng-include src="'partials/grantallocation.html'"></ng-include>

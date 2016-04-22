@@ -27,13 +27,10 @@ angular.module('app')
                 } else {
                     scope.$apply(scope.selectedTown.selected = d.properties);
                 }
-
-                scope.$parent.$digest();
             });
             scope.$watch('data', function(data) {
                 scope.render();
             }, true);
-
             angular.element($window).bind('resize', scope.render);
         }
     }

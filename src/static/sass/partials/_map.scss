@@ -10,7 +10,9 @@ map {
 
     /* Legend */
     div.legend-container {
-        margin-left: 2rem;
+        //margin-left: 2rem;
+        float: right;
+        padding-right: 4rem;
 
         div.legend-entry {
             cursor: default;
@@ -20,7 +22,15 @@ map {
             span.title {
                 margin-left: 0.25rem;
             }
-            
+
+            span.title {
+                p {
+                    display: inline;
+                    margin-bottom: 0;
+                    text-transform: capitalize;
+                }
+            }
+
             span.color {
                 display: inline-block;
                 height: 1rem;
@@ -102,24 +112,3 @@ map {
     margin-left: -14px;
 }
 /* END Tooltip */
-
-/* "Table" data */
-div.state h4,
-div.town h4,
-div.grants h4 {
-    margin: 0.5rem 0;
-}
-div.state p,
-div.town p {
-    margin: 0.25rem 0;
-}
-div.state p span:first-child,
-div.town p span:first-child {
-        font-weight: $heavy;
-        padding-right: 0.3rem;
-}
-div.state p span:first-child:after,
-div.town p span:first-child:after {
-        content: "\003A";
-}
-/* END "Table" data */

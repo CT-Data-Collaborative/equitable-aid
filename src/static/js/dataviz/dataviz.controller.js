@@ -103,8 +103,8 @@ angular.module('app')
         $scope.cutSliderOptions = {
             min: 0,
             max: 100,
-            step: 1,
-            precision: 1,
+            step: .25,
+            precision: .25,
             range: false,
             value: 20
         };
