@@ -1,3 +1,22 @@
+div.card.paremeters {
+  background-color: $extra-light-grey;
+}
+
+.card-header {
+  background-color: $ctdata-extra-dark-blue;
+  color: white;
+}
+.settings-section {
+  p {
+    max-width: 75%;
+    padding-left: 2%;
+  }
+  h4 {
+    padding-bottom: 1rem;
+  }
+}
+
+
 .parameters-slider {
   padding-top: 1rem;
   padding-bottom: 1rem;

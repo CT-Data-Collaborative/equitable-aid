@@ -44,7 +44,7 @@
           <!--</div>-->
           <div class="container-fluid main-internal">
             <div class="row hero-row">
-              <div class="col-md-7 col-md-offset-1 col-lg-7 col-lg-offset-2">
+              <div class="col-sm-11 col-md-7 col-md-offset-1 col-lg-7 col-lg-offset-1">
                 <div class="project-logo">
                   <p class="big">EAC</p>
                   <p class="small">Equitable Aid Calculator</p>
@@ -64,8 +64,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 input">
-                <h2>Select Model Parameters</h2>
+              <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-4 col-lg-offset-0 input">
                 <div ng-include="'partials/percentage.html'"></div>
                 <!--<div ng-show="whichCalc()">-->
                   <!--<div ng-include="'partials/percentage.html'"></div>-->
@@ -74,39 +73,39 @@
                   <!--<div ng-include="'partials/dollar.html'"></div>-->
                 <!--</div>-->
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2  output">
-                <h2>Results</h2>
-                <uib-tabset active="0" type="pills">
-                  <uib-tab index="0">
-                    <uib-tab-heading>
-                      Map <i class="fa fa-map-o"></i>
-                    </uib-tab-heading>
-                    <div class="row">
-                      <ng-include src="'partials/grantTable.html'"></ng-include>
-                    </div>
-                    <div class="row">
-                      <div class="mapdiv col-xs-12 col-md-6">
-                        <h3>Towns and Cities by Category</h3>
-                        <map data=simulatedTowns selected-town="selectedTown"></map>
+              <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-0  output">
+                <div class="card card-block">
+                  <!--<h2>Results</h2>-->
+                  <uib-tabset active="0" type="pills">
+                    <uib-tab index="0">
+                      <uib-tab-heading>
+                        Map <i class="fa fa-map-o"></i>
+                      </uib-tab-heading>
+                      <div class="row">
+                        <ng-include src="'partials/grantTable.html'"></ng-include>
                       </div>
-                      <ng-include src="'partials/grantallocation.html'"></ng-include>
-                    </div>
-                  </uib-tab>
-                  <uib-tab index="1">
-                    <uib-tab-heading>
-                      Table <i class="fa fa-table"></i>
-                    </uib-tab-heading>
-                    <ng-include src="'partials/table.html'"></ng-include>
-                  </uib-tab>
-                  <uib-tab index="2">
-                    <uib-tab-heading>
-                      Scatterplot <i class="fa fa-bar-chart"></i>
-                    </uib-tab-heading>
-                    <scatterplot data=simulatedTowns />
-                  </uib-tab>
-                </uib-tabset>
+                      <div class="row">
+                        <div class="mapdiv col-xs-12 col-md-6">
+                          <h3>Towns and Cities by Category</h3>
+                          <map data=simulatedTowns selected-town="selectedTown"></map>
+                        </div>
+                        <ng-include src="'partials/grantallocation.html'"></ng-include>
+                      </div>
+                    </uib-tab>
+                    <uib-tab index="1">
+                      <uib-tab-heading>
+                        Table <i class="fa fa-table"></i>
+                      </uib-tab-heading>
+                      <ng-include src="'partials/table.html'"></ng-include>
+                    </uib-tab>
+                    <uib-tab index="2">
+                      <uib-tab-heading>
+                        Scatterplot <i class="fa fa-bar-chart"></i>
+                      </uib-tab-heading>
+                      <scatterplot data=simulatedTowns />
+                    </uib-tab>
+                  </uib-tabset>
+                </div>
               </div>
             </div>
           </div>

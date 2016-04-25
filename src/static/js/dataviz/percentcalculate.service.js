@@ -52,6 +52,7 @@ angular.module('app')
                 return true;
             }
         }
+
         function percentile(arr, p) {
             if (arr.length === 0) return 0;
             if (typeof p !== 'number') throw new TypeError('p must be a number');
@@ -69,6 +70,11 @@ angular.module('app')
 
 
         function categorize(town, baseline, max_cut, min_cut, r2) {
+            if (town.town == 'Hartford') {
+                console.log(town);
+                console.log(r2);
+                console.log(baseline);
+            }
             if (typeof r2 == 'undefined') {
                 if (town.gap <= baseline) {
                     return 'max';
@@ -138,7 +144,7 @@ angular.module('app')
             data.forEach(function(e) {
                 e.category = categorize(e, baseline, max_cut, min_cut, new_r2);
             });
-            var new_r2 = calc_r(data, total_allocation, max_cut, min_cut, baseline);
+            //var new_r2 = calc_r(data, total_allocation, max_cut, min_cut, baseline);
             // round 4
             return new_r2;
         }

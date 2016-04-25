@@ -85,11 +85,12 @@
     }
 }
 
-//
-//.output {
-//    max-height: 75vh;
-//    overflow: scroll;
-//}
+
+.output {
+    .card-block {
+        padding: .75rem;
+    }
+}
 
 /* Pill nav styling */
 li.uib-tab.nav-item {
