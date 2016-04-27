@@ -84,6 +84,43 @@ angular.module('app')
         // End data load
         // -----------------------------------------
 
+        // -----------------------------------------
+        // Sort Data
+        // -----------------------------------------
+        $scope.sortCol = "town";
+        $scope.sortDesc = false;
+        $scope.sortIcons = {
+            true : "fa-sort-desc",
+            false : "fa-sort-asc"
+        };
+        $scope.toggleSortDesc = function(sortCol) {
+            if ($scope.sortCol === sortCol) {
+                $scope.sortDesc = !$scope.sortDesc;
+            } else {
+                $scope.sortCol = sortCol;
+                $scope.sortDesc = false;
+            }
+        }
+        // -----------------------------------------
+        // End Sort Data
+        // -----------------------------------------
+
+        // -----------------------------------------
+        // Colorize Gap (surplus/deficit)
+        // -----------------------------------------
+        $scope.colorGap = function(gap) {
+            // NOTE: "negative" gap is a surplus
+            if (gap < 0) {
+                return "green"
+            } else if (gap > 0) {
+                return "red"
+            }
+
+            return;
+        }
+        // -----------------------------------------
+        // End Colorize Gap (surplus/deficit)
+        // -----------------------------------------
 
         // Slider configs
 

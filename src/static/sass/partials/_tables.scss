@@ -27,6 +27,10 @@ table.ctdata-table {
         border-left: 5px solid #fff;
     }
 
+    .sortable {
+        cursor: pointer;
+    }
+
     .col-name.town {
         text-align: left;
     }
@@ -38,5 +42,14 @@ table.ctdata-table {
     .name, .col-name, .value {
         padding-right: .5rem;
         padding-left: .5rem;
+    }
+
+    .gap-color {
+        &.red {
+            color: $red;
+        }
+        &.green {
+            color: $green;
+        }
     }
 }
