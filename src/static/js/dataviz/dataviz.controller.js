@@ -4,6 +4,10 @@ angular.module('app')
     function($scope, $http, $log, lodash, townData, dataProcessor, percalculate){
         var lo = lodash;
 
+
+        $scope.gaptooltiptext = "The municipal gap is the difference between a municipalities capacity to raise revenue and its costs. Capacity is determined by multiplying equalized net grand list by the standard mill rate. Gap is not a reflection of actual spending and revenue, rather it is a measure of the underlying structures in a given municipality.";
+
+
         // Need to nest actual town data object one level deeper than expected
         // to handle directive scoping issues. See comments in directive for more.
         $scope.selectedTown = {selected: {DATA: {}, NAME: '', FIPS: ''}};

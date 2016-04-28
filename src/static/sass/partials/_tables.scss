@@ -85,6 +85,7 @@ div.ctdata-list-table {
             display: inline-block;
             white-space: normal;
             word-wrap: break-on-word;
+            word-break: normal;
 
             &.text-left {
                 text-align: left;
@@ -100,6 +101,8 @@ div.ctdata-list-table {
         div.thead {
             ul {
                 background: $ctdata-extra-light-blue;
+                width: 100%;
+                max-width: 100%;
             }
 
             ul li {
@@ -116,6 +119,8 @@ div.ctdata-list-table {
 
             ul {
                 border-bottom: 1px solid $extra-light-grey;
+                width: 100%;
+                max-width: 100%;
             }
 
             /* Colors, highlight */
@@ -140,35 +145,47 @@ div.ctdata-list-table {
         div.tfoot {
             display: absolute;
             bottom: 0;
+            margin-top: 1rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid $extra-dark-grey;
         }
 
         /* Column width definitions */
         li.col-town {
-            width: 9rem;
+            //width: 9rem;
+            width: 10%;
         }
         li.col-population {
-            width: 5rem;
+            //width: 5rem;
+            width: 8%;
         }
         li.col-gap {
-            width: 5rem;
+            //width: 5rem;
+            width: 8%;
         }
         li.col-allocation {
-            width: 7rem;
+            //width: 7rem;
+            width: 10%;
         }
         li.col-even-cut {
-            width: 7rem;
+            //width: 7rem;
+            width: 9%;
         }
         li.col-sim-allocation {
-            width: 7rem;
+            //width: 7rem;
+            width: 9%;
         }
         li.col-percent-change {
-            width: 5rem;
+            //width: 5rem;
+            width: 7%;
         }
         li.col-allocation-diff {
-            width: 7rem;
+            //width: 7rem;
+            width: 14%;
         }
         li.col-category {
-            width: 7rem;
+            //width: 7rem;
+            width: 10%;
         }
 
         /* NPR-esque mobile reflow */

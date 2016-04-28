@@ -11,6 +11,7 @@
     <!--[if lt IE 9]>
     <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <link rel="stylesheet" href="css/tether.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
     <link rel="stylesheet" href="css/ui-bootstrap-csp.css">
     <link rel="stylesheet" href="css/bootstrap-slider.min.css">
@@ -35,13 +36,6 @@
       <ng-include src="'partials/header.html'"></ng-include>
       <div id="main">
         <div id="page-content-wrapper" ng-controller="DataVizController">
-          <!--<div class="top-row">-->
-            <!--<div class="arrow_box">-->
-              <!--<div class="top-row-title">-->
-                <!--<h1><a href="#">CTData Budget Equity Simulator</a></h1>-->
-              <!--</div>-->
-            <!--</div>-->
-          <!--</div>-->
           <div class="container-fluid main-internal">
             <div class="row hero-row">
               <div class="col-sm-11 col-md-7 col-md-offset-1 col-lg-7 col-lg-offset-1">
@@ -50,28 +44,14 @@
                   <p class="small">Equitable Aid Calculator</p>
                 </div>
                 <h4>Simulate Connecticut budget cut scenarios and explore the impacts statewide and locally.</h4>
-                <p>The <a href="http://www.bostonfed.org/economic/neppc/index.htm">New England Public Policy Center</a> at the Federal Reserve Bank of Boston has developed a <a href="http://www.bostonfed.org/economic/neppc/wp/2011/neppcwp112.pdf">framework</a> that distributes reductions in state aid based on underlying local fiscal health. Under this framework, a municipalities aid cuts are linked to their fiscal health, providing a more rational and equitable method of cutting aid compared to commonly used ad hoc or across-the-board cuts.
+                <p>The <a href="http://www.bostonfed.org/economic/neppc/index.htm">New England Public Policy Center</a> at the Federal Reserve Bank of Boston has developed a <a uib-tooltip="In Massachusetts, the state allocates general municipal aid with a stated equalization goal. However, in Connecticut most nonschool grants do not have a direct equalization goal." href="http://www.bostonfed.org/economic/neppc/wp/2011/neppcwp112.pdf">framework</a> that distributes reductions in state aid based on underlying local fiscal health. Under this framework, a municipalities aid cuts are linked to their fiscal health, providing a more rational and equitable method of cutting aid compared to commonly used ad hoc or across-the-board cuts.
                 </p>
-                <!--<h4>What is municipal gap?</h4>-->
-                <!--<ul>-->
-                  <!--<li>Difference between a municipalities capacity to raise revenue and cost drivers</li>-->
-                  <!--<li>Capacity to raise revenue: equalized net grand list * standard mill rate (does not look at actual revenues since they reflect local tax rates and subject to control of local officials).</li>-->
-                  <!--<li>Costs: statistical analysis identfied five cost factors strongly related to non-school spending levels (unemployment rate, population density, private sector wage index, town mainetenance road mileage, and jobs per capita)</li>-->
-                  <!--<li>Looks at municipal fiscal health that is outside the direct control of local officials</li>-->
-                  <!--<li>Structural deficiencies and NOT current situation</li>-->
-                  <!--<li>NOT a measure of actual spending</li>-->
-                <!--</ul>-->
+                <p>The CT Data Collaborative does not endorse cutting nonschool municipal aid. CTData endorses policy options based on research that seek solutions through an equitable approach.</p>
               </div>
             </div>
             <div class="row">
               <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-4 col-lg-offset-0 input">
                 <div ng-include="'partials/percentage.html'"></div>
-                <!--<div ng-show="whichCalc()">-->
-                  <!--<div ng-include="'partials/percentage.html'"></div>-->
-                <!--</div ng-show>-->
-                <!--<div ng-hide="whichCalc()">-->
-                  <!--<div ng-include="'partials/dollar.html'"></div>-->
-                <!--</div>-->
               </div>
               <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-0  output">
                 <div class="card card-block">
@@ -113,9 +93,13 @@
       </div>
     </div>
     <ng-include src="'partials/footer.html'"></ng-include>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/libs/tether.min.js"></script>
+    <script src="js/libs/jquery.min.js"></script>
     <!-- jQuery plugin - Actual -->
     <script src="js/libs/jquery.actual.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+    <script>$(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })</script>
   </body>
 </html>

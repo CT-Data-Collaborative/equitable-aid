@@ -8,7 +8,7 @@
                     <i ng-if="sortCol=='town'" class="fa" ng-class="sortIcons[sortDesc]"></i>
                 </li>
                 <li class="col-population text-right" ng-click="toggleSortDesc('population')">
-                    Population
+                    Pop.
                     <i ng-if="sortCol=='population'" class="fa" ng-class="sortIcons[sortDesc]"></i>
                 </li>
                 <li class="col-gap text-right" ng-click="toggleSortDesc('gap')">
@@ -16,29 +16,29 @@
                     <i ng-if="sortCol=='gap'" class="fa" ng-class="sortIcons[sortDesc]"></i>
                 </li>
                 <li class="col-allocation text-right" ng-click="toggleSortDesc('total_aid')">
-                    FY '14-'15 Avg. Aid*
+                    *FY '14-'15 Avg. Aid
                     <i ng-if="sortCol=='total_aid'" class="fa" ng-class="sortIcons[sortDesc]"></i>
                 </li>
                 <li class="col-even-cut text-right" ng-click="toggleSortDesc('even_cut_allocation_total')">
-                    Even-cut Aid*
+                    *Even-cut Aid
                     <i ng-if="sortCol=='even_cut_allocation_total'" class="fa" ng-class="sortIcons[sortDesc]"></i>
                 </li>
                 <li class="col-sim-allocation text-right" ng-click="toggleSortDesc('sim_allocation_total')">
-                    Simulated Aid*
+                    *Simulated Aid
                     <i ng-if="sortCol=='sim_allocation_total'" class="fa" ng-class="sortIcons[sortDesc]"></i>
                 </li>
                 <li class="col-percent-change text-right" ng-click="toggleSortDesc('per_change')">
-                    Sim. % Change
+                    &#8224; Sim. % Change
                     <i ng-if="sortCol=='per_change'" class="fa" ng-class="sortIcons[sortDesc]"></i>
                 </li>
                 <li class="col-allocation-diff text-right" ng-click="toggleSortDesc('sim_allocation_difference_total')">
                     Sim. Aid Change (tot.)
                     <i ng-if="sortCol=='sim_allocation_difference_total'" class="fa" ng-class="sortIcons[sortDesc]"></i>
                 </li>
-                <li class="col-category text-right" ng-click="toggleSortDesc('category')">
-                    Category
-                    <i ng-if="sortCol=='category'" class="fa" ng-class="sortIcons[sortDesc]"></i>
-                </li>
+                <!--<li class="col-category text-right" ng-click="toggleSortDesc('category')">-->
+                    <!--Category-->
+                    <!--<i ng-if="sortCol=='category'" class="fa" ng-class="sortIcons[sortDesc]"></i>-->
+                <!--</li>-->
             </ul>
         </div>
         <div class="tbody">
@@ -61,15 +61,15 @@
                     {{town.total_aid | bigcurrency}}
                 </li>
                 <li class="col-even-cut text-right">
-                    <span class="reflow-label">Even-cut Aid *</span>
+                    <span class="reflow-label">* Even-cut Aid</span>
                     {{town.even_cut_allocation_total | bigcurrency}}
                 </li>
                 <li class="col-sim-allocation text-right">
-                    <span class="reflow-label">Simulated Aid *</span>
+                    <span class="reflow-label">* Simulated Aid</span>
                     {{town.sim_allocation_total | bigcurrency}}
                 </li>
                 <li class="col-percent-change text-right">
-                    <span class="reflow-label">Sim. % Change</span>
+                    <span class="reflow-label">&#8224; Sim. % Change</span>
                     <span ng-if="town.category=='proportional'">
                         {{town.per_change | percentage:1}}
                     </span>
@@ -81,15 +81,17 @@
                     <span class="reflow-label">Sim. Aid Change (tot.)</span>
                     {{town.sim_allocation_difference_total | currency:"$":0}}
                 </li>
-                <li class="col-category text-right">
-                    <span class="reflow-label">Category</span>
-                    {{town.category}}
-                </li>
+                <!--<li class="col-category text-right">-->
+                    <!--<span class="reflow-label">Category</span>-->
+                    <!--{{town.category}}-->
+                <!--</li>-->
             </ul>
         </div>
         <div class="tfoot">
             <!--  -->
-            <span class="footnote">* &mdash; Values rounded to 4 digits of precison</span>
+            <span class="footnote">* &mdash; Values rounded, </span>
+            <span class="footnote">&#8224; &mdash; Min Change: {{minmaxSlider.value[0]/100 | percentage }}; </span>
+            <span class="footnote">Max Change: {{minmaxSlider.value[1]/100 | percentage }}</span>
         </div>
     </div>
 </div>

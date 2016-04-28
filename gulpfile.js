@@ -17,14 +17,17 @@ gulp.task('js_dependencies', function() {
         'node_modules/d3-jetpack/d3-jetpack.js',
         'node_modules/ng-lodash/build/ng-lodash.min.js',
         'node_modules/angular-bootstrap-slider/slider.js',
-        'node_modules/bootstrap-slider/dist/bootstrap-slider.min.js'
+        'node_modules/bootstrap-slider/dist/bootstrap-slider.min.js',
+        'node_modules/tether/dist/js/tether.min.js',
+        'node_modules/jquery/dist/jquery.min.js'
     ]).pipe(gulp.dest('dist/js/libs'));
 });
 
 gulp.task('css_dependencies', function() {
    gulp.src([
        'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css',
-       'node_modules/bootstrap-slider/dist/css/bootstrap-slider.min.css'
+       'node_modules/bootstrap-slider/dist/css/bootstrap-slider.min.css',
+       'node_modules/tether/dist/css/tether.min.css'
    ]).pipe(gulp.dest('dist/css'));
 });
 

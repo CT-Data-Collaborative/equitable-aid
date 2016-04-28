@@ -87,6 +87,8 @@
 
 
 .output {
+    max-height: 75vh;
+    overflow: scroll;
     .card-block {
         padding: .75rem;
     }

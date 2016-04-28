@@ -48,16 +48,7 @@
             </div>
         </div>
         <div class="settings-section">
-            <h5>3. Select the gap cutoff</h5>
-            <!--<p>The municipal gap is the difference between a municipalities capacity to raise revenue and its costs. Capacity is-->
-            <!--determined by multiplying equalized net grand list by the standard mill rate. Costs were identified by the NEPPC-->
-            <!--using a statistical analysis that identfied five cost factors strongly related to non-school spending levels-->
-            <!--(unemployment rate, population density, private sector wage index, town mainetenance road mileage, and jobs per-->
-            <!--capita). Gap is not a reflection of actual spending and revenue, rather it is a measure of the underlying-->
-            <!--structures in a given municipality.</p>-->
-            <!--<p>The gap cutoff is used to categorize municipalities. Those with gaps less than the cutoff will be assign to-->
-            <!--the max cut category. Those with gaps more than the cutoff will either be assigned a proportional cut or the-->
-            <!--minimum cut.</p>-->
+            <h5>3. Select the <a href="" uib-tooltip="{{ gaptooltiptext }}">gap cutoff</a></h5>
             <p>Towns and cities with gaps less than <span
                     style="font-weight: bold">{{ gapSlider.value | currency }}</span> will
                 be subject to the maximum % cut. All other towns will have either the minimum or a proportional cut. A
