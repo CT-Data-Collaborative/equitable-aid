@@ -16,15 +16,15 @@
                     <i ng-if="sortCol=='gap'" class="fa" ng-class="sortIcons[sortDesc]"></i>
                 </li>
                 <li class="col-allocation text-right" ng-click="toggleSortDesc('total_aid')">
-                    FY '14-'15 Avg. Aid
+                    FY '14-'15 Avg. Aid*
                     <i ng-if="sortCol=='total_aid'" class="fa" ng-class="sortIcons[sortDesc]"></i>
                 </li>
                 <li class="col-even-cut text-right" ng-click="toggleSortDesc('even_cut_allocation_total')">
-                    Even-cut Aid
+                    Even-cut Aid*
                     <i ng-if="sortCol=='even_cut_allocation_total'" class="fa" ng-class="sortIcons[sortDesc]"></i>
                 </li>
                 <li class="col-sim-allocation text-right" ng-click="toggleSortDesc('sim_allocation_total')">
-                    Simulated Aid
+                    Simulated Aid*
                     <i ng-if="sortCol=='sim_allocation_total'" class="fa" ng-class="sortIcons[sortDesc]"></i>
                 </li>
                 <li class="col-percent-change text-right" ng-click="toggleSortDesc('per_change')">
@@ -57,15 +57,15 @@
                     {{town.gap | currency:"$":0}}
                 </li>
                 <li class="col-allocation text-right">
-                    <span class="reflow-label">FY '14-'15 Avg. Aid</span>
+                    <span class="reflow-label">FY '14-'15 Avg. Aid *</span>
                     {{town.total_aid | bigcurrency}}
                 </li>
                 <li class="col-even-cut text-right">
-                    <span class="reflow-label">Even-cut Aid</span>
+                    <span class="reflow-label">Even-cut Aid *</span>
                     {{town.even_cut_allocation_total | bigcurrency}}
                 </li>
                 <li class="col-sim-allocation text-right">
-                    <span class="reflow-label">Simulated Aid</span>
+                    <span class="reflow-label">Simulated Aid *</span>
                     {{town.sim_allocation_total | bigcurrency}}
                 </li>
                 <li class="col-percent-change text-right">
@@ -89,6 +89,7 @@
         </div>
         <div class="tfoot">
             <!--  -->
+            <span class="footnote">* &mdash; Values rounded to 4 digits of precison</span>
         </div>
     </div>
 </div>
