@@ -76,11 +76,6 @@ angular.module('app')
 
 
         function categorize(town, baseline, max_cut, min_cut, r2) {
-            if (town.town == 'Hartford') {
-                console.log(town);
-                console.log(r2);
-                console.log(baseline);
-            }
             if (typeof r2 == 'undefined') {
                 if (town.gap <= baseline) {
                     return 'max';
