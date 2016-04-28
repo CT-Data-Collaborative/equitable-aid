@@ -1,0 +1,58 @@
+<div class="ctdata-table-container">
+    <table class="ctdata-table ctdata-table-wide">
+        <thead>
+            <tr>
+                <th class="col-name sortable town" ng-click="toggleSortDesc('town')">
+                    Town
+                    <i ng-if="sortCol=='town'" class="fa" ng-class="sortIcons[sortDesc]"></i>
+                </th>
+                <th class="col-name sortable" ng-click="toggleSortDesc('population')">
+                    Population
+                    <i ng-if="sortCol=='population'" class="fa" ng-class="sortIcons[sortDesc]"></i>
+                </th>
+                <th class="col-name sortable" ng-click="toggleSortDesc('gap')">
+                    Surplus/Deficit
+                    <i ng-if="sortCol=='gap'" class="fa" ng-class="sortIcons[sortDesc]"></i>
+                </th>
+                <th class="col-name sortable" ng-click="toggleSortDesc('allocation')">
+                    FY '14-'15 Avg. Aid
+                    <i ng-if="sortCol=='allocation'" class="fa" ng-class="sortIcons[sortDesc]"></i>
+                </th>
+                <th class="col-name sortable" ng-click="toggleSortDesc('even_cut_allocation')">
+                    Even-cut Aid
+                    <i ng-if="sortCol=='even_cut_allocation'" class="fa" ng-class="sortIcons[sortDesc]"></i>
+                </th>
+                <th class="col-name sortable" ng-click="toggleSortDesc('sim_allocation')">
+                    Simulated Aid
+                    <i ng-if="sortCol=='sim_allocation'" class="fa" ng-class="sortIcons[sortDesc]"></i>
+                </th>
+                <th class="col-name sortable" ng-click="toggleSortDesc('per_change')">
+                    Sim. % Change
+                    <i ng-if="sortCol=='per_change'" class="fa" ng-class="sortIcons[sortDesc]"></i>
+                </th>
+                <th class="col-name sortable" ng-click="toggleSortDesc('sim_allocation_difference_total')">
+                    Sim. Aid Change (tot.)
+                    <i ng-if="sortCol=='sim_allocation_difference_total'" class="fa" ng-class="sortIcons[sortDesc]"></i>
+                </th>
+                <th class="col-name sortable" ng-click="toggleSortDesc('category')">
+                    Category
+                    <i ng-if="sortCol=='category'" class="fa" ng-class="sortIcons[sortDesc]"></i>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="town in simulatedTowns | orderBy:sortCol:sortDesc">
+                <td class="name">{{town.town}}</td>
+                <td class="value">{{town.population | number}}</td>
+                <td class="value gap-color" ng-class="colorGap(town.gap)">{{town.gap | currency:"$":0}}</td>
+                <td class="value">{{town.allocation | currency}}</td>
+                <td class="value">{{town.even_cut_allocation | currency}}</td>
+                <td class="value">{{town.sim_allocation | currency}}</td>
+                <td class="value">{{town.per_change | percentage:1}}</td>
+                <td class="value">{{town.sim_allocation_difference_total | currency:"$":0}}</td>
+                <td class="value">{{town.category}}</td>
+            </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+</div>
