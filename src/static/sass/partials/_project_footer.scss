@@ -9,7 +9,8 @@
     width: 100%;
 
     .copyright p {
-        width: 50%;
+        width: 100%;
+        text-align: center;
         margin-left: auto;
         margin-right: auto;
         font-size:1em;
@@ -19,3 +20,12 @@
     }
 }
 
+@media screen and (max-width: 400px) {
+    .footer {
+        .copyright p {
+            font-size: .75rem;
+            padding-left: .5rem;
+            padding-right: .5rem;
+        }
+    }
+}

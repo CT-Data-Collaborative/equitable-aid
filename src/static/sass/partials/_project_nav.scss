@@ -49,7 +49,20 @@
       font-weight: $light;
       padding-right: .5em;
   }
-
+  .logo-link:after {
+    content: "Created by Connecticut Data Collaborative";
+  }
 }
 
-
+@media screen and (max-width: 400px) {
+  .navbar-header {
+    .logo-circle {
+      width: .75rem;
+      height: .75rem;
+      margin-top: .35rem;
+    }
+    .logo-link:after {
+      content: "Created by CTData";
+    }
+  }
+}
