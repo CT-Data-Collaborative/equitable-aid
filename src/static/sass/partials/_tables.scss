@@ -1,3 +1,8 @@
+div.ctdata-table-container {
+    height: 40vh;
+    width: 100%;
+    overflow: auto;
+}
 table.ctdata-table {
     margin-bottom: 2rem;
 
@@ -50,6 +55,169 @@ table.ctdata-table {
         }
         &.green {
             color: $green;
+        }
+    }
+}
+
+div.ctdata-list-table {
+    width: 100%;
+    overflow-x: auto;
+    
+    > div {
+        white-space: nowrap;
+        display: inline-block;
+
+        > div {
+            padding: 0 0.5rem;
+        }
+
+        ul {
+            list-style: none inside none;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            margin: 0 0.5rem;
+            display: inline-block;
+            white-space: normal;
+            word-wrap: break-on-word;
+
+            &.text-left {
+                text-align: left;
+            }
+            &.text-center {
+                text-align: center;
+            }
+            &.text-right {
+                text-align: right;
+            }
+        }
+
+        div.thead {
+            ul {
+                background: $ctdata-extra-light-blue;
+            }
+
+            ul li {
+                font-weight: $heavy;
+                vertical-align: middle;
+                cursor: pointer;
+            }
+        }
+
+        div.tbody {
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: 45vh;
+
+            ul {
+                border-bottom: 1px solid $extra-light-grey;
+            }
+
+            /* Colors, highlight */
+            ul:hover {
+                background: $ctdata-light-blue;
+            }
+
+            .gap-color {
+                &.red {
+                    color: $red;
+                }
+                &.green {
+                    color: $green;
+                }
+            }
+
+            span.reflow-label {
+                display: none;
+            }
+        }
+
+        div.tfoot {
+            display: absolute;
+            bottom: 0;
+        }
+
+        /* Column width definitions */
+        li.col-town {
+            width: 9rem;
+        }
+        li.col-population {
+            width: 5rem;
+        }
+        li.col-gap {
+            width: 5rem;
+        }
+        li.col-allocation {
+            width: 7rem;
+        }
+        li.col-even-cut {
+            width: 7rem;
+        }
+        li.col-sim-allocation {
+            width: 7rem;
+        }
+        li.col-percent-change {
+            width: 5rem;
+        }
+        li.col-allocation-diff {
+            width: 7rem;
+        }
+        li.col-category {
+            width: 7rem;
+        }
+
+        /* NPR-esque mobile reflow */
+        @media screen and (max-width: 500px) {
+            /* still the first nested div */
+            width: 100%;
+
+            div.thead {
+                display: none!important;
+            }
+
+            div.tbody {
+                width: 100%;
+
+                ul {
+                    width: 100%;
+
+                    &:hover {
+                        background-color: $white!important;
+                    }
+                }
+
+                ul li {
+                    width: 100%!important;
+                    display: block!important;
+
+                    &:not(:first-child) {
+                        margtin-left: 1em;
+                    }
+
+                    &:hover {
+                        background-color: $ctdata-extra-light-blue!important;
+                    }
+                }
+
+                li.col-town {
+                    font-weight: $heavy;
+                }
+
+                span.reflow-label {
+                    display: inline-block!important;
+                    float: left;
+                    padding-left:1rem;
+
+                    &:after {
+                        content: ":";
+                    }
+                }
+            }
         }
     }
 }

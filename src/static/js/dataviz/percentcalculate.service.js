@@ -27,11 +27,15 @@ angular.module('app')
                     e.per_change = r2 * (e.gap - baseline) / e.allocation - 1;
                 }
                 e.sim_allocation = e.allocation * (1 + e.per_change );
+                e.sim_allocation_total = e.sim_allocation * e.population;
                 e.sim_allocation_difference = e.sim_allocation - e.allocation;
                 e.sim_allocation_difference_total = e.sim_allocation - e.allocation * e.population;
+                
                 e.even_cut_allocation = e.allocation * (1 + percent_cut);
+                e.even_cut_allocation_total = e.even_cut_allocation * e.population;
                 e.even_cut_allocation_difference = e.even_cut_allocation - e.allocation;
                 e.even_cut_allocation_difference_total = e.even_cut_allocation - e.allocation * e.population;
+                
                 e.sim_better = (e.sim_allocation - e.even_cut_allocation) >= 0;
             });
             return data;
