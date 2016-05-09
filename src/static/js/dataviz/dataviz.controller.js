@@ -16,7 +16,7 @@ angular.module('app')
         $scope.grants = [
             "Colleges & Hospitals PILOT",
             "DECD PILOT Grant",
-            "DECD Tax Abatement",
+            "DOH Tax Abatement",
             "Disability Exemption",
             "Elderly Circuit Breaker",
             "Elderly Freeze",
@@ -31,10 +31,6 @@ angular.module('app')
         // Vars and functions for handling calculation type
         // -----------------------------------------
         $scope.percalculate = percalculate.calculate;
-
-        // -----------------------------------------
-        // Load and initialize data
-        // -----------------------------------------
 
         var dataPromise = townData.loadData();
         dataPromise.then(function(results) {
